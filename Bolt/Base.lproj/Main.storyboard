@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bolt View-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BoltView" customModule="Bolt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZB-v5-dyE">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="9rQ-6b-SQT">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7aQ-D7-xCy">
+                                            <frame key="frameInset" width="600" height="580"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="600" id="n1o-dB-XH8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kic-je-Z2m">
+                                            <frame key="frameInset" width="601" height="581"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="9Lc-4P-Zn0">
+                                                <frame key="frameInset"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="25:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgC-bB-UEK">
+                                                        <frame key="frameInset" minX="110" minY="298" width="154" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="154" id="Bsd-cB-gIR"/>
+                                                            <constraint firstAttribute="height" constant="50" id="tKf-h4-Lxh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="54"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstItem="zgC-bB-UEK" firstAttribute="centerY" secondItem="9Lc-4P-Zn0" secondAttribute="centerY" id="6AQ-qB-xfV"/>
+                                                    <constraint firstItem="zgC-bB-UEK" firstAttribute="top" secondItem="9Lc-4P-Zn0" secondAttribute="top" constant="265" id="AkR-yI-PGh"/>
+                                                    <constraint firstItem="zgC-bB-UEK" firstAttribute="centerX" secondItem="9Lc-4P-Zn0" secondAttribute="centerX" id="HZq-M3-zp2"/>
+                                                    <constraint firstItem="zgC-bB-UEK" firstAttribute="top" secondItem="9Lc-4P-Zn0" secondAttribute="top" constant="298" id="V5V-6E-n9z"/>
+                                                    <constraint firstItem="zgC-bB-UEK" firstAttribute="leading" secondItem="9Lc-4P-Zn0" secondAttribute="leading" constant="223" id="dJY-qI-fYx"/>
+                                                    <constraint firstItem="zgC-bB-UEK" firstAttribute="leading" secondItem="9Lc-4P-Zn0" secondAttribute="leading" constant="110" id="t9H-Pg-KyR"/>
+                                                </constraints>
+                                            </view>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7aQ-D7-xCy" firstAttribute="leading" secondItem="kic-je-Z2m" secondAttribute="leading" id="5CZ-Sz-QcI"/>
+                                        <constraint firstItem="kic-je-Z2m" firstAttribute="top" secondItem="9rQ-6b-SQT" secondAttribute="top" id="FYA-c5-adM"/>
+                                        <constraint firstItem="7aQ-D7-xCy" firstAttribute="top" secondItem="kic-je-Z2m" secondAttribute="top" id="H0N-p8-gas"/>
+                                        <constraint firstItem="kic-je-Z2m" firstAttribute="leading" secondItem="9rQ-6b-SQT" secondAttribute="leading" id="LpT-aK-BQC"/>
+                                        <constraint firstAttribute="bottom" secondItem="7aQ-D7-xCy" secondAttribute="bottom" constant="67" id="Lq6-a1-ZFO"/>
+                                        <constraint firstItem="kic-je-Z2m" firstAttribute="centerY" secondItem="9rQ-6b-SQT" secondAttribute="centerY" id="MSJ-y5-Zw2"/>
+                                        <constraint firstItem="kic-je-Z2m" firstAttribute="centerX" secondItem="9rQ-6b-SQT" secondAttribute="centerX" id="TRd-5K-y1n"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yZB-v5-dyE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0oN-AK-NIE"/>
+                            <constraint firstItem="yZB-v5-dyE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="T21-sO-htM"/>
+                            <constraint firstItem="yZB-v5-dyE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="drZ-o8-ibZ"/>
+                            <constraint firstItem="yZB-v5-dyE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vWf-zk-3nr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="7aQ-D7-xCy" id="Uul-yH-cqI"/>
+                        <outlet property="displayTimer" destination="zgC-bB-UEK" id="557-UF-VWm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="364"/>
+        </scene>
+    </scenes>
+</document>
