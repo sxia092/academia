@@ -9,93 +9,98 @@
 import Foundation
 
 class Timer {
-    private var hours: Int?, minutes: Int?, seconds: Int
-    private let defaultValues: (hours: Int?, minutes: Int?, seconds: Int)
-    
-    var isBreakTimer: Bool
-    var isTimerFinished: Bool { return totalSeconds == 0 }
-    
-    var totalSeconds: Int {
-        var total = seconds
+
+    convenience init(hours: Int, minutes: Int, seconds: Int) {
+        self.init()
         
-        if let hours = hours { total += hours * 60 * 60 }
-        if let minutes = minutes { total += minutes * 60 }
+        var totalSeconds = 0;
+        totalSeconds += hours * Constants.numberOfMinutesInHour * Constants.numberOfSecondsInMinute
+        totalSeconds += minutes * Constants.numberOfSecondsInMinute
+        totalSeconds += seconds
         
-        return total
+        self.totalSeconds = totalSeconds
+        defaultTotalSeconds = totalSeconds
     }
     
-    var initialTotalSeconds: Int {
-        var total = defaultValues.seconds
-        
-        if let hours = defaultValues.hours { total += hours * 60 * 60 }
-        if let minutes = defaultValues.minutes { total += minutes * 60 }
-        
-        return total
+    var timer = Foundation.Timer()
+    var additionalAction: (String) -> Void = { _ in return }
+    
+    var isFinished: Bool {
+        get {
+            return totalSeconds <= 0
+        }
+    }
+    
+    private var totalSeconds = Constants.defaultMinutes * Constants.numberOfSecondsInMinute
+    private var defaultTotalSeconds = Constants.defaultMinutes * Constants.numberOfSecondsInMinute
+    
+    var resetsTo: Int { get { return defaultTotalSeconds } }
+    
+    private var hours: Int {
+        return (totalSeconds / Constants.numberOfSecondsInMinute / Constants.numberOfMinutesInHour) % Constants.numberOfHoursInDay;
+    }
+    
+    private var minutes: Int {
+        return (totalSeconds / Constants.numberOfSecondsInMinute) % Constants.numberOfMinutesInHour
+    }
+    
+    private var seconds: Int {
+        return totalSeconds % Constants.numberOfSecondsInMinute
     }
     
     var displayText: String {
-        var leftHandSide: String, rightHandSide: String
+        if isFinished { return "00:00" }
         
-        if let hours = hours, minutes = minutes {
+        let leftHandSide: String, rightHandSide: String
+        
+        if hours > 0 {
             leftHandSide = hours <= Constants.timeNeededToPreAppendAZeroToDisplay ? "0\(hours)" : "\(hours)"
-            
             rightHandSide = minutes <= Constants.timeNeededToPreAppendAZeroToDisplay ? "0\(minutes)" : "\(minutes)"
-        } else if let minutes = minutes {
+        } else {
             leftHandSide = minutes <= Constants.timeNeededToPreAppendAZeroToDisplay ? "0\(minutes)" : "\(minutes)"
-            
-            rightHandSide = seconds <= Constants.timeNeededToPreAppendAZeroToDisplay ? "0\(seconds)" : "\(seconds)"
-        } else {
-            leftHandSide = "00"
-            
             rightHandSide = seconds <= Constants.timeNeededToPreAppendAZeroToDisplay ? "0\(seconds)" : "\(seconds)"
         }
         
-        return "\(leftHandSide):\(rightHandSide)"
+       return "\(leftHandSide):\(rightHandSide)"
     }
     
-    init(seconds: Int = 0, minutes: Int? = nil, hours: Int? = nil, isBreakTimer: Bool = false) {
-        if hours != nil { self.minutes = 0 }
-        
-        self.hours = hours
-        self.seconds = seconds
-        self.minutes = minutes
-        
-        defaultValues = (hours, minutes, seconds)
-        self.isBreakTimer = isBreakTimer
+    var isRunning: Bool {
+        return timer.isValid
     }
     
-    func resetTheTimer() {
-        hours = defaultValues.hours
-        minutes = defaultValues.minutes
-        seconds = defaultValues.seconds
-    }
-    
-    
-    func updateTheTimer() {
-        if seconds == 0 {
-            seconds = 59
-            if minutes == 0 {
-                
-                minutes = 59
-                if hours != 0 && hours != nil { hours! -= 1 }
-                
-            } else if minutes != nil {
-                minutes! -= 1
-            }
-        } else {
-            seconds -= 1
+    // MARK: Methods
+    func start() {
+        if !isRunning {
+            timer = Foundation.Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         }
+    }
+    
+    func stop() {
+        timer.invalidate()
+    }
+    
+    func reset() {
+        stop()
+        totalSeconds = defaultTotalSeconds
+    }
+    
+    @objc func update() {
+        totalSeconds -= 1
+        additionalAction(displayText)
+    }
+    
+    // MARK: Constants
+    
+    private struct Constants {
+        static let defaultMinutes = 25
+        
+        // Constants For Readibility
+        static let numberOfSecondsInMinute = 60
+        static let numberOfMinutesInHour = 60
+        static let numberOfHoursInDay = 24
+        
+        static let timeNeededToPreAppendAZeroToDisplay = 9
     }
 }
 
-
-/*--------------------Begin Legacy--------------------*/
-/*
- func convertUnitsFromSeconds(let totalSecondsToConvertFrom: Int) {
- hours = (totalSecondsToConvertFrom / GlobalConstants.numberOfSecondsInMinute / GlobalConstants.numberOfMinutesInHours) % GlobalConstants.numberOfHoursInDay; // Trim the lefovers
- minutes = (totalSecondsToConvertFrom / GlobalConstants.numberOfSecondsInMinute) % GlobalConstants.numberOfMinutesInHours; // Trim the leftovers
- seconds = totalSecondsToConvertFrom % GlobalConstants.numberOfSecondsInMinute; // Likewise, trim the leftovers
- }
- */
-/*--------------------End Legacy--------------------*/
 

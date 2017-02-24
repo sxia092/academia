@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490AD3DF1D3BD871001E191D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490AD3DE1D3BD871001E191D /* Assets.xcassets */; };
+		492DA2281D3B619A00318417 /* AngularOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DA2271D3B619A00318417 /* AngularOverlayView.swift */; };
 		4943030D1CA8E3DE00F21F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943030C1CA8E3DE00F21F7E /* AppDelegate.swift */; };
-		4943030F1CA8E3DE00F21F7E /* BoltView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943030E1CA8E3DE00F21F7E /* BoltView.swift */; };
+		4943030F1CA8E3DE00F21F7E /* BoltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943030E1CA8E3DE00F21F7E /* BoltViewController.swift */; };
 		494303121CA8E3DE00F21F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494303101CA8E3DE00F21F7E /* Main.storyboard */; };
-		494303141CA8E3DE00F21F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494303131CA8E3DE00F21F7E /* Assets.xcassets */; };
 		494303171CA8E3DE00F21F7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494303151CA8E3DE00F21F7E /* LaunchScreen.storyboard */; };
 		4943031F1CA8E42100F21F7E /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943031E1CA8E42100F21F7E /* Timer.swift */; };
-		494303211CA8E44500F21F7E /* TimeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494303201CA8E44500F21F7E /* TimeDisplay.swift */; };
-		494303241CA8E47500F21F7E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494303231CA8E47500F21F7E /* Constants.swift */; };
+		49B67F5F1D5BF6F30042ED09 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B67F5E1D5BF6F30042ED09 /* CustomPresentAnimationController.swift */; };
+		49C620D41D45A7A000A02685 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C620D31D45A7A000A02685 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490AD3DE1D3BD871001E191D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		492DA2271D3B619A00318417 /* AngularOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularOverlayView.swift; sourceTree = "<group>"; };
 		494303091CA8E3DE00F21F7E /* Bolt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bolt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4943030C1CA8E3DE00F21F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4943030E1CA8E3DE00F21F7E /* BoltView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoltView.swift; sourceTree = "<group>"; };
+		4943030E1CA8E3DE00F21F7E /* BoltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoltViewController.swift; sourceTree = "<group>"; };
 		494303111CA8E3DE00F21F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		494303131CA8E3DE00F21F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494303161CA8E3DE00F21F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		494303181CA8E3DE00F21F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4943031E1CA8E42100F21F7E /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		494303201CA8E44500F21F7E /* TimeDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDisplay.swift; sourceTree = "<group>"; };
-		494303231CA8E47500F21F7E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49B67F5E1D5BF6F30042ED09 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
+		49C620D31D45A7A000A02685 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +62,14 @@
 		4943030B1CA8E3DE00F21F7E /* Bolt */ = {
 			isa = PBXGroup;
 			children = (
-				4943030E1CA8E3DE00F21F7E /* BoltView.swift */,
+				492DA2271D3B619A00318417 /* AngularOverlayView.swift */,
+				49C620D31D45A7A000A02685 /* SettingsViewController.swift */,
+				4943030E1CA8E3DE00F21F7E /* BoltViewController.swift */,
+				49B67F5E1D5BF6F30042ED09 /* CustomPresentAnimationController.swift */,
 				4943031E1CA8E42100F21F7E /* Timer.swift */,
-				494303231CA8E47500F21F7E /* Constants.swift */,
-				494303201CA8E44500F21F7E /* TimeDisplay.swift */,
 				494303101CA8E3DE00F21F7E /* Main.storyboard */,
-				494303131CA8E3DE00F21F7E /* Assets.xcassets */,
 				494303151CA8E3DE00F21F7E /* LaunchScreen.storyboard */,
+				490AD3DE1D3BD871001E191D /* Assets.xcassets */,
 				4943030C1CA8E3DE00F21F7E /* AppDelegate.swift */,
 				494303181CA8E3DE00F21F7E /* Info.plist */,
 			);
@@ -100,7 +103,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Illya Starikov";
 				TargetAttributes = {
 					494303081CA8E3DE00F21F7E = {
@@ -134,7 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494303171CA8E3DE00F21F7E /* LaunchScreen.storyboard in Resources */,
-				494303141CA8E3DE00F21F7E /* Assets.xcassets in Resources */,
+				490AD3DF1D3BD871001E191D /* Assets.xcassets in Resources */,
 				494303121CA8E3DE00F21F7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,10 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				494303241CA8E47500F21F7E /* Constants.swift in Sources */,
+				49B67F5F1D5BF6F30042ED09 /* CustomPresentAnimationController.swift in Sources */,
+				492DA2281D3B619A00318417 /* AngularOverlayView.swift in Sources */,
+				49C620D41D45A7A000A02685 /* SettingsViewController.swift in Sources */,
 				4943031F1CA8E42100F21F7E /* Timer.swift in Sources */,
-				494303211CA8E44500F21F7E /* TimeDisplay.swift in Sources */,
-				4943030F1CA8E3DE00F21F7E /* BoltView.swift in Sources */,
+				4943030F1CA8E3DE00F21F7E /* BoltViewController.swift in Sources */,
 				4943030D1CA8E3DE00F21F7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,8 +194,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -213,7 +219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -236,8 +242,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -253,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -266,10 +274,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bolt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FreneticArray.Bolt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -278,10 +288,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bolt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FreneticArray.Bolt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
