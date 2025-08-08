@@ -1,0 +1,153 @@
+\section{Relational Set}
+Please note primary keys are signified by \pk \ and foreign keys are signified by \fk.
+
+%-------------------- Post --------------------%
+\subsubsection*{Post}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\underline{PiD} \pk & \underline{FiD} \fk & Message & DateStamp & Title & Date \\
+\hline
+\end{tabular}
+
+%-------------------- Forum --------------------%
+\subsubsection*{Forum}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\underline{FiD} \pk & Title & DateCreated & PublicOrPrivate & GiD \fk \\
+\hline
+\end{tabular}
+
+%-------------------- Groups --------------------%
+\subsubsection*{Groups}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\underline{GiD} \pk & Moderator \fk & Title & StartDate  \\
+\hline
+\end{tabular}
+
+%-------------------- Workout --------------------%
+\subsubsection*{Workouts}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\underline{WiD} \pk & Duration & Title & IntensityLevel & CaloriesBurned & UiD \fk \\
+\hline
+\end{tabular}
+
+%-------------------- Strength --------------------%
+\subsubsection*{Strength}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\underline{WiD} \pk & Duration & Title & IntensityLevel & CaloriesBurned & UiD \fk & Target Zone \\
+\hline
+\end{tabular}
+
+%-------------------- Cardio --------------------%
+\subsubsection*{Cardio}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\underline{WiD} \pk & Duration & Title & IntensityLevel & CaloriesBurned & UiD \fk & AverageHeartRate \\
+\hline
+\end{tabular}
+\begin{tabular}{|l|l|}
+\hline
+AverageSpeed & DistanceCovered \\
+\hline
+\end{tabular}
+
+%-------------------- Cardio --------------------%
+\subsubsection*{Users}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+\underline{UiD} \pk & Username & Height & Birthdate & Goal & Password & JoinDate & Gender\\
+\hline
+\end{tabular}
+
+\noindent
+\begin{tabular}{|l|l|l|}
+\hline
+FirstName & MiddleName & LastName \\
+\hline
+\end{tabular}
+
+\begin{multicols}{2}
+%-------------------- Weight --------------------%
+\subsubsection*{Weight}
+\begin{tabular}{|l|l|l|}
+\hline
+\underline{UiD} \pfk & \underline{TimeStamp} \pk & Weight \\
+\hline
+\end{tabular}
+
+%-------------------- Chest Size --------------------%
+\subsubsection*{Chest Size}
+\begin{tabular}{|l|l|l|}
+\hline
+\underline{UiD} \pfk & \underline{TimeStamp} \pk & ChestSize\\
+\hline
+\end{tabular}
+
+%-------------------- Arm Size --------------------%
+\subsubsection*{Arm Size}
+\begin{tabular}{|l|l|l|}
+\hline
+\underline{UiD} \pfk & \underline{TimeStamp} \pk & Arm Size \\
+\hline
+\end{tabular}
+\end{multicols}
+
+%-------------------- Group Members --------------------%
+\subsubsection*{Group Members}
+\begin{tabular}{|l|l|l|}
+\hline
+\underline{UiD} \pk & \underline{GiD} \fk & ModeratorStatus \\
+\hline
+\end{tabular}
+
+\section{Summary Table}
+\begin{adjustwidth}{-2.25cm}{}
+    \begin{center}
+    \begin{tabular}{l|lll}
+        \toprule
+        \textbf{Attribute}        & \textbf{Data Type} & \textbf{Constraints}  & \textbf{Meaning} \\ \hline
+        \textbf{Message}          & \texttt{varchar}   & 500 characters        & Contents of a post.  \\
+        \textbf{FID}              & \texttt{int}       & unique                & Forum ID.  \\
+        \textbf{DateStamp}        & \texttt{timestamp} & timestamp of creation & Timestamp of post creation.  \\
+        \textbf{Title}            & \texttt{char}      & 35 characters         & Title of a post.  \\ \midrule
+        \textbf{PID}              & \texttt{int}       & unique                & Post ID.  \\
+        \textbf{Date}             & \texttt{timestamp} & date of creation      & Timestamp of post creation.  \\
+        \textbf{Title}            & \texttt{char}      & 35 characters         & Title of a forum.  \\
+        \textbf{DateCreated}      & \texttt{timestamp} & timestamp of creation & Timestamp of forum creation.  \\ \midrule
+        \textbf{PublicOrPrivate}  & \texttt{boolean}   & -                     & Is forum public.  \\
+        \textbf{GID}              & \texttt{int}       & unique                & Group ID.  \\
+        \textbf{Moderator}        & \texttt{char}      & must match a username & Group owner/moderator.  \\
+        \textbf{Title}            & \texttt{char}      & 35 characters         & Title of the group.  \\ \midrule
+        \textbf{StartDate}        & \texttt{timestamp} & timestamp of creation & Timestamp of group creation.  \\
+        \textbf{IntensityLevel}   & \texttt{int}       & -                     & Enumerated value, code for different options.  \\
+        \textbf{Title}            & \texttt{char}      & 35 characters         & Title of the workout.  \\
+        \textbf{CaloriesBurned}   & \texttt{int}       & num $>$ 0             & How many calories burned during exercise.  \\ \midrule
+        \textbf{Duration}         & \texttt{timestamp} & num $>$ 0             & Length of exercise.  \\
+        \textbf{WID}              & \texttt{int}       & unique                & Workout ID.  \\
+        \textbf{Exercise}         & \texttt{char}      & 35 characters         & Exercise name.  \\
+        \textbf{TargetZone}       & \texttt{char}      & 35 characters         & Area exercise is intended to workout.  \\ \midrule
+        \textbf{AverageHeartRate} & \texttt{int}       & num $>$ 0             & Average heart rate recorded during exercise.  \\
+        \textbf{AverageSpeed}     & \texttt{int}       & num $>$ 0             & Average speed of cardio exercise.  \\
+        \textbf{DistanceCovered}  & \texttt{int}       & num $>$ 0             & Distance covered during cardio exercise.  \\
+        \textbf{Password}         & \texttt{char}      & -                     & Password of user.  \\ \midrule
+        \textbf{JoinDate}         & \texttt{timestamp} & timestamp of creation & Timestamp of users sign up.  \\
+        \textbf{Username}         & \texttt{char}      & unique                & Users username, used for sign in.  \\
+        \textbf{ModeratorStatus}  & \texttt{boolean}   & -                     & Is a moderator.  \\
+        \textbf{Birthdate}        & \texttt{date}      & -                     & Date of users birth.  \\ \midrule
+        \textbf{Goal}             & \texttt{varchar}   & 500 characters        & Users intended workout goals.  \\
+        \textbf{Gender}           & \texttt{char}      & 1 character, M or F   & Users gender, male(M) or female(F).  \\
+        \textbf{Weight}           & \texttt{int}       & num $>$ 0             & Users weight at a certain date.  \\
+        \textbf{ChestSize}        & \texttt{int}       & num $>$ 0             & Users chest size at a certain date.  \\ \midrule
+        \textbf{ArmSize}          & \texttt{int}       & num $>$ 0             & Users arm size at a certain date.  \\
+        \textbf{Height}           & \texttt{int}       & num $>$ 0             & Users height at a certain date.  \\
+        \textbf{UID}              & \texttt{int}       & unique                & Users ID.  \\
+        \textbf{TimeStamp}        & \texttt{date}      & unique                & Date of users weight measurement.  \\ \midrule
+        \textbf{TimeStamp}        & \texttt{date}      & unique                & Date of users chest measurement.  \\
+        \textbf{TimeStamp}        & \texttt{date}      & unique                & Date of users arm measurement.  \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+\end{adjustwidth}

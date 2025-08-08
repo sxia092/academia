@@ -1,0 +1,302 @@
+\documentclass{mst}
+
+% Personal information variables (defaults - will be overwritten by config.tex)
+\newcommand{\myname}{}
+\newcommand{\mystudentid}{}
+\newcommand{\myemail}{}
+\newcommand{\mydegree}{}
+\newcommand{\mygraduation}{}
+\newcommand{\mygpa}{}
+\newcommand{\myresearch}{}
+\newcommand{\myadvisor}{}
+\newcommand{\myteaching}{}
+\newcommand{\mycourses}{}
+
+% Load personal configuration
+\InputIfFileExists{config.tex}{}{}
+
+% Document metadata
+\hypersetup{
+    pdftitle={Missouri S\&T Complete Academic Portfolio},
+    pdfauthor={\myname},
+    pdfsubject={Complete Collection of Academic Work}
+}
+
+\pagenumbering{gobble} % Set before document begins
+\begin{document}
+\makemstcover{Complete Portfolio}{The Comprehensive Collection of Academic Work}{ACADEMIC}
+
+% Preface page
+\makepreface{complete}
+
+% Table of contents
+\pagenumbering{arabic} % Restore page numbering
+\setcounter{page}{1} % Start from page 1
+\makecustomtoc
+
+% Activate fancy page style for the rest of the document
+\pagestyle{fancy}
+
+% === COMPLETE ACADEMIC PORTFOLIO ===
+
+% ==============================
+% COMPUTER ENGINEERING COURSES
+% ==============================
+
+\coursesection{CPE2210}{Introduction To Computer Engineering}
+\includeassignment{cpe2210_introduction_to_computer_engineering/exam_i.pdf}{Exam I}
+\includeassignment{cpe2210_introduction_to_computer_engineering/exam_ii.pdf}{Exam II}
+\includeassignment{cpe2210_introduction_to_computer_engineering/lab/lab_1.pdf}{Lab 1}
+\includeassignment{cpe2210_introduction_to_computer_engineering/lab/lab_2.pdf}{Lab 2}
+
+\coursesection{CPE3150}{Micro Embedded Design}
+\includeassignment{cpe3150_micro_embedded_design/lecture3.pdf}{Lecture 3}
+\includeassignment{cpe3150_micro_embedded_design/lecture4.pdf}{Lecture 4}
+\includeassignment{cpe3150_micro_embedded_design/lecture6.pdf}{Lecture 6}
+\includeassignment{cpe3150_micro_embedded_design/lecture7.pdf}{Lecture 7}
+\includeassignment{cpe3150_micro_embedded_design/lecture9.pdf}{Lecture 9}
+\includeassignment{cpe3150_micro_embedded_design/cpe3150_project_1/report/report.pdf}{Project 1 Report}
+\includeassignment{cpe3150_micro_embedded_design/cpe3150-project-3/report/report.pdf}{Project 3 Report}
+
+% ==============================
+% COMPUTER SCIENCE COURSES
+% ==============================
+
+\coursesection{CS1001}{Data Structures Lab}
+\includeassignment{cs1001_data_structures_lab/lab_1.pdf}{Lab 1}
+\includeassignment{cs1001_data_structures_lab/lab_5.pdf}{Lab 5}
+\includeassignment{cs1001_data_structures_lab/lab_8.pdf}{Lab 8}
+\includeassignment{cs1001_data_structures_lab/lab_9.pdf}{Lab 9}
+\includeassignment{cs1001_data_structures_lab/2016sp-b-lab10-isgx2/Lab-10.pdf}{Lab 10}
+\includeassignment{cs1001_data_structures_lab/2016sp-a1-lab14-latex-isgx2/14-assignment.pdf}{Lab 14 Assignment}
+\includeassignment{cs1001_data_structures_lab/project 2.pdf}{Project 2}
+\includeassignment{cs1001_data_structures_lab/Project.pdf}{Final Project}
+
+\coursesection{CS1200}{Discrete Math}
+% Chapter content in logical order
+\includeassignment{cs1200_discrete_math/chapter_5/5.1.pdf}{Chapter 5.1}
+\includeassignment{cs1200_discrete_math/chapter_5/5.1_continued.pdf}{Chapter 5.1 Continued}
+\includeassignment{cs1200_discrete_math/chapter_6/6.1.pdf}{Chapter 6.1}
+\includeassignment{cs1200_discrete_math/chapter_7/7.1_7.2.pdf}{Chapter 7.1-7.2}
+\includeassignment{cs1200_discrete_math/chapter_8/8.1_8.2.pdf}{Chapter 8.1-8.2}
+\includeassignment{cs1200_discrete_math/chapter_8/8.3.pdf}{Chapter 8.3}
+\includeassignment{cs1200_discrete_math/chapter_8/8.5_partial_order_relations.pdf}{Chapter 8.5 Partial Order Relations}
+\includeassignment{cs1200_discrete_math/chapter_9/9.1_9.2.pdf}{Chapter 9.1-9.2}
+\includeassignment{cs1200_discrete_math/chapter_9/9.3_9.4.pdf}{Chapter 9.3-9.4}
+\includeassignment{cs1200_discrete_math/chapter_9/9.3_cont_9.6.pdf}{Chapter 9.3-9.6 Continued}
+\includeassignment{cs1200_discrete_math/tests/test_iii/9.5_9.6.pdf}{Chapter 9.5-9.6}
+\includeassignment{cs1200_discrete_math/chapter_10/10.1_10.2_part_i.pdf}{Chapter 10.1-10.2 Part I}
+\includeassignment{cs1200_discrete_math/chapter_10/10.1_10.2_part_ii.pdf}{Chapter 10.1-10.2 Part II}
+\includeassignment{cs1200_discrete_math/chapter_10/10.2.pdf}{Chapter 10.2}
+\includeassignment{cs1200_discrete_math/tests/test_iii/10.3_10.5.pdf}{Chapter 10.3-10.5}
+% Tests and homework
+\includeassignment{cs1200_discrete_math/tests/test_ii/study_guide.pdf}{Test II Study Guide}
+\includeassignment{cs1200_discrete_math/tests/test_iii/main.pdf}{Test III Review}
+\includeassignment{cs1200_discrete_math/homework_4.pdf}{Homework 4}
+\includeassignment{cs1200_discrete_math/homework_5.pdf}{Homework 5}
+
+\coursesection{CS1510}{Data Structures}
+\includeassignment{cs1510_data_structures/graph.pdf}{Graph}
+\includeassignment{cs1510_data_structures/heap.pdf}{Heap}
+\includeassignment{cs1510_data_structures/recursion.pdf}{Recursion}
+\includeassignment{cs1510_data_structures/tree.pdf}{Tree}
+
+\coursesection{CS2300}{Databases}
+% Homework and quizzes
+\includeassignment{cs2300_databases/quiz_i.pdf}{Quiz I}
+\includeassignment{cs2300_databases/archive/Homework/homework_1/homework_1.pdf}{Homework 1}
+\includeassignment{cs2300_databases/archive/Homework/homework_2/homework_2.pdf}{Homework 2}
+\includeassignment{cs2300_databases/archive/Homework/homework_4/homework_4.pdf}{Homework 4}
+% Project phases
+\includeassignment{cs2300_databases/group_meeting_i.pdf}{Group Meeting I}
+\includeassignment{cs2300_databases/archive/Phases/project_phase_i/Source/Conceptual Database Design.pdf}{Conceptual Database Design}
+\includeassignment{cs2300_databases/archive/Phases/project_phase_i/Source/ERR.pdf}{ERR Diagram}
+\includeassignment{cs2300_databases/archive/Phases/project_phase_ii/Assets/Logical and Physical Database Design.pdf}{Logical and Physical Database Design}
+\includeassignment{cs2300_databases/notes/general/wireframe.pdf}{Wireframe}
+\includeassignment{cs2300_databases/final-report/master.pdf}{Final Report}
+\includeassignment{cs2300_databases/end_of_semester.pdf}{End of Semester}
+
+\coursesection{CS2500}{Algorithms}
+% Lectures in order
+\includeassignment{cs2500_algorithms/1_algorithms_introduction.pdf}{1. Algorithms Introduction}
+\includeassignment{cs2500_algorithms/2_asymptotic_analysis.pdf}{2. Asymptotic Analysis}
+\includeassignment{cs2500_algorithms/3_divide_and_conquer.pdf}{3. Divide And Conquer}
+\includeassignment{cs2500_algorithms/4_recurrence.pdf}{4. Recurrence}
+\includeassignment{cs2500_algorithms/5_correctness.pdf}{5. Correctness}
+\includeassignment{cs2500_algorithms/6_quick_sort.pdf}{6. Quick Sort}
+\includeassignment{cs2500_algorithms/7_heapsort.pdf}{7. Heapsort}
+\includeassignment{cs2500_algorithms/8_counting_sort.pdf}{8. Counting Sort}
+\includeassignment{cs2500_algorithms/9_example.pdf}{9. Example}
+\includeassignment{cs2500_algorithms/10_dynamic_programming.pdf}{10. Dynamic Programming}
+\includeassignment{cs2500_algorithms/11_lcs.pdf}{11. LCS}
+% Study guides
+\includeassignment{cs2500_algorithms/study_guides/exam_i.pdf}{Exam I Study Guide}
+\includeassignment{cs2500_algorithms/study_guides/exam_ii.pdf}{Exam II Study Guide}
+\includeassignment{cs2500_algorithms/study_guides/exam_iii.pdf}{Exam III Study Guide}
+% Homework
+\includeassignment{cs2500_algorithms/homework_1.pdf}{Homework 1}
+\includeassignment{cs2500_algorithms/homework_2.pdf}{Homework 2}
+\includeassignment{cs2500_algorithms/homework_3.pdf}{Homework 3}
+\includeassignment{cs2500_algorithms/homework_4.pdf}{Homework 4}
+% Projects
+\includeassignment{cs2500_algorithms/report_i.pdf}{Project Report I}
+\includeassignment{cs2500_algorithms/report_ii.pdf}{Project Report II}
+\includeassignment{cs2500_algorithms/cs2500_project1/graphs.pdf}{Project Graphs}
+
+\coursesection{CS3001}{Skills Development}
+\includeassignment{cs3001_skills_development/deliverables/assignment-grade.pdf}{Assignment Grade}
+
+\coursesection{CS3100}{Software Engineering I}
+\includeassignment{cs3100_software_engineering_i/camelot/documentation/requirements.pdf}{Requirements}
+\includeassignment{cs3100_software_engineering_i/camelot/documentation/protocol_description.pdf}{Protocol Description}
+\includeassignment{cs3100_software_engineering_i/camelot/presentations/progress_presentation/progress_presentation.pdf}{Progress Presentation}
+\includeassignment{cs3100_software_engineering_i/camelot/presentations/final_presentation/final_presentation.pdf}{Final Presentation}
+\includeassignment{cs3100_software_engineering_i/camelot/documentation/final_summary.pdf}{Final Summary}
+
+\coursesection{CS3200}{Numerical Methods}
+\includeassignment{cs3200_numerical_methods/lecture1.pdf}{Lecture 1}
+\includeassignment{cs3200_numerical_methods/lecture2.pdf}{Lecture 2}
+\includeassignment{cs3200_numerical_methods/lecture4.pdf}{Lecture 4}
+\includeassignment{cs3200_numerical_methods/cribsheet.pdf}{Cribsheet}
+\includeassignment{cs3200_numerical_methods/numerical_methods_equations.pdf}{Numerical Methods Equations}
+\includeassignment{cs3200_numerical_methods/homework/homework_9.pdf}{Homework 9}
+\includeassignment{cs3200_numerical_methods/homework/hw_10.pdf}{Homework 10}
+
+\coursesection{CS3800}{Operating Systems}
+\includeassignment{cs3800_operating_systems/lecture_1.pdf}{Lecture 1}
+\includeassignment{cs3800_operating_systems/lecture_2.pdf}{Lecture 2}
+\includeassignment{cs3800_operating_systems/crib-sheets/exam-1.pdf}{Exam 1 Cribsheet}
+\includeassignment{cs3800_operating_systems/crib-sheets/exam-2.pdf}{Exam 2 Cribsheet}
+\includeassignment{cs3800_operating_systems/homework-2/report.pdf}{Homework 2 Report}
+
+\coursesection{CS4096}{Software Systems Development}
+\includeassignment{cs4096_software_systems_development/splatoonio/documents/progress_presentation.pdf}{Progress Presentation}
+\includeassignment{cs4096_software_systems_development/splatoonio/documents/communication_protocol.pdf}{Communication Protocol}
+\includeassignment{cs4096_software_systems_development/splatoonio/documents/feature_list.pdf}{Feature List}
+\includeassignment{cs4096_software_systems_development/ethics.pdf}{Ethics}
+\includeassignment{cs4096_software_systems_development/reflection_essay.pdf}{Reflection Essay}
+
+\coursesection{CS5200}{Analysis Of Algorithms}
+\includeassignment{cs5200_analysis_of_algorithms/homework-1/homework-1.pdf}{Homework 1}
+\includeassignment{cs5200_analysis_of_algorithms/homework-2/homework-2.pdf}{Homework 2}
+\includeassignment{cs5200_analysis_of_algorithms/homework-3/homework-3.pdf}{Homework 3}
+\includeassignment{cs5200_analysis_of_algorithms/homework-4/homework-4.pdf}{Homework 4}
+\includeassignment{cs5200_analysis_of_algorithms/homework-5/homework-5.pdf}{Homework 5}
+\includeassignment{cs5200_analysis_of_algorithms/homework-6/homework-6.pdf}{Homework 6}
+\includeassignment{cs5200_analysis_of_algorithms/homework-7/homework-7.pdf}{Homework 7}
+\includeassignment{cs5200_analysis_of_algorithms/homework-8/homework-8.pdf}{Homework 8}
+\includeassignment{cs5200_analysis_of_algorithms/final_exam.pdf}{Final Exam}
+
+\coursesection{CS5400}{Artificial Intelligence}
+\includeassignment{cs5400_artificial_intelligence/exercise_1.pdf}{Exercise 1}
+\includeassignment{cs5400_artificial_intelligence/exercise_2.pdf}{Exercise 2}
+\includeassignment{cs5400_artificial_intelligence/exercise_3.pdf}{Exercise 3}
+\includeassignment{cs5400_artificial_intelligence/exercise_4.pdf}{Exercise 4}
+\includeassignment{cs5400_artificial_intelligence/exercise_5.pdf}{Exercise 5}
+\includeassignment{cs5400_artificial_intelligence/exercise_6.pdf}{Exercise 6}
+\includeassignment{cs5400_artificial_intelligence/exercise_7.pdf}{Exercise 7}
+\includeassignment{cs5400_artificial_intelligence/exercise_8.pdf}{Exercise 8}
+\includeassignment{cs5400_artificial_intelligence/bonus_1.pdf}{Bonus 1}
+
+\coursesection{CS5402}{Data Mining}
+\includeassignment{cs5402_data_mining/test-1/test-1.pdf}{Test 1}
+\includeassignment{cs5402_data_mining/test-2/test-2.pdf}{Test 2}
+\includeassignment{cs5402_data_mining/homework-1/homework-1.pdf}{Homework 1}
+\includeassignment{cs5402_data_mining/homework-2/homework-2.pdf}{Homework 2}
+\includeassignment{cs5402_data_mining/homework-3/homework-3.pdf}{Homework 3}
+\includeassignment{cs5402_data_mining/homework-5/homework-5.pdf}{Homework 5}
+\includeassignment{cs5402_data_mining/homework-6/homework-6.pdf}{Homework 6}
+
+% ==============================
+% MATHEMATICS COURSES
+% ==============================
+
+\coursesection{MATH1214}{Calculus I}
+\includeassignment{math1214_calculus_i/main.pdf}{Complete Notes}
+
+\coursesection{MATH1215}{Calculus II}
+\includeassignment{math1215_calculus_ii/chapter_6/chapter_6.pdf}{Chapter 6}
+\includeassignment{math1215_calculus_ii/chapter_7/chapter_7.pdf}{Chapter 7}
+\includeassignment{math1215_calculus_ii/chapter_8/chapter_8.pdf}{Chapter 8}
+\includeassignment{math1215_calculus_ii/chapter_9/chapter_9.pdf}{Chapter 9}
+\includeassignment{math1215_calculus_ii/chapter_10/chapter_10.pdf}{Chapter 10}
+\includeassignment{math1215_calculus_ii/chapter_11/chapter_11.pdf}{Chapter 11}
+\includeassignment{math1215_calculus_ii/chapter_11/11.2_polar_coordinates.pdf}{11.2 Polar Coordinates}
+
+\coursesection{MATH2100}{Foundations Of Mathematics}
+\includeassignment{math2100_foundations_of_mathematics/othernotes.pdf}{Course Notes}
+
+\coursesection{MATH2222}{Calculus III}
+\includeassignment{math2222_calculus_iii/chapter_12/chapter_12.pdf}{Chapter 12}
+\includeassignment{math2222_calculus_iii/chapter_13/chapter_13.pdf}{Chapter 13}
+\includeassignment{math2222_calculus_iii/chapter_14/chapter_14.pdf}{Chapter 14}
+\includeassignment{math2222_calculus_iii/chapter_15/chapter_15.pdf}{Chapter 15}
+
+\coursesection{MATH3304}{Differential Equations}
+\includeassignment{math3304_differential_equations/plotter/sample-output.pdf}{Sample Output}
+
+% ==============================
+% OTHER DISCIPLINES
+% ==============================
+
+\coursesection{PHIL3225}{Business Ethics}
+\includeassignment{phil3225_business_ethics/portfolio.pdf}{Portfolio}
+
+% ==============================
+% MATHEMATICS COURSES
+% ==============================
+
+\coursesection{MATH1214}{Calculus I}
+\includeassignment{math1214_calculus_i/main.pdf}{Complete Notes}
+
+\coursesection{MATH1215}{Calculus II}
+\includeassignment{math1215_calculus_ii/main_complete.pdf}{Complete Notes}
+
+\coursesection{MATH2222}{Calculus III}
+\includeassignment{math2222_calculus_iii/main_full.pdf}{Complete Notes}
+
+\coursesection{STAT3117}{Statistics}
+\includeassignment{stat3117_statistics/exam_iii/cribsheet.pdf}{Exam III Cribsheet}
+\includeassignment{stat3117_statistics/final_report/final_report.pdf}{Final Project Report}
+
+% ==============================
+% PHYSICS COURSES
+% ==============================
+
+\coursesection{PHYS1135}{Physics I}
+\includeassignment{phys1135_physics_i/first_law_of_thermo.pdf}{First Law of Thermodynamics}
+
+\coursesection{PHYS2135}{Physics II}
+\includeassignment{phys2135_physics_ii/lecture1.pdf}{Lecture 1}
+\includeassignment{phys2135_physics_ii/lecture2.pdf}{Lecture 2}
+\includeassignment{phys2135_physics_ii/lecture3.pdf}{Lecture 3}
+\includeassignment{phys2135_physics_ii/lecture4.pdf}{Lecture 4}
+\includeassignment{phys2135_physics_ii/lecture5.pdf}{Lecture 5}
+\includeassignment{phys2135_physics_ii/lecture6.pdf}{Lecture 6}
+\includeassignment{phys2135_physics_ii/lecture7.pdf}{Lecture 7}
+\includeassignment{phys2135_physics_ii/lecture9.pdf}{Lecture 9}
+\includeassignment{phys2135_physics_ii/lecture10.pdf}{Lecture 10}
+\includeassignment{phys2135_physics_ii/lecture11.pdf}{Lecture 11}
+\includeassignment{phys2135_physics_ii/lecture12.pdf}{Lecture 12}
+\includeassignment{phys2135_physics_ii/lecture13.pdf}{Lecture 13}
+\includeassignment{phys2135_physics_ii/exam_1.pdf}{Exam 1}
+\includeassignment{phys2135_physics_ii/exam_2.pdf}{Exam 2}
+
+\coursesection{PHYS2305}{Modern Physics}
+\includeassignment{phys2305_modern_physics/review.pdf}{Review}
+
+\coursesection{PSYC1101}{Psychology 101}
+\includeassignment{psyc1101_psychology_101/extra_credit/a_beautiful_mind.pdf}{A Beautiful Mind}
+\includeassignment{psyc1101_psychology_101/extra_credit/famous_people.pdf}{Famous People}
+
+% ==============================
+% TEACHING MATERIALS
+% ==============================
+
+\coursesection{TEACH}{Teaching Materials}
+\includeassignment{teach/cs1570_lecture_modern_cpp.pdf}{CS1570 Lecture: Modern C++}
+\includeassignment{teach/cs1570_lab_08.pdf}{CS1570 Lab 8}
+\includeassignment{teach/cs1570_lab_15.pdf}{CS1570 Lab 15}
+\includeassignment{teach/rubric.pdf}{Grading Rubric}
+
+\end{document}

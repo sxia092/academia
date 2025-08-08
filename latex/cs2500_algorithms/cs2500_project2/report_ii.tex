@@ -1,0 +1,388 @@
+\documentclass{article}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+\title{Programming Project II, Second Report}
+\author{Illya Starikov, Claire Trebing, Timothy Ott}
+\date{Due Date: May 1st, 2016}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\usepackage{ifthen}
+\newboolean{showGraphs}
+
+\usepackage{xcolor}
+\newcommand{\shellcmd}[1]{\texttt{\colorbox{gray!30}{#1}}}
+\newcommand{\placeholder}[1]{\textbf{\colorbox{red!50}{#1}}}
+
+\newcommand{\br}{\multicolumn{2}{c}{} \\}
+
+% Paramters Are As Follows:
+% 1. Title
+% 2. x-axis Label
+% 3. y-axis Label
+% 4. Data
+% 5. Legend
+
+\newcommand{\graph}[5]{%
+\begin{tikzpicture}
+\begin{axis}[
+    scale only axis,
+    width=\textwidth,
+    height = 5cm,
+    title={_num_1},
+    xlabel={_num_2},
+    ylabel={_num_3},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+\addplot[color=blue, mark = square] table [x=a, y=b, col sep=comma] {_num_4};
+
+\legend{_num_5}
+\end{axis}
+\end{tikzpicture}
+}
+
+\begin{document}
+\maketitle
+
+\setboolean{showGraphs}{true}
+
+\section{Abstract}
+As stated in the prior report, social networks have revolutionized the way we communicate. Seeing as social \textit{networks} are a real-life representation of a graph, we would like to more closely examine them. Particularly, we would like to test
+
+\begin{itemize}
+    \item Degree Distribution
+    \item Shortest Path Distribution
+    \item Graph Diameter
+    \item Closeness Centrality
+    \item Betweenness Centrality Distribution
+    \item Community Detection
+\end{itemize}
+
+This report will showcase our results --- more specifically, we would like to discuss, in detail, our implementation and experiments. Also, we will list any relevant, interesting results we obtain.
+
+\section{Implementation}
+Our implementation is as follows, from a higher level:
+
+\begin{enumerate}
+    \item Get and parse graph input.
+    \begin{enumerate}
+        \item Because our data was given in the form of a \texttt{csv}, we decided to just pipe that input directly to a \shellcmd{vector<string>}.
+        \item We then pass said \shellcmd{vector<string>} to a function that parses using C++ \href{http://www.cplusplus.com/reference/string/string/}{string functions}.
+        \item We pipe the parsed data to a data structure of \\ \shellcmd{map<int, vector<pair<int, double>>>}
+        \begin{itemize}
+            \item The \texttt{int} is the key for retrieval of the \shellcmd{vector}
+            \item The \shellcmd{vector<pair<int, double>>} stores a \texttt{vector} of the edges, in pairs --- where the pair \shellcmd{<int, double>} are proportional to the target vertex and weight.
+        \end{itemize}
+    \end{enumerate}
+
+    \item Move on to calculating the out degree of the vertexes.
+    \begin{enumerate}
+        \item Initialize a \shellcmd{map} of \shellcmd{<int, int>} for unweighted and \shellcmd{<int, double>} for unweighted.
+        \item For both weighted and unweighted simply use the source as the \texttt{key}.
+        \item For unweighted, use the \shellcmd{size()} method of the vector class to determine the out degree\footnote{Remember, the key return the a \shellcmd{vector} of pairs. The number of pairs are directly proportional the out degree.}.
+        \item For weighted, sum the \shellcmd{second} property of the \shellcmd{pair}s in the \shellcmd{vector} --- note that the second property of \shellcmd{pair} is the weight. This gives a total weight.
+     \end{enumerate}
+
+    \item Move to calculating the in degree of the vertexes.
+    \begin{enumerate}
+        \item This is done almost the same way, except there is a weight \shellcmd{map}.
+        \item Iterate over the entirety of our data structure\footnote{An adjacency map of sorts, \shellcmd{map<int, vector<pair<int, double>>>}.}, and store where the target vertex points to in all the edges in the weight \shellcmd{map}.
+    \end{enumerate}
+
+    \item Calculate shortest path via the Floyd-Warshall algorithm.
+    \begin{enumerate}
+        \item Initialize an adjacency matrix --- a \shellcmd{vector<vector<int>>}
+        \begin{itemize}
+            \item Default all values to infinity --- in our case, $999999$.
+        \end{itemize}
+        \item Copy over data from our \shellcmd{map} to said adjacency matrix.
+        \begin{itemize}
+            \item If unweighted and an edge exists, default to $1$.
+        \end{itemize}
+        \item If requested an undirected shortest path, make the graph indirected.
+        \begin{itemize}
+            \item This is done by making a mirror image of the adjacency matrix $A$, by setting $\forall i, j \in A, A_{i, j} = A_{j, i}$. Just copying over the diagonal.
+        \end{itemize}
+        \item Run the Floyd-Warshall algorithm, with triple C-Style \shellcmd{for} loops.
+    \end{enumerate}
+
+<<<<<<< HEAD
+    \item Implemented Graph Diameter
+    \begin{enumerate}
+        \item Took the map and using the Floyd Walsh algorithm, found the shortest paths between each vertex
+        \item Begin by assuming that the path from 0 to 1 is the longest path
+        \item Compare each other path to the longest path. If a longer path is found, replace the longest path with that path. If a path of equal length is found, add the path to the list of paths.
+        \item Output the list of all paths of the maximum length.
+    \end{enumerate}
+=======
+    \item Now we must calculate the Graph Diameter.
+    \begin{enumerate}
+        \item Find the max value of the shortest path matrix
+        \item Simply output this value and the vertices that this path corresponds to.
+    \end{enumerate}
+        
+>>>>>>> 7409d2cda84936f57f2fc39143607d44b000d3ca
+
+    \item Next we endeavor to find the various closeness centrality of the vertices.
+    \begin{enumerate}
+        \item Initialize one vector to hold the solutions set and four separate vectors to contain the vertices that correspond to the four vertices with the highest closeness centrality values.
+        \item Add each edge weight for each vertex together (iterating over each vertex and each edge) and pushing the result into the solution set vector.
+        \item After this has been pushed we check the value against the recorded highest four values to see if this vertex either equals or exceeds those four values and change our recorded values/vertices accordingly.
+        \item Finally, we output both our results for highest closeness centrality values and the data needed to construct the graph.
+<<<<<<< HEAD
+    \end{enumerate}
+
+    \item Calculate Betweenness Centrality
+    \begin{itemize}
+        \item Betweenness Vertex
+        \begin{enumerate}
+            \item Take the map and use the Floyd Walsh algorithm to determine the shortest paths between each vertex
+            \item While constructing the paths, if a vertex is used in a path, increase the betweenness value for that vertex.
+            \item Go through the array of betweenness values and find the one with the maximum value. If two are equal betweenness, record them both.
+            \item Output the results.
+        \end{enumerate}
+
+        \item Betweenness Edge
+        \begin{enumerate}
+            \item Take the map and use the Floyd Walsh algorithm to determine the shortest paths between each vertex
+            \item While constructing the paths, if an edge is used in a path, increase the betweenness value for that edge.
+            \item Go through the array of betweenness values and find the one with the maximum value. If two are equal betweenness, record them both.
+        \end{enumerate}
+    \end{itemize}
+=======
+     \end{enumerate}
+     
+     \item \placeholder{BETWEENESS}
+     
+     \item Lastly we must run an algorithm to detect the communities present within the graph.
+     \begin{enumerate}
+        \item Take the results from the Unweighted Edge Betweeness algorithm and take the maximum value.
+        \item Remove the edge that corresponds to this result from the original network.
+        \item Re-run the Shortest Path and Graph Diameter Algorithms on the new network.
+        \item Repeat these steps until a total of five deletions from the original network have been completed.
+        
+     
+>>>>>>> 7409d2cda84936f57f2fc39143607d44b000d3ca
+
+        \item Lastly we must run an algorithm to detect the communities present within the graph.
+        \begin{enumerate}
+            \item Take the results from the Unweighted Edge Betweeness algorithm and take the maximum value.
+            \item Remove the edge that corresponds to this result from the original network.
+            \item Re-run the Shortest Path and Graph Diameter Algorithms on the new network.
+            \item Repeat these steps until a total of five deletions from the original network have been completed.
+        \end{enumerate}
+\end{enumerate}
+
+\ifthenelse{\boolean{showGraphs}}{
+\section{Experiments}
+\subsection{Degree Distribution}
+\subsubsection{Unweighted In Degree}
+\graph{Unweighted In Degree}{Degree}{Number of Vertices}{Data/degree/UnweightedInDegree.csv}{Trendline}
+
+\subsubsection{Unweighted Out Degree}
+\graph{Unweighted Out Degree}{Degree}{Number of Vertices}{Data/degree/UnweightedOutDegree.csv}{Trendline}
+
+\subsubsection{Weighted In Degree}
+\graph{Weighted In Degree}{Degree}{Number of Vertices}{Data/degree/WeightedInDegree.csv}{Trendline}
+
+\subsubsection{Weighted Out Degree}
+\graph{Weighted Out Degree}{Degree}{Number of Vertices}{Data/degree/WeightedOutDegree.csv}{Trendline}
+
+\subsubsection{Weighted Total Distribution}
+\graph{Weighted Total Distribution}{Degree}{Number of Vertices}{Data/degree/WeightedTotalDistribution.csv}{Trendline}
+
+\subsubsection{Unweighted Total Distribution}
+\graph{Unweighted Total Distribution}{Degree}{Number of Vertices}{Data/degree/UnweightedTotalDistribution.csv}{Trendline}
+
+\subsubsection{Highest In Degree}
+\begin{center}
+\begin{tabular}{l|p{9.5cm}}
+    \textsc{Out Degree, Unweighted: \textbf{21}} & \begin{itemize}
+        \item 5
+        \item 7
+    \end{itemize} \\
+
+    \br
+
+    \textsc{Out Degree, Weighted: \textbf{223}} & \begin{itemize}
+        \item 3
+    \end{itemize} \\
+
+    \br
+
+    \textsc{In Degree, Unweighted: \textbf{15}} & \begin{itemize}
+        \item 70
+        \item 78
+    \end{itemize} \\
+
+    \br
+
+    \textsc{In Degree, Weighted: \textbf{125}} & \begin{itemize}
+        \item 70
+    \end{itemize} \\
+
+    \br
+
+    \textsc{Total Degree, Unweighted: \textbf{22}} & \begin{itemize}
+        \item 5
+        \item 7
+    \end{itemize} \\
+
+    \br
+
+    \textsc{Total Degree, Weighted: \textbf{226}} & \begin{itemize}
+        \item 3
+    \end{itemize} \\
+\end{tabular}
+\end{center}
+
+\subsection{Shortest Path}
+Please not that $-1$ corresponds to a path between two vertices not existing.
+
+\subsubsection{Shortest Path, Unweighted Directed}
+\graph{Shortest Path, Unweighted Directed}{Shortest Path Length}{Number of Paths}{Data/shortest_path/ShortestPathUnweightedDirected.csv}{Trendline}
+
+\subsubsection{Shortest Path, Unweighted Undirected}
+\graph{Shortest Path, Unweighted Undirected}{Shortest Path Length}{Number of Paths}{Data/shortest_path/ShortestPathUnweightedUndirected.csv}{Trendline}
+
+\subsubsection{Shortest Path, Weighted Directed}
+\graph{Shortest Path, Weighted Directed}{Shortest Path Length}{Number of Paths}{Data/shortest_path/ShortestPathWeightedDirected.csv}{Trendline}
+
+\subsubsection{Shortest Path, Weighted Undirected}
+\graph{Shortest Path, Weighted Undirected}{Shortest Path Length}{Number of Paths}{Data/shortest_path/ShortestPathWeightedUndirected.csv}{Trendline}
+
+\subsection{Closeness Centrality}
+\subsubsection{Closeness Centrality, Unweighted Directed}
+\graph{Closeness Centrality, Weighted Undirected}{Closeness Centrality Value (Scale: $10^{-7}$)}{Number of Vertices}{Data/closeness_centrality/UnweightedDirectedCloseness.csv}{Trendline}
+
+\subsubsection{Closeness Centrality, Unweighted Undirected}
+\graph{Closeness Centrality, Unweighted Undirected}{Closeness Centrality Value (Scale: $10^{-7}$)}{Number of Vertices}{Data/closeness_centrality/UnweightedUndirectedCloseness.csv}{Trendline}
+
+\subsubsection{Closeness Centrality, Weighted Directed}
+\graph{Closeness Centrality, Weighted Directed}{Closeness Centrality Value (Scale: $10^{-7}$)}{Number of Vertices}{Data/closeness_centrality/WeightedDirectedCloseness.csv}{Trendline}
+
+\subsubsection{Closeness Centrality, Weighted Undirected}
+\graph{Closeness Centrality, Weighted Undirected}{Closeness Centrality Value (Scale: $10^{-7}$)}{Number of Vertices}{Data/closeness_centrality/WeightedUndirectedCloseness.csv}{Trendline}
+
+\subsubsection{Highest Closeness Centrality}
+\begin{center}
+\begin{tabular}{l|l|l} \toprule
+    Type & \textbf{Value} & \textbf{Vertex} \\ \hline
+    \textbf{Unweighted, Directed} & 0.000000124997e & 5 \\
+    & 0.000000124997 & 7 \\
+    & 0.000000124997 & 1 \\
+    & 0.000000124997 & 3 \\
+    \midrule
+    \textbf{Weighted, Directed}  & 0.00000012498937590 & 5 \\
+    & 0.00000012498914157 & 64 \\
+    & 0.00000012498907908 & 52 \\
+    & 0.00000012498875101 & 11 \\
+    \midrule
+    \textbf{Weighted Undirected} & 0.00000019996612574 & 47 \\
+    & 0.00000019996412644 & 0 \\
+    & 0.00000019996168734 & 70 \\
+    & 0.00000019995872852 & 89 \\
+    \midrule
+    \textbf{Unweighted Undirected} & 0.00000019999132038 & 0 \\
+    & 0.00000019999036046 & 89 \\
+    & 0.00000019998952055 & 70 \\
+    & 0.00000019998928057 & 47 \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Betweenness Centrality}
+\subsubsection{Betweenness Edge, Unweighted Directed}
+\graph{Betweenness Centrality, Weighted Undirected}{Betweenness Centrality Value}{Number of Edges}{Data/betweeness/BetweenessEdgeUnweightedDirected.csv}{Trendline}
+
+\subsubsection{Betweenness Edge, Unweighted Undirected}
+\graph{Betweenness Centrality, Unweighted Undirected}{Betweenness Centrality Value}{Number of Edges}{Data/betweeness/BetweenessEdgeUnweightedUndirected.csv}{Trendline}
+
+\subsubsection{Betweenness Edge, Weighted Directed}
+\graph{Betweenness Centrality, Weighted Directed}{Betweenness Centrality Value}{Number of Edges}{Data/betweeness/BetweenessEdgeWeightedDirected.csv}{Trendline}
+
+\subsubsection{Betweenness Edge, Weighted Undirected}
+\graph{Betweenness Centrality, Weighted Undirected}{Betweenness Centrality Value}{Number of Edges}{Data/betweeness/BetweenessEdgeWeightedUndirected.csv}{Trendline}
+
+\subsubsection{Betweenness Vertex, Unweighted Directed}
+\graph{Betweenness Centrality, Unweighted Directed}{Betweenness Centrality Value}{Number of Edges}{Data/betweeness/BetweenessVertexUnweightedDirected.csv}{Trendline}
+
+\subsubsection{Betweenness Vertex, Weighted Undirected}
+\graph{Betweenness Centrality, Unweighted Directed}{Betweenness Centrality Value}{Number of Vertexes}{Data/betweeness/BetweenessVertexUnweightedDirected.csv}{Trendline}
+
+
+\subsubsection{Betweenness Vertex, Unweighted Undirected}
+\graph{Betweenness Centrality, Unweighted Undirected}{Betweenness Centrality Value}{Number of Vertexes}{Data/betweeness/BetweenessVertexUnweightedUndirected.csv}{Trendline}
+
+\subsubsection{Betweenness Vertex, Weighted Directed}
+\graph{Betweenness Centrality, Weighted Directed}{Betweenness Centrality Value}{Number of Vertexes}{Data/betweeness/BetweenessVertexWeightedDirected.csv}{Trendline}
+
+\subsubsection{Betweenness Vertex, Weighted Undirected}
+\graph{Betweenness Centrality, Weighted Undirected}{Betweenness Centrality Value}{Number of Vertexes}{Data/betweeness/BetweenessVertexWeightedUndirected.csv}{Trendline}
+}
+
+\section{Team Roles}
+\begin{itemize}
+    \item Illya Starikov
+    \begin{itemize}
+        \item Project Manager
+        \item Implementation
+        \begin{itemize}
+            \item Weight Distribution
+            \item Shortest Path
+        \end{itemize}
+    \end{itemize}
+
+    \item Timothy Ott
+    \begin{itemize}
+        \item Report Writeup
+        \item Implementation
+        \begin{itemize}
+            \item Closeness Centrality
+            \item Community Detection
+        \end{itemize}
+    \end{itemize}
+
+    \item Claire Trebing
+    \begin{itemize}
+        \item Report Writeup
+        \item Implementation
+        \begin{itemize}
+            \item Unweighted/Weighted Graph Diameter
+            \item Betweenness Centrality Distribution
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section{Interesting Results}
+Below are interesting results we have found in regards to the project so far.
+
+\begin{itemize}
+    \item Our pick of data structure (essential a Binary Search Tree) made the project easily testable. Because of Binary Search Tree's $\mathcal{O}(\lg n)$ retrieval complexity, this made our project run under 100 macro-seconds every compilation.
+    \item For degree distribution, there seemed to be roughly $10$ vertexes that were very dense. Although the graph seems fairly homogeneous — many vertexes had a total degree of 15 or more.
+    \begin{itemize}
+        \item When observing total weighted distribution (which appears almost to be $f(x) = \frac{1}{x}$), there is a tail caused by three nodes.
+    \end{itemize}
+    \item There are always more paths between an arbitrary two vertexes than there are not. Meaning from any two nodes, it is more likely that there is a path.
+    \begin{itemize}
+        \item This furthers our claim that this graph is dense.
+    \end{itemize}
+    \item Closeness Centraility is so miniscule it cannot be computed by a standard \shellcmd{double} --- the accuracy was not good enough. \shellcmd{long double} was used instead.
+\end{itemize}
+
+\section{Conclusions}
+The experiments detailed above seek to find meaning in what would ordinarily be only raw data, the results of which, while being open to some interpretation, describe the small subsection of a social community that is given by the data set we were provided. For instance, the distribution of degrees is a measure of how interconnected individual nodes or ‘profiles’ are to the rest of the graph. Because this graph is directed, it closely resembles a social network such as Tumblr where individuals can ‘follow’ another profile but that profile is not required to follow back. From our results, particularly those of the unweighted distribution, we can tell that most of our nodes are followed by under 5 profiles and in turn follow between 2 and 8 profiles. The algorithms for Shortest Path are also a test of interconnectedness, though this time measuring the degrees of separation between nodes. From our results we can see that on average the nodes of our network are no more than two or three connections away from each other. The Graph Diameter measurements are meant to give an idea of the outliers in this community or to define the size of the outward edges of this network. Centrality metrics seek to identify the most important nodes within the network, using a variety of qualifications to define what is most ‘important’.  A measure of Closeness centrality is effectively the inverse of a nodes ‘farness’ or distance from other nodes. The next centrality metric that we tested for was the Betweenness Centrality which attempts to determine those nodes that most often act as a bridge between two other nodes. This measurement has applications within social networks to determine which individual (or in our social network examples, profile) has the most influence on communication between other individuals. Lastly we attempted to locate and determine the smaller communities within our social network. One way to accomplish this is to locate those edges that have the highest betweenness centrality and eliminate them from the network. These edges are most likely to be used as bridges between communities so by eliminating them we are able to separate and identify those communities.  Once we have eliminated those edges we simply recalculate the shortest paths and diameters of the network to see how the network has changed. As we can see, these experiments and algorithms are of great use to us to sift through a large quantity of raw data and attribute meaning to them where there originally was little to none. After all, after applying these algorithms to a simple adjacency list we are now able to infer a large amount of information about the underlying situation that is being represented by this graph.
+
+\end{document}

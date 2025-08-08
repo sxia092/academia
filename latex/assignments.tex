@@ -1,0 +1,118 @@
+\documentclass{mst}
+
+% Personal information variables (defaults - will be overwritten by config.tex)
+\newcommand{\myname}{}
+\newcommand{\mystudentid}{}
+\newcommand{\myemail}{}
+\newcommand{\mydegree}{}
+\newcommand{\mygraduation}{}
+\newcommand{\mygpa}{}
+\newcommand{\myresearch}{}
+\newcommand{\myadvisor}{}
+\newcommand{\myteaching}{}
+\newcommand{\mycourses}{}
+
+% Load personal configuration
+\InputIfFileExists{config.tex}{}{}
+
+% Document metadata
+\hypersetup{
+    pdftitle={Missouri S\&T Assignments Portfolio},
+    pdfauthor={\myname},
+    pdfsubject={Homework, Projects, and Laboratory Reports}
+}
+
+\pagenumbering{gobble} % Set before document begins
+\begin{document}
+
+% Epic title page
+\makemstcover{Academic Assignments}{Homework, Projects, and Laboratory Reports}{ACADEMIC}
+
+% Preface page
+\makepreface{assignments}
+
+% Table of contents
+\pagenumbering{arabic} % Restore page numbering
+\setcounter{page}{1} % Start from page 1
+\makecustomtoc
+
+% Activate fancy page style for the rest of the document
+\pagestyle{fancy}
+
+% === HOMEWORK, PROJECTS, AND LABORATORY REPORTS ===
+% This section contains manually curated assignments and projects
+
+\coursesection{CPE2210}{Introduction To Computer Engineering}
+\includeassignment{cpe2210_introduction_to_computer_engineering/lab/lab_1.pdf}{Lab 1}
+\includeassignment{cpe2210_introduction_to_computer_engineering/lab/lab_2.pdf}{Lab 2}
+
+\coursesection{CPE3150}{Micro Embedded Design}
+\includeassignment{cpe3150_micro_embedded_design/cpe3150_project_1/report/report.pdf}{Project 1 Report}
+\includeassignment{cpe3150_micro_embedded_design/cpe3150-project-3/report/report.pdf}{Project 3 Report}
+
+\coursesection{CS1001}{Data Structures Lab}
+\includeassignment{cs1001_data_structures_lab/lab_1.pdf}{Lab 1}
+\includeassignment{cs1001_data_structures_lab/lab_5.pdf}{Lab 5}
+\includeassignment{cs1001_data_structures_lab/lab_8.pdf}{Lab 8}
+\includeassignment{cs1001_data_structures_lab/lab_9.pdf}{Lab 9}
+\includeassignment{cs1001_data_structures_lab/Project.pdf}{Final Project}
+
+\coursesection{CS1200}{Discrete Math}
+\includeassignment{cs1200_discrete_math/homework_4.pdf}{Homework 4}
+\includeassignment{cs1200_discrete_math/homework_5.pdf}{Homework 5}
+
+\coursesection{CS2300}{Databases}
+\includeassignment{cs2300_databases/archive/Homework/homework_1/homework_1.pdf}{Homework 1}
+\includeassignment{cs2300_databases/archive/Homework/homework_2/homework_2.pdf}{Homework 2}
+\includeassignment{cs2300_databases/archive/Homework/homework_4/homework_4.pdf}{Homework 4}
+\includeassignment{cs2300_databases/final-report/master.pdf}{Final Report}
+
+\coursesection{CS2500}{Algorithms}
+\includeassignment{cs2500_algorithms/homework_1.pdf}{Homework 1}
+\includeassignment{cs2500_algorithms/homework_2.pdf}{Homework 2}
+\includeassignment{cs2500_algorithms/homework_3.pdf}{Homework 3}
+\includeassignment{cs2500_algorithms/homework_4.pdf}{Homework 4}
+\includeassignment{cs2500_algorithms/report_i.pdf}{Project 1: Report I}
+\includeassignment{cs2500_algorithms/report_ii.pdf}{Project 1: Report II}
+\includeassignment{cs2500_algorithms/cs2500_project2/report_i/report_i.pdf}{Project 2: Report I}
+\includeassignment{cs2500_algorithms/cs2500_project2/report_ii.pdf}{Project 2: Report II}
+
+\coursesection{CS3001}{Skills Development}
+\includeassignment{cs3001_skills_development/deliverables/assignment-grade.pdf}{Assignment Grade}
+
+\coursesection{CS3200}{Numerical Methods}
+\includeassignment{cs3200_numerical_methods/homework/homework_9.pdf}{Homework 9}
+\includeassignment{cs3200_numerical_methods/homework/hw_10.pdf}{Homework 10}
+
+\coursesection{CS3800}{Operating Systems}
+\includeassignment{cs3800_operating_systems/homework-2/report.pdf}{Homework 2 Report}
+
+\coursesection{CS5200}{Analysis Of Algorithms}
+\includeassignment{cs5200_analysis_of_algorithms/homework-1/homework-1.pdf}{Homework 1}
+\includeassignment{cs5200_analysis_of_algorithms/homework-2/homework-2.pdf}{Homework 2}
+\includeassignment{cs5200_analysis_of_algorithms/homework-3/homework-3.pdf}{Homework 3}
+\includeassignment{cs5200_analysis_of_algorithms/homework-4/homework-4.pdf}{Homework 4}
+\includeassignment{cs5200_analysis_of_algorithms/homework-5/homework-5.pdf}{Homework 5}
+\includeassignment{cs5200_analysis_of_algorithms/homework-6/homework-6.pdf}{Homework 6}
+\includeassignment{cs5200_analysis_of_algorithms/homework-7/homework-7.pdf}{Homework 7}
+\includeassignment{cs5200_analysis_of_algorithms/homework-8/homework-8.pdf}{Homework 8}
+
+\coursesection{CS5400}{Artificial Intelligence}
+\includeassignment{cs5400_artificial_intelligence/exercise_1.pdf}{Exercise 1}
+\includeassignment{cs5400_artificial_intelligence/exercise_2.pdf}{Exercise 2}
+\includeassignment{cs5400_artificial_intelligence/exercise_3.pdf}{Exercise 3}
+\includeassignment{cs5400_artificial_intelligence/exercise_4.pdf}{Exercise 4}
+\includeassignment{cs5400_artificial_intelligence/exercise_5.pdf}{Exercise 5}
+\includeassignment{cs5400_artificial_intelligence/exercise_6.pdf}{Exercise 6}
+\includeassignment{cs5400_artificial_intelligence/exercise_7.pdf}{Exercise 7}
+\includeassignment{cs5400_artificial_intelligence/exercise_8.pdf}{Exercise 8}
+\includeassignment{cs5400_artificial_intelligence/bonus_1.pdf}{Bonus 1}
+
+\coursesection{CS5402}{Data Mining}
+\includeassignment{cs5402_data_mining/homework-1/homework-1.pdf}{Homework 1}
+\includeassignment{cs5402_data_mining/homework-2/homework-2.pdf}{Homework 2}
+\includeassignment{cs5402_data_mining/homework-3/homework-3.pdf}{Homework 3}
+\includeassignment{cs5402_data_mining/homework-5/homework-5.pdf}{Homework 5}
+\includeassignment{cs5402_data_mining/homework-6/homework-6.pdf}{Homework 6}
+
+\end{document}

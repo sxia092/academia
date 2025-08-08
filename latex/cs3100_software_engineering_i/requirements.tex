@@ -1,0 +1,46 @@
+\documentclass[oneside,12pt]{scrbook}
+
+\input{macros}
+
+\newcommand{\titlepagename}{System Requirements}
+\newcommand{\titledescript}{All relevant documentation for system requirements}
+\newcommand{\versionNumber}{1.2}
+\newcommand{\lastEditAuthor}{Illya Starikov}
+\newcommand{\documentStatus}{Validated} % Draft, Proposed, Validated, Approved
+
+% Define missing commands
+\newcommand{\namesigdate}[1]{%
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \vspace{2cm}
+        \rule{0.8\textwidth}{0.4pt}\\
+        Signature\\
+        \vspace{0.5cm}
+        Date: \rule{0.5\textwidth}{0.4pt}
+    \end{minipage}%
+}
+
+\makeglossaries
+\input{glossary}
+\renewcommand{\glossarysection}[2][]{}
+
+\begin{document}
+\input{titlepage}
+
+\tableofcontents
+\clearpage
+
+\input{introduction}
+\input{description}
+\input{specific_requirements}
+\input{references}
+\input{version_history}
+\input{validation}
+
+\chapter{Glossary}
+% \printglossary
+% Note: Glossary generation requires glossaries package
+
+% \chapter{Appendices}
+
+\end{document}

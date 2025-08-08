@@ -1,0 +1,72 @@
+%
+%  macros.tex
+%
+%  Created by Illya Starikov on 10/05/17.
+%  Copyright 2017. Illya Starikov. All rights reserved.
+%
+
+\usepackage{amssymb,amsmath,verbatim,graphicx,microtype,upquote,units,booktabs,siunitx,enumitem,listings,graphics,amsthm,booktabs,mathtools,xcolor,pgf-umlcd}
+
+\usepackage{tocloft}
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
+}
+\usepackage[linguistics]{forest}
+
+% \setlength{\parindent}{0pt}
+\usepackage{parskip}
+
+% \special{pdf:outline}
+
+\usepackage{fontspec}
+% Try to use Fira Code if available, otherwise fall back to default monospace
+\IfFontExistsTF{Fira Code}{
+  \setmonofont[
+    Contextuals={Alternate}
+  ]{Fira Code}
+}{
+  % Fira Code not available, using default monospace font
+}
+
+\lstset{%
+  language=Python,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{blue}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{gray}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#},
+  numbers=left,
+  keepspaces=true,
+  tabsize=4,
+  breaklines=true,
+  morekeywords={True, False},
+  showspaces=false,
+  showtabs=false,
+  xleftmargin=17pt,
+  framexleftmargin=17pt,
+  framexrightmargin=5pt,
+  framexbottommargin=4pt,
+  % mathescape
+}
+
+\usepackage[margin=0.75in]{geometry}
+
+\let\emptyset\varnothing%
+\newtheorem{theorem}{Theorem}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\newcommand{\bigO}[1]{\mathcal{O}\left(_num_1\right)}
+\newcommand{\bigTheta}[1]{\Theta\left(_num_1\right)}
+\newcommand{\bigOmega}[1]{\Omega\left(_num_1\right)}
+
+\newcommand{\shellcmd}[1]{\texttt{\colorbox{gray!25}{_num_1}}}
+\newcommand{\todo}[1]{\textbf{\colorbox{red!50}{\strut_num_1}}}
+\newcommand{\cpp}[1]{\lstinline$_num_1$}

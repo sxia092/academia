@@ -1,0 +1,233 @@
+\documentclass{mst}
+
+% Personal information variables (defaults - will be overwritten by config.tex)
+\newcommand{\myname}{}
+\newcommand{\mystudentid}{}
+\newcommand{\myemail}{}
+\newcommand{\mydegree}{}
+\newcommand{\mygraduation}{}
+\newcommand{\mygpa}{}
+\newcommand{\myresearch}{}
+\newcommand{\myadvisor}{}
+\newcommand{\myteaching}{}
+\newcommand{\mycourses}{}
+
+% Load personal configuration
+\InputIfFileExists{config.tex}{}{}
+
+% Document metadata
+\hypersetup{
+    pdftitle={Missouri S\&T Curated Academic Portfolio},
+    pdfauthor={\myname},
+    pdfsubject={Selected Coursework and Teaching Materials}
+}
+
+\pagenumbering{gobble} % Set before document begins
+\begin{document}
+% Epic title page
+\makemstcover{Curated Portfolio}{Selected Coursework and Teaching Materials}{CURATED}
+
+% Preface page
+\makepreface{curated}
+
+% Table of contents
+\pagenumbering{arabic} % Restore page numbering
+\setcounter{page}{1} % Start from page 1
+\makecustomtoc
+
+% Activate fancy page style for the rest of the document
+\pagestyle{fancy}
+
+% === DOCUMENT DESCRIPTIONS PAGE ===
+\clearpage
+\section*{Portfolio Overview}
+\addcontentsline{toc}{chapter}{Portfolio Overview}
+
+\noindent This curated portfolio showcases both academic coursework and teaching materials from my time at Missouri S\&T. The collection includes materials I developed as a teaching assistant and guest lecturer, alongside significant assignments, examinations, and projects that demonstrate mastery across computer science, mathematics, and engineering disciplines.
+
+\section*{Teaching Materials}
+\addcontentsline{toc}{section}{Teaching Materials}
+
+The following materials were developed for instructional purposes as a teaching assistant and guest lecturer:
+
+\subsection*{Modern C++ Lecture}
+A comprehensive lecture introducing CS1570 students to modern C++ features (C++11/14). This document covers advanced programming paradigms including type inference with \texttt{auto}, lambda expressions, constant expressions, and modern best practices. Designed to bridge the gap between traditional C++03 taught in introductory courses and contemporary industry standards.
+
+\subsection*{Lab 8: Template Functions}
+A comprehensive lab assignment for CS1570 introducing template programming and the classic Battleship game implementation. Students learn generic programming concepts through function templates, develop a complete game with board management and AI opponents, and practice modular design with multiple compilation units. Features creative narrative elements and progressive difficulty levels.
+
+\subsection*{Lab 15: Vectors}
+An engaging holiday-themed lab assignment for CS1570 focusing on dynamic data structures using C++ vectors. Students implement a party simulation where they manage guest lists, gift exchanges, and social interactions using vector operations. This lab reinforces object-oriented programming concepts while introducing STL containers in a creative context.
+
+\subsection*{CS1570 Homework 10 Grading Rubric}
+A detailed grading rubric for CS1570's Homework 10, demonstrating assessment methodology for programming assignments. The rubric evaluates functional correctness, semantic accuracy, object-oriented design principles, documentation quality, coding style adherence, and presentation skills. Includes sections for partner collaboration and reflective questions about implementation challenges.
+
+\subsection*{Git Tutorial for Missouri S\&T Satellite Team}
+A comprehensive Git version control tutorial developed for the Missouri S\&T Satellite Team. Includes interactive slides covering fundamental Git concepts, branching strategies, collaborative workflows, and best practices for aerospace software development. Features hands-on demonstrations with a Tic-Tac-Toe game implementation showing practical Git usage patterns for team projects.
+
+
+\subsection*{11.2 Polar Coordinates Lecture}
+Personal lecture notes from when I served as a guest lecturer for Calculus II, covering the introduction and application of polar coordinates. The material includes coordinate system definitions, conversion between Cartesian and polar forms, graphing techniques, and practical applications in physics and engineering. These notes reflect my teaching approach emphasizing visual understanding and real-world connections.
+
+\section*{Academic Coursework}
+\addcontentsline{toc}{section}{Academic Coursework}
+
+The following documents represent significant assignments, examinations, and projects completed as a student, demonstrating comprehensive understanding across multiple disciplines:
+
+\subsection*{CS5402 Data Mining Test 1}
+Solutions and analysis for Test~1 in graduate-level Data Mining course. Covers fundamental data mining concepts including data preprocessing, correlation measures, OLAP operations (slice, dice, roll-up, drill-down), and the 1-R classification method. Demonstrates understanding of ROC curves, attribute selection, and data warehouse operations with practical examples.
+
+\subsection*{CS5400 AI Exercise 2}
+Problem formulation and solution for the classic Missionaries and Cannibals river-crossing puzzle. This exercise demonstrates state space representation, constraint satisfaction, and search problem formulation. Includes formal mathematical notation for state descriptions and transition rules, showcasing systematic problem-solving approaches in AI.
+
+\subsection*{CS5400 AI Exercise 4}
+Search algorithm implementation and analysis exercise focusing on uninformed search strategies. Demonstrates practical application of search algorithms with complexity analysis and performance evaluation. Includes problem-solving using various search techniques in artificial intelligence contexts.
+
+\subsection*{CS5200 Homework 8}
+Advanced algorithm analysis assignment covering probability theory applications (Bayes' Theorem), binary heap properties, and efficient k-way merge algorithms. Demonstrates mathematical rigor in analyzing algorithmic complexity and probability calculations, including the famous prisoner paradox problem.
+
+\subsection*{CS5200 Final Exam}
+Comprehensive final examination for graduate Analysis of Algorithms course. Features rigorous mathematical proofs using Big-O notation definitions, asymptotic analysis without limits, and detailed algorithmic complexity demonstrations. Showcases deep understanding of theoretical computer science foundations.
+
+\subsection*{CS3800 Exam II Cheatsheet}
+Concise reference sheet for Operating Systems Exam II, formatted for maximum information density. Covers advanced OS concepts in a landscape format, optimized for quick reference during examinations. Demonstrates ability to synthesize and organize complex technical information effectively.
+
+\subsection*{CS2300 Databases Final Report}
+Comprehensive database system design and implementation report for ForFit, a fitness tracking application. Includes complete database design manual with conceptual, logical, and physical design phases, along with detailed user manual. Features EER diagrams, relational schemas, application program design, and extensive testing procedures. Demonstrates end-to-end database project development from problem statement to deployment.
+
+\subsection*{CS2200 Theory of Computer Science Quiz 10}
+Solutions for context-free grammar derivations and language theory problems. Demonstrates understanding of formal language theory including production rules, derivation sequences, and language characterization. Shows mastery of theoretical computer science concepts including grammar transformations and formal language specifications.
+
+\subsection*{CS1510 Data Structures Heap}
+Comprehensive notes on heap data structure implementation and operations. Covers binary heap properties, percolation algorithms, and array-based heap implementation in C++. Includes visual tree representations and detailed code examples for insertion and removal operations with complexity analysis.
+
+\subsection*{CS1200 Discrete Math Test II Study Guide}
+Student-prepared comprehensive study guide for Discrete Mathematics Test II. Covers sequences, mathematical induction, recursion, and set theory with formal definitions and proofs. Includes summation formulas, binomial coefficients, geometric sequences, and element argument proof methods. Demonstrates ability to synthesize course material into effective study resources.
+
+\subsection*{CPE3150 Homework 8}
+Embedded systems programming assignment for the 8051 microcontroller. Features four problems demonstrating timer/counter operations, interrupt handling, and waveform generation. Includes C and assembly language implementations showcasing frequency generation for 5~kHz and 500~Hz square waves with precise duty cycle control using timer interrupts.
+
+\subsection*{CPE3150 Arduino Research Paper}
+Research paper on ``Paradigms and Applications of the Arduino Uno'' examining the microcontroller's impact across education, healthcare, and home automation industries. Discusses Arduino's open-source philosophy, technical specifications, community ecosystem, and practical implementations including PID controllers and remote laboratory systems for engineering education.
+
+\subsection*{CPE3150 Project 3: Space Invaders}
+Team project report implementing a retro Space Invaders game on embedded hardware with custom peripherals. Features terminal-based graphics using a custom 8051 curses implementation, music synthesis through timer interrupts, interactive menu system with Penrose triangle visualization, seven-segment display integration, and keyboard input for real-time gameplay. Demonstrates creative problem-solving for memory constraints and serial communication challenges.
+
+\subsection*{Physics II Lecture 3: Electric Fields}
+Comprehensive lecture notes covering electric field lines, electric dipoles, electric flux, and Gauss' Law. Includes detailed explanations of dipole moments, torque calculations, and the fundamental relationship between electric flux and enclosed charge. Features both book notes and recitation examples demonstrating practical applications of field theory and surface integrals in electrostatics.
+
+\subsection*{Modern Physics Review}
+Comprehensive review document covering special relativity, energy-momentum relationships, and quantum phenomena. Includes derivations of time dilation and length contraction, relativistic energy equations, and detailed explanations of the photoelectric effect, Compton scattering, and de Broglie wavelength. Features mathematical proofs connecting classical and quantum mechanics through limiting cases.
+
+\subsection*{Philosophy 3235 Test 2: Business Ethics}
+Examination covering utilitarian and Kantian ethical frameworks with practical applications. Analyzes the fundamental differences between universal and maximum benefit principles through thought experiments including the transplant problem and truth-telling scenarios. Features analysis of autonomous vehicle ethics through the MIT Moral Machine experiment, demonstrating real-world applications of ethical decision-making in technology.
+
+% === TEACHING MATERIALS ===
+\coursesection{TEACH}{Teaching Materials}
+
+% CS1570 Modern C++ Lecture
+\includeassignment{teach/cs1570_lecture_modern_cpp.pdf}{Modern C++ Lecture}
+
+% CS1570 Lab 8: Template Functions
+\includeassignment{teach/cs1570_lab_08.pdf}{Lab 8: Template Functions}
+
+% CS1570 Lab 15: Vectors  
+\includeassignment{teach/cs1570_lab_15.pdf}{Lab 15: Vectors}
+
+% CS1570 Homework 10 Grading Rubric
+\includeassignment{teach/rubric.pdf}{CS1570 Homework 10 Grading Rubric}
+
+% Git Tutorial for Missouri S&T Satellite Team
+\includeassignment{teach/msat_git_tutorial/source/slides.pdf}{Git Tutorial Slides}
+
+% === GRADUATE COURSES ===
+\coursesection{GRAD}{Graduate Courses}
+
+% CS5402 Data Mining Test 1
+\includeassignment{cs5402_data_mining/test-1/test-1.pdf}{CS5402 Data Mining Test 1}
+
+% CS5400 AI Exercise 2
+\includeassignment{cs5400_artificial_intelligence/exercise_2.pdf}{CS5400 AI Exercise 2}
+
+% CS5400 AI Exercise 4: Search Algorithms
+\includeassignment{cs5400_artificial_intelligence/exercise_4.pdf}{CS5400 AI Exercise 4}
+
+% CS5200 Analysis of Algorithms Homework 8
+\includeassignment{cs5200_analysis_of_algorithms/homework_8.pdf}{CS5200 Homework 8}
+
+% CS5200 Analysis of Algorithms Final Exam
+\includeassignment{cs5200_analysis_of_algorithms/final_exam.pdf}{CS5200 Final Exam}
+
+% === COMPUTER SCIENCE ===
+\coursesection{CS}{Computer Science}
+
+% CS3800 Operating Systems Exam II Cheatsheet
+\includeassignment{cs3800_operating_systems/crib-sheets/exam-2.pdf}{CS3800 Exam II Cheatsheet}
+
+% CS2300 Databases Final Report
+\includeassignment{cs2300_databases/final-report/master.pdf}{CS2300 Databases Final Report}
+
+% CS2200 Theory of Computer Science Quiz 10
+\includeassignment{cs2200_theory_of_computer_science/quizzes/quiz_10.pdf}{CS2200 Quiz 10}
+
+% CS1510 Data Structures Heap
+\includeassignment{cs1510_data_structures/heap.pdf}{CS1510 Heap}
+
+% CS1200 Discrete Math Test II Study Guide
+\includeassignment{cs1200_discrete_math/tests/test_ii/study_guide.pdf}{CS1200 Test II Study Guide}
+
+% === COMPUTER ENGINEERING ===
+\coursesection{CPE}{Computer Engineering}
+
+% CPE3150 Homework 8
+\includeassignment{cpe3150_micro_embedded_design/homework/homework_8.pdf}{CPE3150 Homework 8}
+
+% CPE3150 Arduino Research Paper
+\includeassignment{cpe3150_micro_embedded_design/homework/paper/microcontroller.pdf}{CPE3150 Arduino Paper}
+
+% CPE3150 Project 3: Space Invaders
+\includeassignment{cpe3150_micro_embedded_design/cpe3150_project_3/report/report.pdf}{CPE3150 Space Invaders}
+
+% === MATHEMATICS ===
+\coursesection{MATH}{Mathematics}
+
+% Note: For Calc I sections 2.2 and 2.3, using main document as individual sections lack standalone structure
+\includeassignment{math1214_calculus_i/main.pdf}{Calculus I: Limits (Sections 2.2 and 2.3)}
+
+% Calculus II - 7.7 Hyperbolic Functions
+\includeassignment{math1215_calculus_ii/chapter_7/7.7_hyperbolic_functions_standalone.pdf}{Calculus II: 7.7 Hyperbolic Functions}
+
+% Calculus II - 11.2 Polar Coordinates
+\includeassignment{math1215_calculus_ii/chapter_11/11.2_polar_coordinates.pdf}{Calculus II: 11.2 Polar Coordinates}
+
+% Calculus II - Practice Final
+\includeassignment{math1215_calculus_ii/practice_test/practice_final.pdf}{Calculus II: Practice Final}
+
+% Calculus III - 12.4 Cross Products
+\includeassignment{math2222_calculus_iii/chapter_12/12.4_cross_products_standalone.pdf}{Calculus III: 12.4 Cross Products}
+
+% Calculus III - 15.5 Divergence and Curl
+\includeassignment{math2222_calculus_iii/chapter_15/15.5_divergence_and_curl_standalone.pdf}{Calculus III: 15.5 Divergence and Curl}
+
+% Statistics - Exam III Cribsheet
+\includeassignment{stat3117_statistics/exam_iii/cribsheet.pdf}{Statistics: Cribsheet 3}
+
+% Statistics - Final Report
+\includeassignment{stat3117_statistics/final_report/final_report.pdf}{Statistics: Project Report}
+
+% === PHYSICS ===
+\coursesection{PHYS}{Physics}
+
+% Physics II Lecture 3: Electric Fields
+\includeassignment{phys2135_physics_ii/lecture3.pdf}{Physics II: Electric Fields}
+
+% Modern Physics Review
+\includeassignment{phys2305_modern_physics/review.pdf}{Modern Physics Review}
+
+% === PHILOSOPHY ===
+\coursesection{PHIL}{Philosophy}
+
+% Philosophy 3235 Test 2: Business Ethics
+\includeassignment{phil3225_business_ethics/test_2.pdf}{Philosophy 3235 Test 2}
+
+\end{document}

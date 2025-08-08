@@ -1,0 +1,184 @@
+\documentclass{mst}
+
+% Personal information variables (defaults - will be overwritten by config.tex)
+\newcommand{\myname}{}
+\newcommand{\mystudentid}{}
+\newcommand{\myemail}{}
+\newcommand{\mydegree}{}
+\newcommand{\mygraduation}{}
+\newcommand{\mygpa}{}
+\newcommand{\myresearch}{}
+\newcommand{\myadvisor}{}
+\newcommand{\myteaching}{}
+\newcommand{\mycourses}{}
+
+% Load personal configuration
+\InputIfFileExists{config.tex}{}{}
+
+% Document metadata
+\hypersetup{
+    pdftitle={Missouri S\&T Academic Notes Portfolio},
+    pdfauthor={\myname},
+    pdfsubject={Course Notes and Reference Materials}
+}
+
+\pagenumbering{gobble} % Set before document begins
+\begin{document}
+
+% Epic title page
+\makemstcover{Academic Notes}{Course Lecture Notes and Study Materials}{ACADEMIC}
+
+% Preface page
+\makepreface{notes}
+
+% Table of contents
+\pagenumbering{arabic} % Restore page numbering
+\setcounter{page}{1} % Start from page 1
+\makecustomtoc
+
+% Activate fancy page style for the rest of the document
+\pagestyle{fancy}
+
+% === COURSE NOTES AND REFERENCE MATERIALS ===
+% This section contains manually curated course notes, lectures, and study materials
+
+\coursesection{CPE2210}{Introduction To Computer Engineering}
+\includeassignment{cpe2210_introduction_to_computer_engineering/exam_i.pdf}{Exam I}
+\includeassignment{cpe2210_introduction_to_computer_engineering/exam_ii.pdf}{Exam II}
+
+\coursesection{CPE3150}{Micro Embedded Design}
+\includeassignment{cpe3150_micro_embedded_design/lecture3.pdf}{Lecture 3}
+\includeassignment{cpe3150_micro_embedded_design/lecture4.pdf}{Lecture 4}
+\includeassignment{cpe3150_micro_embedded_design/lecture6.pdf}{Lecture 6}
+\includeassignment{cpe3150_micro_embedded_design/lecture7.pdf}{Lecture 7}
+\includeassignment{cpe3150_micro_embedded_design/lecture9.pdf}{Lecture 9}
+
+\coursesection{CS1200}{Discrete Math}
+\includeassignment{cs1200_discrete_math/chapter_5/5.1.pdf}{5.1}
+\includeassignment{cs1200_discrete_math/chapter_5/5.1_continued.pdf}{5.1 Continued}
+\includeassignment{cs1200_discrete_math/chapter_6/6.1.pdf}{6.1}
+\includeassignment{cs1200_discrete_math/chapter_7/7.1_7.2.pdf}{7.1-7.2}
+\includeassignment{cs1200_discrete_math/chapter_8/8.1_8.2.pdf}{8.1-8.2}
+\includeassignment{cs1200_discrete_math/chapter_8/8.3.pdf}{8.3}
+\includeassignment{cs1200_discrete_math/chapter_8/8.5_partial_order_relations.pdf}{8.5 Partial Order Relations}
+\includeassignment{cs1200_discrete_math/chapter_9/9.1_9.2.pdf}{9.1-9.2}
+\includeassignment{cs1200_discrete_math/chapter_9/9.3_9.4.pdf}{9.3-9.4}
+\includeassignment{cs1200_discrete_math/chapter_9/9.3_cont_9.6.pdf}{9.3-9.6 Continued}
+\includeassignment{cs1200_discrete_math/chapter_10/10.1_10.2_part_i.pdf}{10.1-10.2 Part I}
+\includeassignment{cs1200_discrete_math/chapter_10/10.1_10.2_part_ii.pdf}{10.1-10.2 Part II}
+\includeassignment{cs1200_discrete_math/chapter_10/10.2.pdf}{10.2}
+\includeassignment{cs1200_discrete_math/tests/test_ii/study_guide.pdf}{Test II Study Guide}
+\includeassignment{cs1200_discrete_math/tests/test_iii/10.1_10.2.pdf}{Test III: 10.1-10.2}
+\includeassignment{cs1200_discrete_math/tests/test_iii/10.3_10.5.pdf}{Test III: 10.3-10.5}
+
+\coursesection{CS1510}{Data Structures}
+\includeassignment{cs1510_data_structures/graph.pdf}{Graph}
+\includeassignment{cs1510_data_structures/heap.pdf}{Heap}
+\includeassignment{cs1510_data_structures/recursion.pdf}{Recursion}
+\includeassignment{cs1510_data_structures/tree.pdf}{Tree}
+
+\coursesection{CS2300}{Databases}
+\includeassignment{cs2300_databases/quiz_i.pdf}{Quiz I}
+\includeassignment{cs2300_databases/group_meeting_i.pdf}{Group Meeting I}
+\includeassignment{cs2300_databases/end_of_semester.pdf}{End of Semester}
+
+\coursesection{CS2500}{Algorithms}
+\includeassignment{cs2500_algorithms/1_algorithms_introduction.pdf}{1. Algorithms Introduction}
+\includeassignment{cs2500_algorithms/2_asymptotic_analysis.pdf}{2. Asymptotic Analysis}
+\includeassignment{cs2500_algorithms/3_divide_and_conquer.pdf}{3. Divide And Conquer}
+\includeassignment{cs2500_algorithms/4_recurrence.pdf}{4. Recurrence}
+\includeassignment{cs2500_algorithms/5_correctness.pdf}{5. Correctness}
+\includeassignment{cs2500_algorithms/6_quick_sort.pdf}{6. Quick Sort}
+\includeassignment{cs2500_algorithms/7_heapsort.pdf}{7. Heapsort}
+\includeassignment{cs2500_algorithms/8_counting_sort.pdf}{8. Counting Sort}
+\includeassignment{cs2500_algorithms/9_example.pdf}{9. Example}
+\includeassignment{cs2500_algorithms/10_dynamic_programming.pdf}{10. Dynamic Programming}
+\includeassignment{cs2500_algorithms/11_lcs.pdf}{11. LCS}
+\includeassignment{cs2500_algorithms/study_guides/exam_i.pdf}{Exam I Study Guide}
+\includeassignment{cs2500_algorithms/study_guides/exam_ii.pdf}{Exam II Study Guide}
+\includeassignment{cs2500_algorithms/study_guides/exam_iii.pdf}{Exam III Study Guide}
+
+\coursesection{CS3100}{Software Engineering I}
+\includeassignment{cs3100_software_engineering_i/camelot/documentation/protocol_description.pdf}{Protocol Description}
+\includeassignment{cs3100_software_engineering_i/camelot/documentation/requirements.pdf}{Requirements}
+\includeassignment{cs3100_software_engineering_i/camelot/documentation/final_summary.pdf}{Final Summary}
+
+\coursesection{CS3200}{Numerical Methods}
+\includeassignment{cs3200_numerical_methods/lecture1.pdf}{Lecture 1}
+\includeassignment{cs3200_numerical_methods/lecture2.pdf}{Lecture 2}
+\includeassignment{cs3200_numerical_methods/lecture4.pdf}{Lecture 4}
+\includeassignment{cs3200_numerical_methods/cribsheet.pdf}{Cribsheet}
+\includeassignment{cs3200_numerical_methods/numerical_methods_equations.pdf}{Numerical Methods Equations}
+
+\coursesection{CS3800}{Operating Systems}
+\includeassignment{cs3800_operating_systems/lecture_1.pdf}{Lecture 1}
+\includeassignment{cs3800_operating_systems/lecture_2.pdf}{Lecture 2}
+\includeassignment{cs3800_operating_systems/crib-sheets/exam-1.pdf}{Exam 1 Cribsheet}
+\includeassignment{cs3800_operating_systems/crib-sheets/exam-2.pdf}{Exam 2 Cribsheet}
+
+\coursesection{CS4096}{Software Systems Development}
+\includeassignment{cs4096_software_systems_development/ethics.pdf}{Ethics}
+\includeassignment{cs4096_software_systems_development/reflection_essay.pdf}{Reflection Essay}
+
+\coursesection{CS5200}{Analysis Of Algorithms}
+\includeassignment{cs5200_analysis_of_algorithms/final_exam.pdf}{Final Exam}
+
+\coursesection{CS5402}{Data Mining}
+\includeassignment{cs5402_data_mining/test-1/test-1.pdf}{Test 1}
+\includeassignment{cs5402_data_mining/test-2/test-2.pdf}{Test 2}
+
+\coursesection{MATH1214}{Calculus I}
+\includeassignment{math1214_calculus_i/main.pdf}{Complete Notes}
+
+\coursesection{MATH1215}{Calculus II}
+\includeassignment{math1215_calculus_ii/chapter_6/chapter_6.pdf}{Chapter 6}
+\includeassignment{math1215_calculus_ii/chapter_7/chapter_7.pdf}{Chapter 7}
+\includeassignment{math1215_calculus_ii/chapter_8/chapter_8.pdf}{Chapter 8}
+\includeassignment{math1215_calculus_ii/chapter_9/chapter_9.pdf}{Chapter 9}
+\includeassignment{math1215_calculus_ii/chapter_10/chapter_10.pdf}{Chapter 10}
+\includeassignment{math1215_calculus_ii/chapter_11/chapter_11.pdf}{Chapter 11}
+\includeassignment{math1215_calculus_ii/main_complete.pdf}{Complete Notes}
+
+\coursesection{MATH2100}{Foundations Of Mathematics}
+\includeassignment{math2100_foundations_of_mathematics/othernotes.pdf}{Course Notes}
+
+\coursesection{MATH2222}{Calculus III}
+\includeassignment{math2222_calculus_iii/chapter_12/chapter_12.pdf}{Chapter 12}
+\includeassignment{math2222_calculus_iii/chapter_13/chapter_13.pdf}{Chapter 13}
+\includeassignment{math2222_calculus_iii/chapter_14/chapter_14.pdf}{Chapter 14}
+\includeassignment{math2222_calculus_iii/chapter_15/chapter_15.pdf}{Chapter 15}
+\includeassignment{math2222_calculus_iii/main_full.pdf}{Complete Notes}
+
+\coursesection{MATH3304}{Differential Equations}
+\includeassignment{math3304_differential_equations/plotter/sample-output.pdf}{Sample Output}
+
+\coursesection{PHIL3225}{Business Ethics}
+\includeassignment{phil3225_business_ethics/portfolio.pdf}{Portfolio}
+
+\coursesection{PHYS1135}{Physics I}
+\includeassignment{phys1135_physics_i/first_law_of_thermo.pdf}{First Law of Thermodynamics}
+
+\coursesection{PHYS2135}{Physics II}
+\includeassignment{phys2135_physics_ii/lecture1.pdf}{Lecture 1}
+\includeassignment{phys2135_physics_ii/lecture2.pdf}{Lecture 2}
+\includeassignment{phys2135_physics_ii/lecture3.pdf}{Lecture 3}
+\includeassignment{phys2135_physics_ii/lecture4.pdf}{Lecture 4}
+\includeassignment{phys2135_physics_ii/lecture5.pdf}{Lecture 5}
+\includeassignment{phys2135_physics_ii/lecture6.pdf}{Lecture 6}
+\includeassignment{phys2135_physics_ii/lecture7.pdf}{Lecture 7}
+\includeassignment{phys2135_physics_ii/lecture9.pdf}{Lecture 9}
+\includeassignment{phys2135_physics_ii/lecture10.pdf}{Lecture 10}
+\includeassignment{phys2135_physics_ii/lecture11.pdf}{Lecture 11}
+\includeassignment{phys2135_physics_ii/lecture12.pdf}{Lecture 12}
+\includeassignment{phys2135_physics_ii/lecture13.pdf}{Lecture 13}
+\includeassignment{phys2135_physics_ii/exam_1.pdf}{Exam 1}
+\includeassignment{phys2135_physics_ii/exam_2.pdf}{Exam 2}
+
+\coursesection{PHYS2305}{Modern Physics}
+\includeassignment{phys2305_modern_physics/review.pdf}{Review}
+
+\coursesection{PSYC1101}{Psychology 101}
+\includeassignment{psyc1101_psychology_101/extra_credit/a_beautiful_mind.pdf}{A Beautiful Mind}
+\includeassignment{psyc1101_psychology_101/extra_credit/famous_people.pdf}{Famous People}
+
+\end{document}
