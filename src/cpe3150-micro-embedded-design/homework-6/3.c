@@ -11,5 +11,6 @@ int main(int argc, char *argv[]) {
 	 char number = 0x38;
 	
 	swap_bits(number);
-	printf("%2x", swap_bits(number));
+	printf("%2x\n", swap_bits(number));
+	return 0;
 }
