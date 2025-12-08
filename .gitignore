@@ -277,3 +277,23 @@ Carthage/
 # Claude files
 .claude/
 CLAUDE.md
+
+# iCloud duplicates (files with " 2" suffix from sync conflicts)
+* 2
+* 2.*
+* 2/
+
+# One-off cleanup/utility scripts
+fix_*.py
+convert_*.py
+normalize_*.py
+rebuild.txt
+actual-pdfs.txt
+
+# Test input directories
+input/
+
+# Compiled binaries without extensions (common in this repo)
+# These are covered by build/ but adding explicit patterns
+**/homework-6-3
+**/space-invaders
