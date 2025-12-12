@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Log-->
+        <scene sceneID="uI5-pR-0h0">
+            <objects>
+                <tableViewController id="X6y-EF-wgN" customClass="UsersTableViewController" customModule="CLC_Tally" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kqL-0T-uoP">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" id="s1B-2B-wDf" customClass="UserTableViewCell" customModule="CLC_Tally" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s1B-2B-wDf" id="459-B9-g49">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhR-ka-qZa">
+                                            <rect key="frame" x="20" y="11" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6Q-VL-f7f">
+                                            <rect key="frame" x="320" y="11" width="37" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QhR-ka-qZa" firstAttribute="centerY" secondItem="459-B9-g49" secondAttribute="centerY" id="B0a-8W-PiT"/>
+                                        <constraint firstItem="s6Q-VL-f7f" firstAttribute="trailing" secondItem="459-B9-g49" secondAttribute="trailingMargin" constant="-10" id="Ceu-eQ-93x"/>
+                                        <constraint firstItem="s6Q-VL-f7f" firstAttribute="baseline" secondItem="QhR-ka-qZa" secondAttribute="baseline" id="FNv-0Y-N08"/>
+                                        <constraint firstItem="QhR-ka-qZa" firstAttribute="leading" secondItem="459-B9-g49" secondAttribute="leadingMargin" constant="12" id="qye-AR-cDO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.094125650823116302" green="0.094266824424266815" blue="0.085922412574291229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="time" destination="QhR-ka-qZa" id="Ehr-du-4nN"/>
+                                    <outlet property="userCount" destination="s6Q-VL-f7f" id="BtR-vk-Hiv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="X6y-EF-wgN" id="edw-a1-ime"/>
+                            <outlet property="delegate" destination="X6y-EF-wgN" id="RqF-0Y-BO0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="User Log" id="G5T-eI-6al">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="jP5-Wi-Scd">
+                            <color key="tintColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="dismiss:" destination="X6y-EF-wgN" id="mDd-sp-6wI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7e-rG-L66" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1719" y="327"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uow-VI-3ig">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9mj-cW-wSX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="bl1-oy-3Er">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.50190365314483643" green="0.50199371576309204" blue="0.50189799070358276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X6y-EF-wgN" kind="relationship" relationship="rootViewController" id="Jby-q5-sJx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGV-Bz-nFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918" y="327"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rat-MD-X2C">
+            <objects>
+                <navigationController id="wcn-iD-dgG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zVe-np-Laq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.50190365314483643" green="0.50199371576309204" blue="0.50189799070358276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6pc-C9-3RK" kind="relationship" relationship="rootViewController" id="42D-bu-w3v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mw2-7A-v0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="1054"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="eRq-Z0-n8W">
+            <objects>
+                <viewController id="6pc-C9-3RK" customClass="AboutViewController" customModule="CLC_Tally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zwS-xp-21C"/>
+                        <viewControllerLayoutGuide type="bottom" id="aHd-Nl-ZRb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0rB-xo-Sxy">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sw3-X9-2fU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.094125650823116302" green="0.094266824424266815" blue="0.085922412574291229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">CLC Tally is a simple tally manager to help identify the number of users at any particular hour.
+
+To increment, either tap or swipe up from the screen.
+
+To decrement, swipe down.
+
+To reset, tap and hold the screen.
+
+Made with ❤ by Illya Starikov.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sw3-X9-2fU" firstAttribute="bottom" secondItem="aHd-Nl-ZRb" secondAttribute="top" id="9aw-7T-jSp"/>
+                            <constraint firstItem="Sw3-X9-2fU" firstAttribute="leading" secondItem="0rB-xo-Sxy" secondAttribute="leading" id="W0s-Rd-FeB"/>
+                            <constraint firstItem="Sw3-X9-2fU" firstAttribute="top" secondItem="zwS-xp-21C" secondAttribute="bottom" id="cp6-66-UI4"/>
+                            <constraint firstAttribute="trailing" secondItem="Sw3-X9-2fU" secondAttribute="trailing" id="dUx-i4-oPB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="5Iv-au-tHd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="Ioh-Sh-eEp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismiss:" destination="6pc-C9-3RK" id="yaN-AQ-2id"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOt-6P-V91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1501.5999999999999" y="1053.8230884557722"/>
+        </scene>
+        <!--Tally View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TallyViewController" customModule="CLC_Tally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUq-vC-gHB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.50190365314483643" green="0.50199371576309204" blue="0.50189799070358276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="CLC Tally" id="Dke-GP-qjh"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-EB-jce">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="Numbered List Filled" id="0ei-qs-edB">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="9mj-cW-wSX" kind="presentation" identifier="showLog" id="bet-Ae-Uym"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="Info" id="T9l-8h-gNm">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="wcn-iD-dgG" kind="presentation" identifier="showLog" id="HCM-92-OIv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="Safari" id="Vbn-OB-BOZ">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="openInSafari:" destination="BYZ-38-t0r" id="Whw-hs-vut"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.50190365314483643" green="0.50199371576309204" blue="0.50189799070358276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Hour: 0 Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU2-SZ-EcC">
+                                <rect key="frame" x="216" y="635" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O43-MA-10K">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65C-tF-aIv">
+                                        <rect key="frame" x="0.0" y="182" width="375" height="195"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="150"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.094125650823116302" green="0.094266824424266815" blue="0.085922412574291229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="65C-tF-aIv" firstAttribute="centerY" secondItem="O43-MA-10K" secondAttribute="centerY" id="SaY-yb-bgR"/>
+                                    <constraint firstItem="65C-tF-aIv" firstAttribute="leading" secondItem="O43-MA-10K" secondAttribute="leading" id="Xz9-FO-VVm"/>
+                                    <constraint firstAttribute="trailing" secondItem="65C-tF-aIv" secondAttribute="trailing" id="fXV-1m-IxL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="aFd-EB-jce" firstAttribute="trailing" secondItem="O43-MA-10K" secondAttribute="trailing" id="0DH-X8-AYj"/>
+                            <constraint firstItem="aFd-EB-jce" firstAttribute="leading" secondItem="O43-MA-10K" secondAttribute="leading" id="0U5-fc-Kdv"/>
+                            <constraint firstAttribute="trailing" secondItem="nUq-vC-gHB" secondAttribute="trailing" id="5EL-qb-W2m"/>
+                            <constraint firstItem="nUq-vC-gHB" firstAttribute="leading" secondItem="O43-MA-10K" secondAttribute="leading" id="7wp-Aw-opq"/>
+                            <constraint firstItem="XU2-SZ-EcC" firstAttribute="centerY" secondItem="aFd-EB-jce" secondAttribute="centerY" id="BwU-cZ-rwL"/>
+                            <constraint firstItem="aFd-EB-jce" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="EyL-qP-RsZ"/>
+                            <constraint firstItem="nUq-vC-gHB" firstAttribute="bottom" secondItem="O43-MA-10K" secondAttribute="top" id="I5C-wo-ylZ"/>
+                            <constraint firstItem="nUq-vC-gHB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dlb-da-S6W"/>
+                            <constraint firstItem="XU2-SZ-EcC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="eBF-Nk-FEa"/>
+                            <constraint firstItem="nUq-vC-gHB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qai-4a-p6w"/>
+                            <constraint firstItem="aFd-EB-jce" firstAttribute="top" secondItem="O43-MA-10K" secondAttribute="bottom" id="qdb-Er-VBR"/>
+                            <constraint firstItem="nUq-vC-gHB" firstAttribute="trailing" secondItem="O43-MA-10K" secondAttribute="trailing" id="rqY-9T-RvX"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kea-Vk-j0j" appends="YES" id="feh-dg-5lF"/>
+                            <outletCollection property="gestureRecognizers" destination="JPX-OF-Slv" appends="YES" id="Yda-7D-6XF"/>
+                        </connections>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem image="Numbered List Filled" style="plain" id="bch-Ge-K5m">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem image="Info" id="afv-Um-zEY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem image="Safari" id="UB2-84-QwW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="openInSafari:" destination="BYZ-38-t0r" id="7Qo-Gq-huC"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="AS6-az-xhP"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="65C-tF-aIv" id="LOa-Jb-ckS"/>
+                        <outlet property="navigationBar" destination="nUq-vC-gHB" id="FfL-bm-aP9"/>
+                        <outlet property="tapView" destination="O43-MA-10K" id="JUu-tJ-XjJ"/>
+                        <outlet property="toolbarLabel" destination="XU2-SZ-EcC" id="OhG-I0-kJ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kea-Vk-j0j"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="JPX-OF-Slv"/>
+            </objects>
+            <point key="canvasLocation" x="210.40000000000001" y="326.98650674662673"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Info" width="20" height="20"/>
+        <image name="Numbered List Filled" width="20" height="20"/>
+        <image name="Safari" width="20" height="20"/>
+    </resources>
+</document>
