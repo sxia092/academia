@@ -1,0 +1,128 @@
+\documentclass[oneside,12pt]{scrbook}
+
+\input{template/macros}
+
+\newcommand{\titlepagename}{Feature List}
+\newcommand{\titledescript}{A design document detailing all possible features for Splatoonio}
+\newcommand{\versionNumber}{1.1}
+\newcommand{\lastEditAuthor}{Adam Evans}
+\newcommand{\documentStatus}{Draft} % Draft, Proposed, Validated, Approved
+
+\begin{document}
+\input{template/titlepage}
+
+\tableofcontents
+\clearpage
+% Index
+\chapter{Index}
+Game Board: The pixel map data structure that tracks enumerated pixel color
+
+% Server
+\chapter{Server}
+Server Team: Eric Michalak, Deacon Seals, Michael Harrington
+
+\section{Tasks}
+\begin{itemize}
+    \item \textbf{Entire team (done):} Create client/server communication protocol
+    \item \textbf{Deacon, Michael (done):} Research server frameworks
+    \item Create games with unique IDs
+        \begin{itemize}
+            \item Add players to games with unique IDs (added to smallest team)
+            \item Add players via group lobbies
+        \end{itemize}
+    \item \textbf{Eric:} Manage account information in a database
+        \begin{itemize}
+            \item \textbf{(done):} Leaderboards
+            \item \textbf{(done):} Achievements
+            \item Player Level
+            \item Statistics (items used, accuracy, players hit, total distance, total painted)
+            \item Unlockables (new items, etc)
+        \end{itemize}
+    \item \textbf{Eric:} Maintain game state in a database
+        \begin{itemize}
+            \item Bounds (lat/long)
+            \item Color of the \emph{Game Board} map pixels
+            \item Active players and player information (held items, brush size, name)
+            \item Game clock
+        \end{itemize}
+    \item \textbf{Deacon, Michael:} Play games
+        \begin{itemize}
+            \item Handle game state changes (e.g. adding players, items spawning...)
+            \item \textbf{Deacons:} Update \emph{Game Board}
+            \item \textbf{Michael:} Implement public REST API
+        \end{itemize}
+    \item \textbf{Deacon:} Multiple concurrent games
+    \item \textbf{Michael:} Generic API calls (winning team, percent controlled)
+\end{itemize}
+
+% Mobile
+\chapter{Mobile}
+iOS Team: Adam Evans, Illya Starikov\\
+Android Team: Ian Howell, Luke Parton
+
+\section{Tasks}
+\begin{itemize}
+    \item Plays game
+        \begin{itemize}
+            \item \textbf{(iOS, Android done):} Draws main display map in background - potentially fancy map (stretch goal)
+            \item \textbf{Ian (iOS done):} Paint board pixels slightly transparently over the map
+            \item \textbf{(iOS done):} Draw minimap displaying only the board (not map)
+            \item Display location of other players with arrows on the board edges or on the minimap (do we even want to do this anymore?)
+            \item \textbf{Ian:} Track the user's location/direction and move/rotate accordingly
+            \item \textbf{Luke:} Update game state from server
+            \item Game Features (see section 3)
+        \end{itemize}
+    \item \textbf{(iOS done):} Stub out server calls
+    \item \textbf{Adam:} Query server for leaderboards and achievements
+    \item Query server for available game by user's location
+    \item Query server to create/join a public game
+    \item Query server to create/join a private game
+        \begin{itemize}
+            \item Custom map and boundaries
+            \item Custom item spawns
+        \end{itemize}
+    \item \textbf{(iOS done):} Create an options page
+\end{itemize}
+
+
+% Game Mechanics
+\chapter{Game Mechanics}
+
+% Game Information
+\section{Games}
+\begin{itemize}
+    \item 3 teams per game: red/green/blue
+    \item Game duration: 10/20/30 minutes
+    \item Team with the most points wins
+\end{itemize}
+
+% Player Information
+\section{Player}
+\begin{itemize}
+    \item Paints ground under player with team's color
+    \item brush size slowly increases with distance
+\end{itemize}
+
+% Items
+\section{Items}
+\begin{itemize}
+    \item Players collect items
+        \begin{itemize}
+            \item Items spawn randomly?
+            \item Random Items every $n$ seconds
+            \item Select an item every $n$ seconds
+        \end{itemize}
+    \item Items can damage players, resetting their brush size
+    \item Bomb: paint a circle anywhere on the map by tapping the screen
+    \item Green Shell: throws a shell which travels in a line painting everything under it
+\end{itemize}
+
+% Winning / Scoring System
+\section{Scoring System}
+\begin{itemize}
+    \item Teams get points based on percentage. (10\% = 10 points)
+    \item Teams get additional points for controlling a marked region (CompSci Building = 10 additional points)
+\end{itemize}
+
+
+\end{document}
