@@ -7,7 +7,11 @@
 
 Four years of computer science education distilled into one repository. From writing "Hello World" to implementing chess AIs—this is the complete journey through Missouri S&T's CS curriculum.
 
-**[View Portfolio](PORTFOLIO.md)**
+<p align="center">
+  <a href="PORTFOLIO.md"><strong>View Portfolio &rarr;</strong></a>
+</p>
+
+---
 
 ## Coursework
 
