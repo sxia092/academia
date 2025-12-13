@@ -40,6 +40,13 @@ def parseArguments():
         printError("Need a minimum of five arguments.")
         sys.exit(1)
 
+    # Initialize variables before parsing
+    programlist = None
+    commandlist = None
+    pagesize = None
+    algorithm = None
+    paging = None
+
     for argument in sys.argv:
         if "main" in argument:
             pass
@@ -60,6 +67,23 @@ def parseArguments():
             paging = argument
         else:
             printError("Invalid Argument ({0})".format(argument))
+
+    # Validate all required arguments were provided
+    missing = []
+    if programlist is None:
+        missing.append("program list file")
+    if commandlist is None:
+        missing.append("command list file")
+    if pagesize is None:
+        missing.append("page size (1-16, power of 2)")
+    if algorithm is None:
+        missing.append("algorithm (lru/fifo/clock)")
+    if paging is None:
+        missing.append("paging mode (ondemand/prepaging)")
+
+    if missing:
+        printError("Missing required arguments: {0}".format(", ".join(missing)))
+        sys.exit(1)
 
     print("Program List: {0}\nCommand List: {1}\nPage Size: {2}\nAlgorithm: {3}\nPaging: {4}".format(programlist, commandlist, pagesize, algorithm, paging))
 

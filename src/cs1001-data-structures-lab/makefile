@@ -17,7 +17,7 @@
 
 # Compiler settings
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++11 -g
+CXXFLAGS = -Wall -Wextra -std=c++14 -g
 LDFLAGS =
 
 # Qt settings for lab13

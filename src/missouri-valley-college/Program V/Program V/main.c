@@ -22,42 +22,48 @@ aDeck myDeck[52];
 
 int main(void)
 {
-    int Value;
-    char charDelt = 'Y';
-    char Diamonds, Hearts, Spades, Clubs;
-    char myDeck, aDeck;
     int x=0, y=0, i = 0;
-    
-    
-    for (int x=0; x < 4; x++)
+
+
+    for (x=0; x < 4; x++)
     {
-        for(int y=0; y < 13; y++)
+        for(y=0; y < 13; y++)
         {
+            i = x * 13 + y;
             switch (x)
             {
                 case 0:
-                    strcpy(myDeck[y].Suit, “Diamonds”);
-                    myDeck[y].Value = y;
-                    myDeck[y].Delt = 'y';
+                    strcpy(myDeck[i].Suit, "Diamonds");
+                    myDeck[i].Value = y;
+                    myDeck[i].Delt = 'N';
                     break;
-                    
+
                 case 1:
-                    strcpy(myDeck[y].Suit, “Clubs”);
-                    myDeck[y].Value = y;
-                    myDeck[y].Delt = "y";
+                    strcpy(myDeck[i].Suit, "Clubs");
+                    myDeck[i].Value = y;
+                    myDeck[i].Delt = 'N';
                     break;
-                    
+
                 case 2:
-                    strcpy(myDeck[y].Suit, “Spades”);
-                    myDeck[y].Value = "y";
-                    myDeck[y].Delt = "y";
+                    strcpy(myDeck[i].Suit, "Spades");
+                    myDeck[i].Value = y;
+                    myDeck[i].Delt = 'N';
                     break;
-                    
+
                 case 3:
-                    strcpy(myDeck[y].Suit, “Hearts”);
-                    myDeck[y].Value = "y";
-                    myDeck[y].Delt = "y";
+                    strcpy(myDeck[i].Suit, "Hearts");
+                    myDeck[i].Value = y;
+                    myDeck[i].Delt = 'N';
                     break;
             }
-            printf("Your Hand Is:");
         }
+    }
+
+    printf("Your Hand Is:\n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("  %s %d\n", myDeck[i].Suit, myDeck[i].Value);
+    }
+
+    return 0;
+}

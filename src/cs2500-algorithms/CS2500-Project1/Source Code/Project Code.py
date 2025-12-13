@@ -231,7 +231,7 @@ while (True):
     n += 1
     for i in baseinput:
         inputsize = int(i*pow(10,n))
-        print "Input size:", inputsize
+        print("Input size:", inputsize)
         Smartphone = []
         Time = []
         TotalMem = 0
@@ -245,25 +245,25 @@ while (True):
         Smartphone.sort(key=lambda x: x.ratio)
         if (inputsize < 50):
             for i in range(10):
-                t0 = time.clock()
+                t0 = time.perf_counter()
                 data = bruteForce(Smartphone, MemGoal)
-                elapsed = time.clock() - t0
+                elapsed = time.perf_counter() - t0
                 Time.append(elapsed)
             averagetime = sum(Time)/len(Time)
             PrintOut(1, inputsize, data, averagetime, MemGoal)
 
         for i in range(10):
-            t0 = time.clock()
+            t0 = time.perf_counter()
             data = DelTable(Smartphone, MemGoal)
-            elapsed = time.clock() - t0
+            elapsed = time.perf_counter() - t0
             Time.append(elapsed)
         averagetime = sum(Time)/len(Time)
         PrintOut(2, inputsize, data, averagetime, MemGoal)
 
         for i in range(10):
-            t0 = time.clock()
+            t0 = time.perf_counter()
             data = GreedKnap(Smartphone, MemGoal)
-            elapsed = time.clock() - t0
+            elapsed = time.perf_counter() - t0
             Time.append(elapsed)
         averagetime = sum(Time)/len(Time)
         PrintOut(3, inputsize, data, averagetime, MemGoal)
