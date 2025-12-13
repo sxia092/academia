@@ -3,7 +3,7 @@ CFLAGS =-Wall -Werror
 
 all: main
 
-main: main.o list.h list.hpp
+main: main.o
 	g++ ${CFLAGS} $^ -o main
 
 test: testsuite

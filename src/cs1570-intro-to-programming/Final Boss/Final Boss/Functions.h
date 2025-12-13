@@ -106,7 +106,7 @@ Description:  Round a number.
 Pre-Condition:  A number must be passed to round.
 Post-Condition: A rounded int is returned based on he number passed.
 */
-int round(const float numberToRound);
+int roundNumber(const float numberToRound);
 
 /*
 Description:  gives back an absolute number. Basically, abs() but without

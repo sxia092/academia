@@ -224,7 +224,7 @@ int randomArbitrary(const int floor, const int ceiling)
   return (floor + rand() % (ceiling - floor + 1));
 }
 
-int round(const float numberToRound)
+int roundNumber(const float numberToRound)
 {
   return static_cast<int>(numberToRound+.5);
 }

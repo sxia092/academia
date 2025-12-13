@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
   cin >> match;
   
   while(getline(cin, buf)) {
-    if(!matches_with_whitespace(buf, '#') {
+    if(!matches_with_whitespace(buf, '#')) {
       cout << buf << endl;
     }
   }

@@ -200,7 +200,7 @@ bool csiAgent::perpSearch(Resident residentToSearch)
   score = (dnaScore * DNA_SCORE_MULTIPLIER) +
   (fingerPrintScore * FINGERPRINT_SCORE_MULTIPLIER) +
   (hairScore * HAIR_SCORE_MULTIPLIER);
-  return (round(score * 100) >= (PERP_SEARCH_SUCCESS * 100));
+  return (roundNumber(score * 100) >= (PERP_SEARCH_SUCCESS * 100));
 }
 
 int csiAgent::dataCorruptionAddition(const int data, const int dataAddition,
