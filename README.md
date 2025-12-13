@@ -1,6 +1,8 @@
 # academia
 > 🎓 Pain is temporary, GPA is forever.
 
+> **Note:** This repository is archived and read-only. It serves as a historical record of coursework completed between 2014-2018.
+
 📚 **33 courses** · 📝 **146 assignments** · 💻 **8+ languages** · 🎓 **BS/MS Computer Science**
 
 Four years of computer science education distilled into one repository. From writing "Hello World" to implementing chess AIs—this is the complete journey through Missouri S&T's CS curriculum.
