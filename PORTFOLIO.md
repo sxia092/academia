@@ -25,7 +25,9 @@ Built a chess engine from scratch using bitboards—64-bit integers where each b
 
 Four puzzle solvers using various search algorithms. The standout is the A* implementation with custom heuristics that solves complex state-space problems efficiently. Each puzzle required thinking carefully about state representation and admissible heuristics. Watching the solver find optimal paths through thousands of states in milliseconds was deeply satisfying.
 
-![Mechanical Match Demo](assets/match3.gif)
+<p align="center">
+  <img src="assets/match3.gif" alt="Mechanical Match Demo">
+</p>
 
 ## 3. Linear Algebra Library
 
@@ -49,7 +51,9 @@ Capstone project—a multiplayer mobile game built with Flutter/Dart. Worked wit
 
 **Path:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders`
 
-![Space Invaders Demo](assets/space_invaders.gif)
+<p align="center">
+  <img src="assets/space_invaders.gif" alt="Space Invaders Demo">
+</p>
 
 Space Invaders running on an 8051 microcontroller. Written in assembly and C, pushing against tight memory constraints. Every byte mattered. Implementing smooth sprite movement and collision detection on hardware this limited teaches you what efficiency really means.
 
@@ -63,7 +67,9 @@ Team software engineering project with full documentation, UML diagrams, and Dox
 
 **Path:** `src/clc-tally`
 
-![CLC Tally Screenshot](assets/clc_tally.png)
+<p align="center">
+  <img src="assets/clc_tally.png" alt="CLC Tally Screenshot">
+</p>
 
 iOS app for tracking student headcounts at Missouri S&T's Computer Learning Center. Built to solve a real problem—tutors needed a quick way to log how many students they helped. Simple interface, local storage, export functionality. Sometimes the best software is the software that just works.
 
