@@ -10,7 +10,7 @@
 void VertexPathReconstruction(const AdjacencyMap & map, int betweeness[], bool Directness, bool Weightness){
 	// Floyd - Walsh algorithm
     const int size = static_cast<int>(map.size()) + 2; // One for the index of map, other for index of solution vector
-    auto solution = std::vector<std::vector<int>>(size, std::vector<int>(size, INFINITY)); // 2D Adjacency Matrix with size of map and default values of infinity
+    auto solution = std::vector<std::vector<int>>(size, std::vector<int>(size, INF_VALUE)); // 2D Adjacency Matrix with size of map and default values of infinity
     // Copy the map to the two dimensional matrix
     for (auto element : map) {
         for (auto pair : element.second) {
@@ -47,7 +47,7 @@ void VertexPathReconstruction(const AdjacencyMap & map, int betweeness[], bool D
 void EdgePathReconstruction(const AdjacencyMap & map, int (&betweeness)[MAX_VERTEX][MAX_VERTEX], bool Directness, bool Weightness){
 		// Floyd - Walsh algorithm
     const int size = static_cast<int>(map.size()) + 2; // One for the index of map, other for index of solution vector
-    auto solution = std::vector<std::vector<int>>(size, std::vector<int>(size, INFINITY)); // 2D Adjacency Matrix with size of map and default values of infinity
+    auto solution = std::vector<std::vector<int>>(size, std::vector<int>(size, INF_VALUE)); // 2D Adjacency Matrix with size of map and default values of infinity
     // Copy the map to the two dimensional matrix
     for (auto element : map) {
         for (auto pair : element.second) {
@@ -163,7 +163,7 @@ void Betweeness(const AdjacencyMap & map){
 AdjacencyMatrix CommunityPathReconstruction(const AdjacencyMap & map, int (&betweeness)[MAX_VERTEX][MAX_VERTEX], bool Directness, bool Weightness){
 		// Floyd - Walsh algorithm
     const int size = static_cast<int>(map.size()) + 2; // One for the index of map, other for index of solution vector
-    auto solution = std::vector<std::vector<int>>(size, std::vector<int>(size, INFINITY)); // 2D Adjacency Matrix with size of map and default values of infinity
+    auto solution = std::vector<std::vector<int>>(size, std::vector<int>(size, INF_VALUE)); // 2D Adjacency Matrix with size of map and default values of infinity
     // Copy the map to the two dimensional matrix
     for (auto element : map) {
         for (auto pair : element.second) {

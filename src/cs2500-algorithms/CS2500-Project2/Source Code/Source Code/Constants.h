@@ -56,7 +56,7 @@ const std::string COMMUNITY_DETECTION3 = "Community Detection, Third Run";
 const std::string COMMUNITY_DETECTION4 = "Community Detection, Fourth Run";
 const std::string COMMUNITY_DETECTION5 = "Community Detection, Fifth Run";
 
-const int INFINITY = 999999;
+const int INF_VALUE = 999999;
 const int DEFAULT_WEIGHT_FOR_PATH = 1;
 
 const int MAX_VERTEX = 100;
