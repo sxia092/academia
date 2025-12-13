@@ -25,6 +25,8 @@ Built a chess engine from scratch using bitboards—64-bit integers where each b
 
 Four puzzle solvers using various search algorithms. The standout is the A* implementation with custom heuristics that solves complex state-space problems efficiently. Each puzzle required thinking carefully about state representation and admissible heuristics. Watching the solver find optimal paths through thousands of states in milliseconds was deeply satisfying.
 
+![Mechanical Match Demo](assets/match3.gif)
+
 ## 3. Linear Algebra Library
 
 **Path:** `src/cs5201-object-oriented-numerical-modeling-ninjas/`
