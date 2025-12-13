@@ -1,0 +1,556 @@
+# Portfolio
+
+A curated selection of projects that represent the best work in this repository.
+
+## Documents
+
+- [Assignments](latex/assignments.pdf)
+- [Curated](latex/curated.pdf)
+- [Notes](latex/notes.pdf)
+- [Complete](latex/complete.pdf)
+
+## 1. Chess AI
+
+**Path:** `src/cs5400-artificial-intelligence/game-series/`
+
+Built a chess engine from scratch that plays competitively against other student AIs. Implements minimax with alpha-beta pruning, iterative deepening, and a custom evaluation function that considers piece positioning, king safety, and pawn structure. The later iterations got progressively smarter—game-4 could beat most opponents in tournament play.
+
+## 2. Puzzle Solvers
+
+**Path:** `src/cs5400-artificial-intelligence/puzzle-series/`
+
+Four puzzle solvers using various search algorithms. The standout is the A* implementation with custom heuristics that solves complex state-space problems efficiently. Each puzzle required thinking carefully about state representation and admissible heuristics. Watching the solver find optimal paths through thousands of states in milliseconds was deeply satisfying.
+
+## 3. Linear Algebra Library
+
+**Path:** `src/cs5201-object-oriented-numerical-modeling-ninjas/`
+
+A templated C++ linear algebra library built over a semester. Supports matrices, vectors, and various decompositions (LU, QR, Cholesky). Heavy use of operator overloading to make matrix math read naturally. The final project ties it all together to solve systems of linear equations with different numerical methods.
+
+## 4. CFG Tracer
+
+**Path:** `src/cs4099-undergrad-research/`
+
+Undergraduate research project that instruments C++ code to trace control flow at runtime. Parses source files, identifies basic blocks, and generates execution traces. Used Boost for regex parsing. The goal was to understand how programs actually execute versus how we think they execute.
+
+## 5. Splatoonio
+
+**Path:** `src/cs4096-software-systems-development/splatoonio`
+
+Capstone project—a multiplayer mobile game built with Flutter/Dart. Worked with a team to go from concept to deployed app. Handled real-time synchronization, touch controls, and cross-platform deployment. The kind of project where you learn that 80% of software engineering is communication and coordination.
+
+## 6. Space Invaders
+
+**Path:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders`
+
+Space Invaders running on an 8051 microcontroller. Written in assembly and C, pushing against tight memory constraints. Every byte mattered. Implementing smooth sprite movement and collision detection on hardware this limited teaches you what efficiency really means.
+
+## 7. Camelot
+
+**Path:** `src/cs3100-software-engineering-i/camelot`
+
+Team software engineering project with full documentation, UML diagrams, and Doxygen-generated API docs. Practiced agile methodology, code reviews, and collaborative development. The code itself is less interesting than learning how to build software with other people.
+
+## 8. CLC Tally
+
+**Path:** `src/clc-tally`
+
+iOS app for tracking student headcounts at Missouri S&T's Computer Learning Center. Built to solve a real problem—tutors needed a quick way to log how many students they helped. Simple interface, local storage, export functionality. Sometimes the best software is the software that just works.
+
+## 9. Grading Suite
+
+**Path:** `src/cs1570-grading-suite`
+
+Automated grading tools for CS 1570 intro programming course. Style checker enforces coding standards, roster checker validates submissions, and the grader script runs test cases. Built out of necessity when grading hundreds of student submissions by hand became unsustainable.
+
+## 10. Community Detection
+
+**Path:** `src/cs2500-algorithms/CS2500-Project2`
+
+Graph algorithms for detecting communities in social networks. Implements betweenness centrality, shortest path algorithms, and the Girvan-Newman method. Fascinating to see mathematical structures emerge from connection data.
+
+---
+
+## Metrics
+
+Statistics for academic coursework from Missouri S&T (2014-2018).
+
+> **Note:** Metrics exclude post-graduation additions (`cs1570-grading-suite`, `bolt`, `clc-tally`).
+
+### Summary
+
+| Metric | Value |
+|--------|-------|
+| Courses | 24 |
+| Total Commits | 531 |
+| Total Files | 1,812 |
+| Lines of Code | 92,080 |
+| Languages | 13 |
+
+### Lines of Code by Language
+
+```
+Language                          files          blank        comment           code
+------------------------------------------------------------------------------------
+TeX                                 459           8010           1269          30898
+C/C++ Header                        301           8515          12349          28235
+C++                                 283           4809           3276          17246
+SQL                                  21            170             65          11184
+Python                              125           2734           2342           7174
+C                                    21            626            547           2667
+Bourne Shell                         35            207            174           1489
+Java                                 23            407            674           1297
+Assembly                              2            119             37            656
+make                                 22            192             42            643
+Swift                                10            162            107            375
+MATLAB                               16            139             95            337
+R                                     7             29              6            156
+Bourne Again Shell                    7              8              0             24
+Lisp                                  1             12             19             61
+------------------------------------------------------------------------------------
+SUM:                               1333          26139          21002          92080
+```
+
+### Contributions by Author
+
+| Author                 |     loc |   coms |   fils |  distribution   |
+|:-----------------------|--------:|-------:|-------:|:----------------|
+| Illya Starikov         | 3462894 |    342 |   1564 | 96.0/64.3/56.7  |
+| markmyersii            |  139522 |     16 |   1074 | 3.9/ 3.0/38.9   |
+| Tim Ott                |    1706 |     20 |     33 | 0.0/ 3.8/ 1.2   |
+| Ian Howell             |    1279 |      5 |      9 | 0.0/ 0.9/ 0.3   |
+| Claire Trebing         |    1087 |     29 |     32 | 0.0/ 5.5/ 1.2   |
+| Nathan Eloe            |    1063 |     61 |     21 | 0.0/11.5/ 0.8   |
+| Zachary Wileman        |     469 |      8 |      9 | 0.0/ 1.5/ 0.3   |
+| Michael Schoen         |     284 |      1 |      1 | 0.0/ 0.2/ 0.0   |
+| Abdirahman Ahmed Osman |      87 |      5 |      4 | 0.0/ 0.9/ 0.1   |
+| Adam Evans             |      48 |     21 |      5 | 0.0/ 3.9/ 0.2   |
+| LinuxMercedes          |      19 |      7 |      7 | 0.0/ 1.3/ 0.3   |
+| Eric Michalak          |       0 |      4 |      0 | 0.0/ 0.8/ 0.0   |
+| Michael Harrington     |       0 |     13 |      0 | 0.0/ 2.4/ 0.0   |
+
+**Total:** 532 commits, 3,608,458 loc, 2,759 files
+
+*Distribution format: loc% / commits% / files%*
+
+### Commit Activity by Hour
+
+```
++-----------------------------------------------------+
+| Commit Activity by Hour                             |
++-----------------------------------------------------+
+| Hour   | Commits | Distribution                     |
++-----------------------------------------------------+
+| 00:00  |      14 | ███████                          |
+| 01:00  |       4 | ██                               |
+| 02:00  |      11 | ██████                           |
+| 03:00  |       5 | ██                               |
+| 04:00  |       0 |                                  |
+| 05:00  |       0 |                                  |
+| 06:00  |       0 |                                  |
+| 07:00  |       4 | ██                               |
+| 08:00  |       7 | ███                              |
+| 09:00  |      32 | █████████████████                |
+| 10:00  |      34 | ██████████████████               |
+| 11:00  |      30 | ████████████████                 |
+| 12:00  |      28 | ███████████████                  |
+| 13:00  |      21 | ███████████                      |
+| 14:00  |      31 | ████████████████                 |
+| 15:00  |      24 | █████████████                    |
+| 16:00  |      36 | ███████████████████              |
+| 17:00  |      20 | ██████████                       |
+| 18:00  |      25 | █████████████                    |
+| 19:00  |      40 | █████████████████████            |
+| 20:00  |      41 | ██████████████████████           |
+| 21:00  |      64 | █████████████████████████████████|
+| 22:00  |      44 | ████████████████████████         |
+| 23:00  |      16 | ████████                         |
++-----------------------------------------------------+
+| Total commits: 531                                  |
++-----------------------------------------------------+
+```
+
+Peak activity: **9 PM (21:00)** with 64 commits
+
+### Primary Languages (by code volume)
+
+1. **TeX** - 30,898 lines
+2. **C/C++ Header** - 28,235 lines
+3. **C++** - 17,246 lines
+4. **SQL** - 11,184 lines
+5. **Python** - 7,174 lines
+6. **C** - 2,667 lines
+7. **Shell** - 1,513 lines
+8. **Java** - 1,297 lines
+9. **Assembly** - 656 lines
+10. **MATLAB** - 337 lines
+
+---
+
+## Code Highlights
+
+A collection of code snippets that showcase interesting techniques, clever solutions, and the occasional moment of personality.
+
+### Lazy Move Generator
+
+**Source:** `src/cs5400-artificial-intelligence/puzzle-series/2018-sp-a-puzzle_4-isgx2/src/mechanical_match.py:111-149`
+
+Python's generators let you build lazy sequences that compute values on demand. Here, instead of generating all possible moves upfront and storing them in a list, the generator yields valid moves one at a time. Memory stays flat regardless of how many possible moves exist—only the ones we actually use get computed.
+
+```python
+@staticmethod
+def actions(state):
+    # This is ugly, but by abusing list comprehension, I get lazy evaluation.
+    # In turn, I actually do a linear search of the entire space, but only store
+    # the states that are legal. Thank you, generators.
+
+    row_max, column_max = MechanicalMatch.grid_size(state.grid)
+
+    return [] if state.swaps >= state.max_swaps else (
+        Action((row, column), direction)
+        for row in range(0, row_max)
+        for column in range(0, column_max)
+        for direction in [Direction.UP, Direction.LEFT]
+        if MechanicalMatch.swap_is_valid(state.grid, (row, column), direction)
+    )
+```
+
+### Bitboard Chess Representation
+
+**Source:** `src/cs5400-artificial-intelligence/game-series/2018-sp-a-game-4-isgx2/Joueur.cpp/games/chess/chess-ai/src/bitboard.cpp`
+
+Bitboards encode a chess position as a 64-bit integer—one bit per square. This makes move generation blazingly fast since you can use bitwise operations instead of loops. The `numberOfBits` function uses Brian Kernighan's algorithm, which clears one set bit per iteration. The `seperated` method splits a bitboard with multiple pieces into individual single-piece boards for iteration.
+
+```cpp
+int Bitboard::numberOfBits() const noexcept {
+    auto temporaryBoard = board;
+    int count;
+
+    for (count = 0; temporaryBoard; count++)
+    {
+        temporaryBoard &= temporaryBoard - 1; // clear the least significant bit set
+    }
+
+    return count;
+}
+
+std::vector<Bitboard> Bitboard::seperated() const {
+    // If it is a power of two, it means it's a single index
+    // If so, we can do a single lookup
+    if ((this -> board & (this -> board - 1)) == 0) {
+        return { Bitboard(this -> board) };
+    } else {
+        auto solution = std::vector<Bitboard>();
+
+        uint64_t board = 1;
+        uint64_t temporaryBoard = this -> board;
+
+        while (temporaryBoard) {
+            if ((temporaryBoard & 1) == 1) {
+                solution.push_back(board);
+            }
+
+            temporaryBoard = temporaryBoard >> 1;
+            board = board << 1;
+        }
+
+        return solution;
+    }
+}
+```
+
+### Newton Interpolation with Divided Differences
+
+**Source:** `src/cs5201-object-oriented-numerical-modeling-ninjas/2018-sp-a-hw4-isgx2/src/polynomial-interpolation.hpp:131-148`
+
+Polynomial interpolation lets you find a curve that passes through a set of points. This lambda captures the divided difference table and evaluates the Newton form of the interpolating polynomial at any x value. The nested loop multiplies by successive `(x - x_i)` terms—the building blocks of Newton's formula.
+
+```cpp
+auto lambda = [&](const T x) {
+    calculateDividedDifferenceTable();
+
+    auto mainDiagonal = (*dividedDifferenceTable).mainDiagonal();
+    auto total = points[0].second;
+
+    for (int i = 0; i < (*dividedDifferenceTable).magnitude(); i++) {
+        auto accumulator = mainDiagonal[i];
+
+        for (int j = 0; j <= i; j++) {
+            accumulator *= x - points[j].first;
+        }
+
+        total += accumulator;
+    }
+
+    return total;
+};
+```
+
+### Polar Pair Equality
+
+**Source:** `src/cs5201-object-oriented-numerical-modeling-ninjas/2018-sp-a-hw2-isgx2/src/lib/polarpair.hpp:229-236`
+
+Two polar coordinates can represent the same point in multiple ways. `(r, θ)` equals `(r, θ + 2πn)` for any integer n, and `(-r, θ)` equals `(r, θ + π)`. This equality operator handles all the edge cases with floating-point tolerance. Yes, it's a single return statement. No, I'm not sorry.
+
+```cpp
+return (std::fabs(this->getModulus() - rightHandSide.getModulus()) < EPSILON
+            && std::fabs(this->getArgument() - rightHandSide.getArgument()) < EPSILON)
+    || (std::fabs(this->getModulus() - rightHandSide.getModulus()) < EPSILON
+            && std::fabs(std::fmod(this->getArgument(), 2.0*pi)
+                - std::fmod(rightHandSide.getArgument(), 2.0*pi)) < EPSILON)
+    || (std::fabs(this->getModulus() + rightHandSide.getModulus()) < EPSILON
+            && std::fabs(std::fmod(this->getArgument(), 2.0*pi)
+                - std::fmod(pi + rightHandSide.getArgument(), 2.0*pi)) < EPSILON);
+```
+
+### Extended Euclidean Algorithm
+
+**Source:** `src/cs5200-analysis-of-algorithms/homework-1/source/question-7.py`
+
+The classic GCD algorithm, but this version also returns Bézout coefficients—integers `s` and `t` such that `as + bt = gcd(a,b)`. Useful for modular arithmetic, RSA, and impressing people at parties.
+
+```python
+def gcd2(a, b):
+    if a == 0:
+        return (b, 0, 1)
+    else:
+        g, s, t = gcd2(b % a, a)
+        return [g, t - (b // a) * s, s]
+```
+
+### K-Way Merge with a Heap
+
+**Source:** `src/cs5200-analysis-of-algorithms/homework-8/source/problem-3.py:84-110`
+
+Merging k sorted lists efficiently. A min-heap tracks the smallest element from each list. Pop the minimum, push the next element from that list. O(n log k) instead of the naive O(nk). The `defaultdict` handles duplicate values elegantly by letting multiple lists share the same key.
+
+```python
+def k_way_merge(enumerables):
+    heap_values = defaultdict(list)
+    heap = MinHeap()
+    solution = []
+
+    for list_ in enumerables:
+        list_ = sorted(list_)
+        min_value = list_.pop(0)
+        heap_values[min_value].append(list_)
+
+    heap.heapify(list(heap_values.keys()))
+
+    while len(heap) > 0:
+        minimum = heap.delete_min()
+        solution.append(minimum)
+
+        minimum_list = [] if heap_values[minimum] == [] else heap_values[minimum][-1]
+        del heap_values[minimum]
+
+        if minimum_list != []:
+            new_minimum = minimum_list.pop(0)
+            heap_values[new_minimum].append(minimum_list)
+            heap.insert(new_minimum)
+
+    return solution
+```
+
+### 8051 Random Number Generator
+
+**Source:** `src/cpe3150-micro-embedded-design/project-1/code/project1.a51:314-331`
+
+Pseudo-random number generation in assembly for an 8051 microcontroller. Uses a linear feedback shift register (LFSR) approach with the polynomial taps at bits 7, 5, 4, and 3. The magic `#10111000B` mask selects these bits for the XOR. Divides by 8 and adds 1 to get a result from 1-9 for the game.
+
+```assembly
+; note this a port from http://pjrc.com/tech/8051/rand.asm
+; returns a random value in the A register from 0 to 9, inclusive.
+; note needs a seed value (equated at the top)
+RNG:
+    MOV  A, RANDREG
+    JNZ  RAND8B
+    CPL  A
+    MOV  RANDREG, A
+RAND8B:
+    ANL  A, #10111000B
+    MOV  C, PSW.0
+    MOV  A, RANDREG
+    RLC  A
+    MOV  RANDREG, A
+    MOV  B, #8D
+    DIV  AB
+    MOV  A, B
+    INC  A
+    RET
+```
+
+### Power of Two Check
+
+**Source:** `src/cs3800-operating-systems/homework-2/source-code/functions.py:33-34`
+
+The classic bit trick. A power of two in binary has exactly one bit set. Subtracting 1 flips all the lower bits. AND them together and you get zero—if and only if the original was a power of two. One line, constant time, no loops.
+
+```python
+def isPowerOfTwo(number):
+    return number != 0 and ((number & (number - 1)) == 0)
+```
+
+### How I Met Your Mother Reference
+
+**Source:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders/functions.h:42-44`
+
+Barney Stinson would be proud. A delay function declaration that spans three lines for comedic effect.
+
+```c
+// It's gonna be legened..
+void waitForIt(unsigned char seconds);
+// ..ary! Lengendary.
+```
+
+### Fifty Shades of Gray Code
+
+**Source:** `src/cs1200-discrete-math/Homework #4/Homework #4/Functions.cpp:126-127`
+
+Sometimes you just need to leave a comment that makes future-you smile.
+
+```cpp
+displayColumnBreak("Gray Conversion"); // 50 Shades of Gray Conversions
+```
+
+### Boolean Soup
+
+**Source:** `src/cs1570-intro-to-programming/Homework6/WavelengthCalculator5001.h:54`
+
+When your intro programming assignment involves soup and you need a boolean for it.
+
+```cpp
+bool funcSoupIsHomemade(); // lol. boolean soup.
+```
+
+### The Apologetic Parser
+
+**Source:** `src/cs5400-artificial-intelligence/game-series/2018-sp-a-game-4-isgx2/Joueur.cpp/games/chess/chess-ai/src/fen-parser.cpp:12-31`
+
+FEN (Forsyth-Edwards Notation) is how you represent a chess position as a string. Parsing it requires a regex that looks like someone smashed their keyboard. The apology is warranted. The error message is... honest.
+
+```cpp
+std::string FenParser::getToken(const FenToken& token) {
+    // lol sorry
+    const auto regexString = R"((([pPnNbBrRqQkK0-8]{1,8}/?){8})\s*(w|b)\s*([KQkq-]{0,4})\s*([a-hA-H0-8\-]{1,2})\s*(\d+)\s*(\d+)*)";
+    auto regexExpression = std::regex(regexString);
+    auto match = std::smatch();
+
+    if (std::regex_search(fenString, match, regexExpression)) {
+        switch (token) {
+            case board:       return match[1];
+            case colorAtPlay: return match[3]; // don't ask why it's off by one, regex error
+            case castling:    return match[4];
+            case enPassant:   return match[5];
+            case halfTurns:   return match[6];
+            case fullTurns:   return match[7];
+            default:          throw std::logic_error("Fen String is fucking broke");
+        }
+    } else {
+        throw std::logic_error("Fen String is fucking broke");
+    }
+}
+```
+
+### Collatz Conjecture Tester
+
+**Source:** `src/cs1200-discrete-math/Homework #2/Homework 2/main.cpp`
+
+One of math's famous unsolved problems: does every positive integer eventually reach 1 under the Collatz sequence? This tests ranges of numbers, calling them "magic" if they reach 1. The ternary-in-a-do-while is peak early-CS-student energy.
+
+```cpp
+do {
+    instanceOfCounter % 2 == 0 ? instanceOfCounter /= 2 : (instanceOfCounter *= 3) += 1;
+    if (numberOfIteration > i * 10) { counterExampleHasBeenFound = true; }
+} while (instanceOfCounter > i - 1 && !counterExampleHasBeenFound);
+
+(!counterExampleHasBeenFound) ? cout << "\nAll positive integers in this set are magic.\n"
+                              : cout << "\nOne or more positive integers in this set are not magic.\n";
+```
+
+### Monty Hall Simulation
+
+**Source:** `src/cs1200-discrete-math/Homework #5/Homework #5/MontyHall.cpp`
+
+The famous probability puzzle: you pick a door, the host opens another door showing a goat, should you switch? This simulator runs thousands of games to prove empirically that switching wins ~67% of the time. Probability is weird.
+
+```cpp
+void MontyHallGame::play() {
+    int winningSpot, yourSpot, spotThatIsTakenAway;
+    int switchCounter = 0, stayCounter = 0;
+
+    for (int i = 0; i < numberOfGames; i++) {
+        winningSpot = randomArbitrary(1, numberOfDoors);
+
+        do {
+            spotThatIsTakenAway = randomArbitrary(2, numberOfDoors);
+        } while (spotThatIsTakenAway == winningSpot);
+
+        do {
+            yourSpot = randomArbitrary(2, numberOfDoors);
+        } while (yourSpot == spotThatIsTakenAway);
+
+        if (winningSpot == yourSpot) {
+            switchCounter++;
+        } else if (winningSpot == 1) {
+            stayCounter++;
+        }
+    }
+
+    reportTheResults(switchCounter, stayCounter);
+}
+```
+
+### Steepest Descent Solver
+
+**Source:** `src/cs5201-object-oriented-numerical-modeling-ninjas/2018-sp-a-hw6-isgx2/src/steepest-descent-solver.hpp`
+
+Iterative linear system solver that follows the gradient downhill until it converges. The initial guess is just the `b` vector because "why not." Clean numerical code with proper error handling for non-diagonally-dominant matrices.
+
+```cpp
+template <typename T>
+Vector<T> SteepestDescentSolver<T>::operator()(const SymmetricMatrix<T>& A, const Vector<T> b) {
+    auto x = b; // initial guess is the b vector, cause why not
+    auto alpha = T();
+
+    unsigned i = 0;
+    auto residual = b - (A * x);
+
+    if (!isDiagonallyDominant(A)) {
+        throw NonDiagonallyDominantMatrixError();
+    }
+
+    while (norm(residual) > EPSILON && i++ < MAX_ITERATIONS) {
+        residual = b - (A * x);
+        alpha = (residual * residual) / ((A * residual) * residual);
+        x += alpha * residual;
+    }
+
+    return x;
+}
+```
+
+### Random User Generator
+
+**Source:** `src/cs2300-databases/Database Code/C++/Random SQL Generator/Users.cpp`
+
+Generates realistic fake users for database testing. Combines random first names, adds "the" sometimes, appends numbers occasionally—just like real usernames. Heights between 4-6 feet, passwords 8-15 characters, ages 18+. The attention to realistic constraints is oddly satisfying.
+
+```cpp
+Username = importFromFile(USER_USERNAME_FILENAME, RandNum);
+
+RandNum = randomArbitrary(0, 1);
+if(RandNum == 0){Username.append("the");}
+
+RandNum = randomArbitrary(0,USERS_USERNAME_TO_GO_TO);
+Username.append(importFromFile(USER_USERNAME_FILENAME, RandNum));
+
+RandNum = randomArbitrary(0, 1);
+if(RandNum == 0){Username.append(std::to_string(randomArbitrary(0,999)));}
+
+HeightFeet = randomArbitrary(4, 6);
+HeightInches = randomArbitrary(0,11);
+MInit = 'A' + randomArbitrary(0, 25);
+
+email = FName + LName + std::to_string(Uid) + "@" + MAIL_PROVIDERS[RandNum];
+```
