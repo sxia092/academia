@@ -3,7 +3,7 @@
 
 > **Note:** This repository is archived and read-only. It serves as a historical record of coursework completed between 2014-2018.
 
-📚 **33 courses** · 📝 **146 assignments** · 💻 **8+ languages** · 🎓 **BS/MS Computer Science**
+📚 **33 courses** · 📝 **146 assignments** · 💻 **9 languages** · 🎓 **BS/MS Computer Science**
 
 Four years of computer science education distilled into one repository. From writing "Hello World" to implementing chess AIs—this is the complete journey through Missouri S&T's CS curriculum.
 
@@ -76,8 +76,6 @@ Four years of computer science education distilled into one repository. From wri
 |----------|-------|-------|
 | C/C++ | 821 | Core coursework, systems programming, numerical modeling |
 | Python | 263 | AI, data mining, automation |
-| C# | 125 | Game AI clients |
-| Java | 85 | Game AI clients |
 | Swift | 63 | iOS apps (bolt, clc-tally) |
 | Shell | 57 | Build scripts, automation |
 | SQL | 21 | Database projects |

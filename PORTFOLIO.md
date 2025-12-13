@@ -4,16 +4,20 @@ A curated selection of projects that represent the best work in this repository.
 
 ## Documents
 
-- [Assignments](latex/assignments.pdf)
-- [Curated](latex/curated.pdf)
-- [Notes](latex/notes.pdf)
-- [Complete](latex/complete.pdf)
+Course notes and assignments typeset in LaTeX—the standard for academic and scientific writing. Mathematical notation, diagrams, and code listings rendered properly. Four compilations covering different subsets of the material.
+
+| Document | Pages | Description |
+|----------|------:|-------------|
+| [Curated](latex/curated.pdf) | 224 | Curated selection of best work |
+| [Assignments](latex/assignments.pdf) | 276 | Homework assignments with solutions |
+| [Notes](latex/notes.pdf) | 450 | Lecture notes and study materials |
+| [Complete](latex/complete.pdf) | 815 | Complete collection: assignments + notes |
 
 ## 1. Chess AI
 
 **Path:** `src/cs5400-artificial-intelligence/game-series/`
 
-Built a chess engine from scratch that plays competitively against other student AIs. Implements minimax with alpha-beta pruning, iterative deepening, and a custom evaluation function that considers piece positioning, king safety, and pawn structure. The later iterations got progressively smarter—game-4 could beat most opponents in tournament play.
+Built a chess engine from scratch using bitboards—64-bit integers where each bit represents a square. Move generation becomes pure bitwise operations: shifts for sliding pieces, masks to prevent board wraparound. Combined with alpha-beta pruning, iterative deepening, and a custom evaluation function considering piece positioning, king safety, and pawn structure. Four iterations, each faster than the last.
 
 ## 2. Puzzle Solvers
 
@@ -31,7 +35,7 @@ A templated C++ linear algebra library. Supports matrices, vectors, and various 
 
 **Path:** `src/cs4099-undergrad-research/`
 
-Undergraduate research project that instruments C++ code to trace control flow at runtime. Parses source files, identifies basic blocks, and generates execution traces. Used Boost for regex parsing. The goal was to understand how programs actually execute versus how we think they execute.
+Undergraduate research project that instruments C++ code to trace control flow at runtime. A control flow graph (CFG) represents all possible execution paths through a program—nodes are basic blocks (straight-line code with no branches), edges are jumps between them. This tool parses source files, identifies basic blocks, and generates execution traces. Used Boost for regex parsing. The goal was to understand how programs actually execute versus how we think they execute.
 
 ## 5. Splatoonio
 
@@ -95,11 +99,11 @@ $ python3 stylechecker.py bad_homework.cpp bad_homework.h
 
 - Line 0: ``
 
-**Header Gaurds Don't Match**
+**Header Guards Don't Match**
 
 - Line 3: `#ifndef WRONG_NAME`
 
-**Header Gaurds Are Incorrect Format**
+**Header Guards Are Incorrect Format**
 
 - Line 4: `#define ALSO_WRONG`
 ```
@@ -118,7 +122,7 @@ Graph algorithms for detecting communities in social networks. Implements betwee
 
 Statistics for academic coursework from Missouri S&T (2014-2018).
 
-> **Note:** Metrics exclude post-graduation additions (`cs1570-grading-suite`, `bolt`, `clc-tally`).
+> **Note:** Some projects excluded from metrics.
 
 ### Summary
 
@@ -127,10 +131,24 @@ Statistics for academic coursework from Missouri S&T (2014-2018).
 | Courses | 24 |
 | Total Commits | 531 |
 | Total Files | 1,812 |
-| Lines of Code | 92,080 |
-| Languages | 13 |
+| Lines of Code | 90,783 |
+| Languages | 9 |
 
 ### Lines of Code by Language
+
+1. **TeX** - 30,898 lines
+2. **C/C++ Header** - 28,235 lines
+3. **C++** - 17,246 lines
+4. **SQL** - 11,184 lines
+5. **Python** - 7,174 lines
+6. **C** - 2,667 lines
+7. **Shell** - 1,513 lines
+8. **Assembly** - 656 lines
+9. **MATLAB** - 337 lines
+10. **R** - 156 lines
+
+<details>
+<summary>Full breakdown</summary>
 
 ```
 Language                          files          blank        comment           code
@@ -151,8 +169,10 @@ R                                     7             29              6           
 Bourne Again Shell                    7              8              0             24
 Lisp                                  1             12             19             61
 ------------------------------------------------------------------------------------
-SUM:                               1333          26139          21002          92080
+SUM:                               1333          26139          21002          90783
 ```
+
+</details>
 
 ### Contributions by Author
 
@@ -212,19 +232,6 @@ SUM:                               1333          26139          21002          9
 
 Peak activity: **9 PM (21:00)** with 64 commits
 
-### Primary Languages (by code volume)
-
-1. **TeX** - 30,898 lines
-2. **C/C++ Header** - 28,235 lines
-3. **C++** - 17,246 lines
-4. **SQL** - 11,184 lines
-5. **Python** - 7,174 lines
-6. **C** - 2,667 lines
-7. **Shell** - 1,513 lines
-8. **Java** - 1,297 lines
-9. **Assembly** - 656 lines
-10. **MATLAB** - 337 lines
-
 ### Commit Timeline
 
 ```
@@ -280,12 +287,12 @@ Peak: April 2017 (62 commits) — Junior year crunch
         └───────┴───────┴───────┴───────┴───────┴───────┴───────┘
               │
               ▼
-2018    ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
-        │ C++  │  Py  │ ASM  │ SQL  │  Sh  │ MAT  │ TeX  │  R   │
-        └──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+2018    ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+        │ C++ │  Py │ ASM │ SQL │  Sh │ MAT │ TeX │  R  │Swift│
+        └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
 
 ──────────────────────────────────────────────────────────────────────
-                           8 languages by graduation
+                           9 languages by graduation
 ```
 
 ### Activity Heatmap
@@ -334,7 +341,7 @@ Peak: April 2017 (62 commits) — Junior year crunch
       ~2k       ~10k       ~20k       ~25k       ~35k
 
 ───────────────────────────────────────────────────────────────
-            92,080 lines across 13 languages
+            90,783 lines across 9 languages
 ```
 
 ---
@@ -605,19 +612,19 @@ def isPowerOfTwo(number):
     return number != 0 and ((number & (number - 1)) == 0)
 ```
 
-### How I Met Your Mother Reference
+### [How I Met Your Mother](https://en.wikipedia.org/wiki/How_I_Met_Your_Mother) Reference
 
 **Source:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders/functions.h:42-44`
 
 Barney Stinson would be proud. A delay function declaration that spans three lines for comedic effect.
 
 ```c
-// It's gonna be legened..
+// It's gonna be legend..
 void waitForIt(unsigned char seconds);
-// ..ary! Lengendary.
+// ..ary! Legendary.
 ```
 
-### Fifty Shades of Gray Code
+### [Fifty Shades of Gray](https://en.wikipedia.org/wiki/Fifty_Shades_of_Grey) Code
 
 **Source:** `src/cs1200-discrete-math/Homework #4/Homework #4/Functions.cpp:126-127`
 
@@ -667,7 +674,7 @@ std::string FenParser::getToken(const FenToken& token) {
 }
 ```
 
-### Collatz Conjecture Tester
+### [Collatz Conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) Tester
 
 **Source:** `src/cs1200-discrete-math/Homework #2/Homework 2/main.cpp`
 
@@ -684,7 +691,7 @@ do {
     : cout << "\nOne or more positive integers in this set are not magic.\n";
 ```
 
-### Monty Hall Simulation
+### [Monty Hall](https://en.wikipedia.org/wiki/Monty_Hall_problem) Simulation
 
 **Source:** `src/cs1200-discrete-math/Homework #5/Homework #5/MontyHall.cpp`
 
