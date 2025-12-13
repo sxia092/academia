@@ -297,3 +297,17 @@ input/
 # These are covered by build/ but adding explicit patterns
 **/homework-6-3
 **/space-invaders
+
+# Flex/Bison generated files
+lex.yy.c
+*.tab.c
+*.tab.h
+
+# Compiled binaries without extensions
+**/main
+!**/main.c
+!**/main.cpp
+!**/main.py
+
+# Metrics (generated)
+metrics.md

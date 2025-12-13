@@ -87,7 +87,6 @@ Four years of computer science education distilled into one repository. From wri
 src/           Course directories (cs1570-intro-to-programming, etc.)
 latex/         LaTeX notes and teaching materials
 review/        Course evaluation documents
-util/          Repository management scripts
 ```
 
 ## Getting Started
@@ -141,4 +140,8 @@ make run
 - Abdirahman Ahmed Osman
 - Adam Evans
 - Eric Michalak
-- Michael Harrington     
+- Michael Harrington
+- Deacon Seals
+- Luke Parton
+- Hunter Mathews
+- William Thurman     

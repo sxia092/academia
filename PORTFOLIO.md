@@ -25,7 +25,7 @@ Four puzzle solvers using various search algorithms. The standout is the A* impl
 
 **Path:** `src/cs5201-object-oriented-numerical-modeling-ninjas/`
 
-A templated C++ linear algebra library built over a semester. Supports matrices, vectors, and various decompositions (LU, QR, Cholesky). Heavy use of operator overloading to make matrix math read naturally. The final project ties it all together to solve systems of linear equations with different numerical methods.
+A templated C++ linear algebra library. Supports matrices, vectors, and various decompositions (LU, QR, Cholesky). Heavy use of operator overloading to make matrix math read naturally. The final project ties it all together to solve systems of linear equations with different numerical methods.
 
 ## 4. CFG Tracer
 
@@ -43,6 +43,8 @@ Capstone project—a multiplayer mobile game built with Flutter/Dart. Worked wit
 
 **Path:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders`
 
+![Space Invaders Demo](assets/space_invaders.gif)
+
 Space Invaders running on an 8051 microcontroller. Written in assembly and C, pushing against tight memory constraints. Every byte mattered. Implementing smooth sprite movement and collision detection on hardware this limited teaches you what efficiency really means.
 
 ## 7. Camelot
@@ -55,6 +57,8 @@ Team software engineering project with full documentation, UML diagrams, and Dox
 
 **Path:** `src/clc-tally`
 
+![CLC Tally Screenshot](assets/clc_tally.png)
+
 iOS app for tracking student headcounts at Missouri S&T's Computer Learning Center. Built to solve a real problem—tutors needed a quick way to log how many students they helped. Simple interface, local storage, export functionality. Sometimes the best software is the software that just works.
 
 ## 9. Grading Suite
@@ -62,6 +66,45 @@ iOS app for tracking student headcounts at Missouri S&T's Computer Learning Cent
 **Path:** `src/cs1570-grading-suite`
 
 Automated grading tools for CS 1570 intro programming course. Style checker enforces coding standards, roster checker validates submissions, and the grader script runs test cases. Built out of necessity when grading hundreds of student submissions by hand became unsustainable.
+
+<details>
+<summary>Sample Output</summary>
+
+```
+$ python3 stylechecker.py bad_homework.cpp bad_homework.h
+
+## bad_homework.cpp
+
+**80 Column Rule**
+
+- Line 25: `cout << "The result is: " << result << " and this line is very long...`
+
+**Tabs**
+
+- Line 22: `int x = 5;`
+- Line 23: `int y = 10;`
+
+**Non-Uppercase Constants**
+
+- Line 6: `const int maxValue = 100;`
+- Line 7: `const float pi_value = 3.14159;`
+
+## bad_homework.h
+
+**Missing Documentation (2 Functions, 1 Lines of Comments)**
+
+- Line 0: ``
+
+**Header Gaurds Don't Match**
+
+- Line 3: `#ifndef WRONG_NAME`
+
+**Header Gaurds Are Incorrect Format**
+
+- Line 4: `#define ALSO_WRONG`
+```
+
+</details>
 
 ## 10. Community Detection
 
@@ -215,46 +258,98 @@ def actions(state):
     )
 ```
 
-### Bitboard Chess Representation
+### Bitboard Move Generation
 
-**Source:** `src/cs5400-artificial-intelligence/game-series/2018-sp-a-game-4-isgx2/Joueur.cpp/games/chess/chess-ai/src/bitboard.cpp`
+**Source:** `src/cs5400-artificial-intelligence/game-series/2018-sp-a-game-4-isgx2/Joueur.cpp/games/chess/chess-ai/src/chess-engine.cpp`
 
-Bitboards encode a chess position as a 64-bit integer—one bit per square. This makes move generation blazingly fast since you can use bitwise operations instead of loops. The `numberOfBits` function uses Brian Kernighan's algorithm, which clears one set bit per iteration. The `seperated` method splits a bitboard with multiple pieces into individual single-piece boards for iteration.
+Bitboards encode a chess position as a 64-bit integer—one bit per square. Move generation becomes pure bitwise operations. The `moving` function shifts bits to simulate piece movement, masking edge files to prevent wraparound. Each piece type builds on this primitive.
 
 ```cpp
-int Bitboard::numberOfBits() const noexcept {
-    auto temporaryBoard = board;
-    int count;
+Bitboard MoveEngine::moving(const Bitboard& board, const Direction& direction) {
+    const static Bitboard aFileInverse = 0xfefefefefefefefe;
+    const static Bitboard hFileInverse = 0x7f7f7f7f7f7f7f7f;
 
-    for (count = 0; temporaryBoard; count++)
-    {
-        temporaryBoard &= temporaryBoard - 1; // clear the least significant bit set
+    switch (direction) {
+        case north:     return  board << 8;
+        case south:     return  board >> 8;
+        case east:      return (board << 1) & aFileInverse;
+        case west:      return (board >> 1) & hFileInverse;
+        case northeast: return (board << 9) & aFileInverse;
+        case northwest: return (board << 7) & hFileInverse;
+        case southeast: return (board >> 7) & aFileInverse;
+        case southwest: return (board >> 9) & hFileInverse;
+        default:        return Bitboard();
     }
-
-    return count;
 }
+```
 
-std::vector<Bitboard> Bitboard::seperated() const {
-    // If it is a power of two, it means it's a single index
-    // If so, we can do a single lookup
-    if ((this -> board & (this -> board - 1)) == 0) {
-        return { Bitboard(this -> board) };
+King moves combine all eight directions, masked against friendly pieces:
+
+```cpp
+Bitboard MoveEngine::kingMoves(const Bitboard& king, const Bitboard& self) {
+    return (moving(king, north) | moving(king, south) | moving(king, east) | moving(king, west)
+          | moving(king, northeast) | moving(king, northwest)
+          | moving(king, southeast) | moving(king, southwest))
+          & (~self);
+}
+```
+
+Knights require special handling—the L-shape jumps need different file masks to prevent wrapping across the board edges:
+
+```cpp
+Bitboard MoveEngine::knightMoves(const Bitboard& knight, const Bitboard& self) {
+    const static Bitboard aFileInverse  = 0xfefefefefefefefe;
+    const static Bitboard hFileInverse  = 0x7f7f7f7f7f7f7f7f;
+    const static Bitboard abFileInverse = 0xfcfcfcfcfcfcfcfc;
+    const static Bitboard ghFileInverse = 0x3f3f3f3f3f3f3f3f;
+
+    return (((knight << 17) & aFileInverse ) | ((knight >> 15) & aFileInverse )
+          | ((knight << 15) & hFileInverse ) | ((knight >> 17) & hFileInverse )
+          | ((knight << 10) & abFileInverse) | ((knight >> 6 ) & abFileInverse)
+          | ((knight >> 10) & ghFileInverse) | ((knight << 6 ) & ghFileInverse))
+          & (~self);
+}
+```
+
+Sliding pieces (rooks, bishops, queens) ray-cast until hitting a blocker. Shifts repeat 7 times—the maximum squares a piece can slide:
+
+```cpp
+Bitboard MoveEngine::northMovesWithBlockers(Bitboard board, const Bitboard& blockerInverse) {
+    auto result = board;
+    result |= board = (board << 8) & blockerInverse;
+    result |= board = (board << 8) & blockerInverse;
+    result |= board = (board << 8) & blockerInverse;
+    result |= board = (board << 8) & blockerInverse;
+    result |= board = (board << 8) & blockerInverse;
+    result |= board = (board << 8) & blockerInverse;
+    result |= board = (board << 8) & blockerInverse;
+    return result;
+}
+```
+
+Pawns are the most complex—different move patterns for each color, double-moves from starting rank, diagonal captures only when enemies present:
+
+```cpp
+Bitboard MoveEngine::pawnMoves(const Bitboard& pawn, Bitboard self, Bitboard enemy, const Color& selfColor) {
+    const auto enemyOriginal = enemy;
+    self = ~self;
+    enemy = ~enemy;
+
+    static Bitboard secondRank = 0xff00;
+    static Bitboard seventhRank = 0xff000000000000;
+
+    if (selfColor == white) {
+        return (pawnNorthMovesWithBlockers(pawn, self & enemy)
+              | pawnNorthNorthMovesWithBlockers(pawn & secondRank, self & enemy)
+              | (moving(pawn, northeast) & enemyOriginal)
+              | (moving(pawn, northwest) & enemyOriginal))
+              ^ pawn;
     } else {
-        auto solution = std::vector<Bitboard>();
-
-        uint64_t board = 1;
-        uint64_t temporaryBoard = this -> board;
-
-        while (temporaryBoard) {
-            if ((temporaryBoard & 1) == 1) {
-                solution.push_back(board);
-            }
-
-            temporaryBoard = temporaryBoard >> 1;
-            board = board << 1;
-        }
-
-        return solution;
+        return (pawnSouthMovesWithBlockers(pawn, self & enemy)
+              | pawnSouthSouthMovesWithBlockers(pawn & seventhRank, self & enemy)
+              | (moving(pawn, southeast) & enemyOriginal)
+              | (moving(pawn, southwest) & enemyOriginal))
+              ^ pawn;
     }
 }
 ```
@@ -417,7 +512,7 @@ displayColumnBreak("Gray Conversion"); // 50 Shades of Gray Conversions
 
 **Source:** `src/cs1570-intro-to-programming/Homework6/WavelengthCalculator5001.h:54`
 
-When your intro programming assignment involves soup and you need a boolean for it.
+When your intro programming assignment involves soup and you need a boolean for it. Was listening to [Bowling For Soup](https://en.wikipedia.org/wiki/Bowling_for_Soup) when writing this line.
 
 ```cpp
 bool funcSoupIsHomemade(); // lol. boolean soup.
