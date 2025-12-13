@@ -159,20 +159,17 @@ SUM:                               1333          26139          21002          9
 | Author                 |     loc |   coms |   fils |  distribution   |
 |:-----------------------|--------:|-------:|-------:|:----------------|
 | Illya Starikov         | 3462894 |    342 |   1564 | 96.0/64.3/56.7  |
-| markmyersii            |  139522 |     16 |   1074 | 3.9/ 3.0/38.9   |
 | Tim Ott                |    1706 |     20 |     33 | 0.0/ 3.8/ 1.2   |
 | Ian Howell             |    1279 |      5 |      9 | 0.0/ 0.9/ 0.3   |
 | Claire Trebing         |    1087 |     29 |     32 | 0.0/ 5.5/ 1.2   |
-| Nathan Eloe            |    1063 |     61 |     21 | 0.0/11.5/ 0.8   |
 | Zachary Wileman        |     469 |      8 |      9 | 0.0/ 1.5/ 0.3   |
 | Michael Schoen         |     284 |      1 |      1 | 0.0/ 0.2/ 0.0   |
 | Abdirahman Ahmed Osman |      87 |      5 |      4 | 0.0/ 0.9/ 0.1   |
 | Adam Evans             |      48 |     21 |      5 | 0.0/ 3.9/ 0.2   |
-| LinuxMercedes          |      19 |      7 |      7 | 0.0/ 1.3/ 0.3   |
 | Eric Michalak          |       0 |      4 |      0 | 0.0/ 0.8/ 0.0   |
 | Michael Harrington     |       0 |     13 |      0 | 0.0/ 2.4/ 0.0   |
 
-**Total:** 532 commits, 3,608,458 loc, 2,759 files
+**Total:** 448 commits, 3,467,854 loc, 1,657 files
 
 *Distribution format: loc% / commits% / files%*
 
@@ -261,7 +258,6 @@ Peak: April 2017 (62 commits) — Junior year crunch
 
 ```
                           LANGUAGE EVOLUTION
-                      From "Hello World" to Polyglot
 ──────────────────────────────────────────────────────────────────────
 
 2014    ┌─────────┐
@@ -284,12 +280,12 @@ Peak: April 2017 (62 commits) — Junior year crunch
         └───────┴───────┴───────┴───────┴───────┴───────┴───────┘
               │
               ▼
-2018    ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-        │ C++ │  Py │ ASM │ SQL │  Sh │ Java│  C# │  Go │ MAT │ TeX │
-        └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+2018    ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+        │  C++  │ Python│  ASM  │  SQL  │ Shell │ MATLAB│ LaTeX │
+        └───────┴───────┴───────┴───────┴───────┴───────┴───────┘
 
 ──────────────────────────────────────────────────────────────────────
-                           10 languages by graduation
+                           7 languages by graduation
 ```
 
 ### Activity Heatmap
@@ -383,8 +379,8 @@ Bitboard MoveEngine::moving(const Bitboard& board, const Direction& direction) {
     const static Bitboard hFileInverse = 0x7f7f7f7f7f7f7f7f;
 
     switch (direction) {
-        case north:     return  board << 8;
-        case south:     return  board >> 8;
+        case north:     return board << 8;
+        case south:     return board >> 8;
         case east:      return (board << 1) & aFileInverse;
         case west:      return (board >> 1) & hFileInverse;
         case northeast: return (board << 9) & aFileInverse;
@@ -400,9 +396,14 @@ King moves combine all eight directions, masked against friendly pieces:
 
 ```cpp
 Bitboard MoveEngine::kingMoves(const Bitboard& king, const Bitboard& self) {
-    return (moving(king, north) | moving(king, south) | moving(king, east) | moving(king, west)
-          | moving(king, northeast) | moving(king, northwest)
-          | moving(king, southeast) | moving(king, southwest))
+    return (moving(king, north)
+          | moving(king, south)
+          | moving(king, east)
+          | moving(king, west)
+          | moving(king, northeast)
+          | moving(king, northwest)
+          | moving(king, southeast)
+          | moving(king, southwest))
           & (~self);
 }
 ```
@@ -416,10 +417,14 @@ Bitboard MoveEngine::knightMoves(const Bitboard& knight, const Bitboard& self) {
     const static Bitboard abFileInverse = 0xfcfcfcfcfcfcfcfc;
     const static Bitboard ghFileInverse = 0x3f3f3f3f3f3f3f3f;
 
-    return (((knight << 17) & aFileInverse ) | ((knight >> 15) & aFileInverse )
-          | ((knight << 15) & hFileInverse ) | ((knight >> 17) & hFileInverse )
-          | ((knight << 10) & abFileInverse) | ((knight >> 6 ) & abFileInverse)
-          | ((knight >> 10) & ghFileInverse) | ((knight << 6 ) & ghFileInverse))
+    return (((knight << 17) & aFileInverse)
+          | ((knight >> 15) & aFileInverse)
+          | ((knight << 15) & hFileInverse)
+          | ((knight >> 17) & hFileInverse)
+          | ((knight << 10) & abFileInverse)
+          | ((knight >>  6) & abFileInverse)
+          | ((knight >> 10) & ghFileInverse)
+          | ((knight <<  6) & ghFileInverse))
           & (~self);
 }
 ```
@@ -443,7 +448,8 @@ Bitboard MoveEngine::northMovesWithBlockers(Bitboard board, const Bitboard& bloc
 Pawns are the most complex—different move patterns for each color, double-moves from starting rank, diagonal captures only when enemies present:
 
 ```cpp
-Bitboard MoveEngine::pawnMoves(const Bitboard& pawn, Bitboard self, Bitboard enemy, const Color& selfColor) {
+Bitboard MoveEngine::pawnMoves(const Bitboard& pawn, Bitboard self,
+                               Bitboard enemy, const Color& selfColor) {
     const auto enemyOriginal = enemy;
     self = ~self;
     enemy = ~enemy;
@@ -456,13 +462,13 @@ Bitboard MoveEngine::pawnMoves(const Bitboard& pawn, Bitboard self, Bitboard ene
               | pawnNorthNorthMovesWithBlockers(pawn & secondRank, self & enemy)
               | (moving(pawn, northeast) & enemyOriginal)
               | (moving(pawn, northwest) & enemyOriginal))
-              ^ pawn;
+            ^ pawn;
     } else {
         return (pawnSouthMovesWithBlockers(pawn, self & enemy)
               | pawnSouthSouthMovesWithBlockers(pawn & seventhRank, self & enemy)
               | (moving(pawn, southeast) & enemyOriginal)
               | (moving(pawn, southwest) & enemyOriginal))
-              ^ pawn;
+            ^ pawn;
     }
 }
 ```
@@ -504,11 +510,11 @@ Two polar coordinates can represent the same point in multiple ways. `(r, θ)` e
 return (std::fabs(this->getModulus() - rightHandSide.getModulus()) < EPSILON
             && std::fabs(this->getArgument() - rightHandSide.getArgument()) < EPSILON)
     || (std::fabs(this->getModulus() - rightHandSide.getModulus()) < EPSILON
-            && std::fabs(std::fmod(this->getArgument(), 2.0*pi)
-                - std::fmod(rightHandSide.getArgument(), 2.0*pi)) < EPSILON)
+            && std::fabs(std::fmod(this->getArgument(), 2.0 * pi)
+                       - std::fmod(rightHandSide.getArgument(), 2.0 * pi)) < EPSILON)
     || (std::fabs(this->getModulus() + rightHandSide.getModulus()) < EPSILON
-            && std::fabs(std::fmod(this->getArgument(), 2.0*pi)
-                - std::fmod(pi + rightHandSide.getArgument(), 2.0*pi)) < EPSILON);
+            && std::fabs(std::fmod(this->getArgument(), 2.0 * pi)
+                       - std::fmod(pi + rightHandSide.getArgument(), 2.0 * pi)) < EPSILON);
 ```
 
 ### Extended Euclidean Algorithm
@@ -640,7 +646,8 @@ FEN (Forsyth-Edwards Notation) is how you represent a chess position as a string
 ```cpp
 std::string FenParser::getToken(const FenToken& token) {
     // lol sorry
-    const auto regexString = R"((([pPnNbBrRqQkK0-8]{1,8}/?){8})\s*(w|b)\s*([KQkq-]{0,4})\s*([a-hA-H0-8\-]{1,2})\s*(\d+)\s*(\d+)*)";
+    const auto regexString =
+        R"((([pPnNbBrRqQkK0-8]{1,8}/?){8})\s*(w|b)\s*([KQkq-]{0,4})\s*([a-hA-H0-8\-]{1,2})\s*(\d+)\s*(\d+)*)";
     auto regexExpression = std::regex(regexString);
     auto match = std::smatch();
 
@@ -672,8 +679,9 @@ do {
     if (numberOfIteration > i * 10) { counterExampleHasBeenFound = true; }
 } while (instanceOfCounter > i - 1 && !counterExampleHasBeenFound);
 
-(!counterExampleHasBeenFound) ? cout << "\nAll positive integers in this set are magic.\n"
-                              : cout << "\nOne or more positive integers in this set are not magic.\n";
+(!counterExampleHasBeenFound)
+    ? cout << "\nAll positive integers in this set are magic.\n"
+    : cout << "\nOne or more positive integers in this set are not magic.\n";
 ```
 
 ### Monty Hall Simulation
@@ -717,7 +725,8 @@ Iterative linear system solver that follows the gradient downhill until it conve
 
 ```cpp
 template <typename T>
-Vector<T> SteepestDescentSolver<T>::operator()(const SymmetricMatrix<T>& A, const Vector<T> b) {
+Vector<T> SteepestDescentSolver<T>::operator()(const SymmetricMatrix<T>& A,
+                                               const Vector<T> b) {
     auto x = b; // initial guess is the b vector, cause why not
     auto alpha = T();
 
@@ -748,16 +757,16 @@ Generates realistic fake users for database testing. Combines random first names
 Username = importFromFile(USER_USERNAME_FILENAME, RandNum);
 
 RandNum = randomArbitrary(0, 1);
-if(RandNum == 0){Username.append("the");}
+if (RandNum == 0) { Username.append("the"); }
 
-RandNum = randomArbitrary(0,USERS_USERNAME_TO_GO_TO);
+RandNum = randomArbitrary(0, USERS_USERNAME_TO_GO_TO);
 Username.append(importFromFile(USER_USERNAME_FILENAME, RandNum));
 
 RandNum = randomArbitrary(0, 1);
-if(RandNum == 0){Username.append(std::to_string(randomArbitrary(0,999)));}
+if (RandNum == 0) { Username.append(std::to_string(randomArbitrary(0, 999))); }
 
 HeightFeet = randomArbitrary(4, 6);
-HeightInches = randomArbitrary(0,11);
+HeightInches = randomArbitrary(0, 11);
 MInit = 'A' + randomArbitrary(0, 25);
 
 email = FName + LName + std::to_string(Uid) + "@" + MAIL_PROVIDERS[RandNum];
