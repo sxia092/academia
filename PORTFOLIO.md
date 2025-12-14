@@ -19,6 +19,10 @@ Course notes and assignments typeset in LaTeX—the standard for academic and sc
 
 Built a chess engine from scratch using bitboards—64-bit integers where each bit represents a square. Move generation becomes pure bitwise operations: shifts for sliding pieces, masks to prevent board wraparound. Combined with alpha-beta pruning, iterative deepening, and a custom evaluation function considering piece positioning, king safety, and pawn structure. Four iterations, each faster than the last.
 
+<p align="center">
+  <img src="assets/chess_ai.gif" alt="Chess AI Demo">
+</p>
+
 ## 2. Puzzle Solvers
 
 **Path:** `src/cs5400-artificial-intelligence/puzzle-series/`
