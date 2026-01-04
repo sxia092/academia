@@ -9,6 +9,7 @@
 
 import random
 import sys
+import heapq
 
 from functools import partial, reduce
 from math import ceil
@@ -170,29 +171,27 @@ class EA():
         return selected
 
     def __k_tournament_selection(self, k, with_replacement, cutoff):
-        from copy import deepcopy
-
         selected = []
-        solutions = deepcopy(self.get_solutions())
-        random.shuffle(solutions)
+        random.shuffle(self.solutions)
 
         if k < len(selected):
             k = len(selected)
 
         while len(selected) < cutoff:
-            tournament_candidates = solutions[:k]  # Fugh.. fugh.. fugh.. FIGHT
+            tournament_candidates = self.solutions[:k]  # Fugh.. fugh.. fugh.. FIGHT
             winner = max(tournament_candidates)  # FLAWLESS VICTORY
             # reference: https://www.youtube.com/watch?v=0jFcBMY71-M
 
             selected += [winner]
 
             if not with_replacement:
-                solutions.remove(winner)
+                self.solutions.remove(winner)
 
+        self.solutions += selected
         return selected
 
     def __truncation(self, cutoff):
-        return sorted(self.shapes)[:cutoff]
+        return heapq.nlargest(cutoff, self.solutions)
 
     def get_solutions(self):
         return self.solutions

@@ -16,6 +16,10 @@ class Shape():
     shapes_list = []
     start_position = (0, 0)
 
+    __previous_points = []
+    __previous_start_position = (0, 0)
+    __previous_rotations = 0
+
     shape_number = 0
     id_counter = 0
 
@@ -59,6 +63,8 @@ class Shape():
         return max_point
 
     def get_points_in_path(self):
+        #jif self.__previous_start_position == self.start_position and self.__previous_rotations == self.rotations:
+            #return self.__previous_points
         current_row, current_column = 0, 0
         positions_list = set([(current_row, current_column)])
 
@@ -94,6 +100,10 @@ class Shape():
 
         for row, column in positions_list:
             final_list.add((row + start_row, column + start_column))
+
+        self.__previous_points = final_list
+        self.__previous_start_position = self.get_start_position()
+        self.__previous_rotations = self.get_rotations()
 
         return final_list
 

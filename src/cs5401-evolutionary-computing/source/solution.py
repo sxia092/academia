@@ -7,9 +7,8 @@
 # Copyright 2017. Illya Starikov. All rights reserved.
 #
 
-from utilities import random_arbitrary, generate_random_point, shuffled_array, add_list_of_sets, n_point_crossover
+from utilities import random_arbitrary, generate_random_point, shuffled_array, add_list_of_sets, uniform_random
 from math import floor
-from copy import deepcopy
 import random
 import operator
 
@@ -22,6 +21,7 @@ class Solution():
     all_points = set()
     run = -1
     dimensions = (-1, -1)
+    recombination_algorithm = uniform_random
 
     # MARK: Constructors
     def __init__(self, shapes, dimensions, run):
@@ -60,10 +60,7 @@ class Solution():
         return new_solution
 
     def recombination(self, other_solution, n):
-        solution_one_shapes = deepcopy(self.get_shapes())
-        solution_two_shapes = deepcopy(other_solution.get_shapes())
-
-        solution_one_shapes = n_point_crossover(solution_one_shapes, solution_two_shapes, n)
+        solution_one_shapes = uniform_random(self.get_shapes(), other_solution.get_shapes())
 
         solution_one = Solution([], self.get_dimensions(), self.get_run())
         solution_one.set_shapes(solution_one_shapes)
@@ -75,7 +72,7 @@ class Solution():
         all_points = set()
         new_shapes = []
 
-        for shape in self.get_shapes():
+        for shape in self.shapes:
             index = 0
 
             points_in_path = list(shape.get_points_in_path())
@@ -159,6 +156,7 @@ class Solution():
             for row, column in shape.get_points_in_path():
                 if (row, column) in current_points or not (0 <= row < board_rows) or not (0 <= column < board_columns):
                     place_found = False
+
 
         return place_found, shape
 

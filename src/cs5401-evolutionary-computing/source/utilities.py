@@ -14,7 +14,6 @@ import sys
 import os
 
 from EA import EA
-from copy import deepcopy
 from shape import Shape
 from math import floor
 
@@ -24,7 +23,7 @@ def generate_initial_population(board_dimensions, shapes, size):
     solutions = []
 
     for i in range(size):
-        solutions += [deepcopy(Solution(shapes, board_dimensions, 0))]
+        solutions += [Solution(shapes, board_dimensions, 0)]
 
     return solutions
 
@@ -57,6 +56,20 @@ def n_point_crossover(list_one, list_two, n):
             solution_one += segment_two
 
     return solution_one
+
+
+def uniform_random(list_one, list_two):
+    solution = []
+
+    for element_one, element_two in zip(list_one, list_two):
+        flip = random.randint(0, 1)
+
+        if flip == 1:
+            solution += [element_one]
+        else:
+            solution += [element_two]
+
+    return solution
 
 
 def shuffled_array(array):
