@@ -49,6 +49,10 @@ Evolutionary algorithm for 2D shape packing. Given a set of irregular shapes and
 
 A templated C++ linear algebra library. Supports matrices, vectors, and various decompositions (LU, QR, Cholesky). Heavy use of operator overloading to make matrix math read naturally. The final project ties it all together to solve systems of linear equations with different numerical methods.
 
+<p align="center">
+  <img src="assets/linear_algebra.gif" alt="Linear Algebra Visualization">
+</p>
+
 ## 5. CFG Tracer
 
 **Path:** `src/cs4099-undergrad-research/`
