@@ -138,12 +138,6 @@ $ python3 stylechecker.py bad_homework.cpp bad_homework.h
 
 </details>
 
-## 11. Community Detection
-
-**Path:** `src/cs2500-algorithms/CS2500-Project2`
-
-Graph algorithms for detecting communities in social networks. Implements betweenness centrality, shortest path algorithms, and the Girvan-Newman method. Fascinating to see mathematical structures emerge from connection data.
-
 ---
 
 ## Metrics
