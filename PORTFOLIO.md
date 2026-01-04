@@ -11,7 +11,7 @@ Course notes and assignments typeset in LaTeX—the standard for academic and sc
 | [Curated](latex/curated.pdf) | 224 | Curated selection of best work |
 | [Assignments](latex/assignments.pdf) | 276 | Homework assignments with solutions |
 | [Notes](latex/notes.pdf) | 450 | Lecture notes and study materials |
-| [Complete](latex/complete.pdf) | 815 | Complete collection: assignments + notes |
+| [Complete](latex/complete.pdf) | 850 | Complete collection: assignments + notes |
 
 ## 1. Chess AI
 
