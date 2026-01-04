@@ -33,25 +33,35 @@ Four puzzle solvers using various search algorithms. The standout is the A* impl
   <img src="assets/match3.gif" alt="Mechanical Match Demo">
 </p>
 
-## 3. Linear Algebra Library
+## 3. Shape Packer
+
+**Path:** `src/cs5401-evolutionary-computing/`
+
+Evolutionary algorithm for 2D shape packing. Given a set of irregular shapes and a rectangular board, find the optimal placement that maximizes coverage. The EA uses fitness proportional selection, k-tournament selection (with and without replacement), and truncation for survival. Shapes can rotate and translate—the genome encodes position and orientation for each piece. Mutation perturbs placements; recombination swaps shape configurations between parents. Watching generations converge on tight packings is mesmerizing.
+
+<p align="center">
+  <img src="assets/shape_packer.gif" alt="Shape Packer Demo">
+</p>
+
+## 4. Linear Algebra Library
 
 **Path:** `src/cs5201-object-oriented-numerical-modeling-ninjas/`
 
 A templated C++ linear algebra library. Supports matrices, vectors, and various decompositions (LU, QR, Cholesky). Heavy use of operator overloading to make matrix math read naturally. The final project ties it all together to solve systems of linear equations with different numerical methods.
 
-## 4. CFG Tracer
+## 5. CFG Tracer
 
 **Path:** `src/cs4099-undergrad-research/`
 
 Undergraduate research project that instruments C++ code to trace control flow at runtime. A control flow graph (CFG) represents all possible execution paths through a program—nodes are basic blocks (straight-line code with no branches), edges are jumps between them. This tool parses source files, identifies basic blocks, and generates execution traces. Used Boost for regex parsing. The goal was to understand how programs actually execute versus how we think they execute.
 
-## 5. Splatoonio
+## 6. Splatoonio
 
 **Path:** `src/cs4096-software-systems-development/splatoonio`
 
 Capstone project—a multiplayer mobile game built with Flutter/Dart. Worked with a team to go from concept to deployed app. Handled real-time synchronization, touch controls, and cross-platform deployment. The kind of project where you learn that 80% of software engineering is communication and coordination.
 
-## 6. Space Invaders
+## 7. Space Invaders
 
 **Path:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders`
 
@@ -61,7 +71,7 @@ Capstone project—a multiplayer mobile game built with Flutter/Dart. Worked wit
 
 Space Invaders running on an 8051 microcontroller. Written in assembly and C, pushing against tight memory constraints. Every byte mattered. Implementing smooth sprite movement and collision detection on hardware this limited teaches you what efficiency really means.
 
-## 7. Camelot
+## 8. Camelot
 
 **Path:** `src/cs3100-software-engineering-i/camelot`
 
@@ -73,7 +83,7 @@ An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServ
   <img src="assets/socket_chat.png" alt="Socket Chat Client" width="300">
 </p>
 
-## 8. CLC Tally
+## 9. CLC Tally
 
 **Path:** `src/clc-tally`
 
@@ -83,7 +93,7 @@ An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServ
 
 iOS app for tracking student headcounts at Missouri S&T's Computer Learning Center. Built to solve a real problem—tutors needed a quick way to log how many students they helped. Simple interface, local storage, export functionality. Sometimes the best software is the software that just works.
 
-## 9. Grading Suite
+## 10. Grading Suite
 
 **Path:** `src/cs1570-grading-suite`
 
@@ -128,7 +138,7 @@ $ python3 stylechecker.py bad_homework.cpp bad_homework.h
 
 </details>
 
-## 10. Community Detection
+## 11. Community Detection
 
 **Path:** `src/cs2500-algorithms/CS2500-Project2`
 
@@ -146,19 +156,19 @@ Statistics for academic coursework from Missouri S&T (2014-2018).
 
 | Metric | Value |
 |--------|-------|
-| Courses | 24 |
-| Total Commits | 531 |
-| Total Files | 1,812 |
-| Lines of Code | 90,783 |
+| Courses | 25 |
+| Total Commits | 545 |
+| Total Files | 1,826 |
+| Lines of Code | 91,512 |
 | Languages | 9 |
 
 ### Lines of Code by Language
 
-1. **TeX** - 30,898 lines
+1. **TeX** - 31,043 lines
 2. **C/C++ Header** - 28,235 lines
 3. **C++** - 17,246 lines
 4. **SQL** - 11,184 lines
-5. **Python** - 7,174 lines
+5. **Python** - 7,758 lines
 6. **C** - 2,667 lines
 7. **Shell** - 1,513 lines
 8. **Assembly** - 656 lines
@@ -171,11 +181,11 @@ Statistics for academic coursework from Missouri S&T (2014-2018).
 ```
 Language                          files          blank        comment           code
 ------------------------------------------------------------------------------------
-TeX                                 459           8010           1269          30898
+TeX                                 460           8075           1270          31043
 C/C++ Header                        301           8515          12349          28235
 C++                                 283           4809           3276          17246
 SQL                                  21            170             65          11184
-Python                              125           2734           2342           7174
+Python                              131           2986           2405           7758
 C                                    21            626            547           2667
 Bourne Shell                         35            207            174           1489
 Java                                 23            407            674           1297
@@ -187,7 +197,7 @@ R                                     7             29              6           
 Bourne Again Shell                    7              8              0             24
 Lisp                                  1             12             19             61
 ------------------------------------------------------------------------------------
-SUM:                               1333          26139          21002          90783
+SUM:                               1347          26456          21066          91512
 ```
 
 </details>
@@ -244,7 +254,7 @@ SUM:                               1333          26139          21002          9
 | 22:00  |      44 | ████████████████████████           |
 | 23:00  |      16 | ████████                           |
 +-------------------------------------------------------+
-| Total commits: 531                                    |
+| Total commits: 545                                    |
 +-------------------------------------------------------+
 ```
 
@@ -359,7 +369,7 @@ Peak: April 2017 (62 commits) — Junior year crunch
       ~2k       ~10k       ~20k       ~25k       ~35k
 
 ───────────────────────────────────────────────────────────────
-            90,783 lines across 9 languages
+            91,512 lines across 9 languages
 ```
 
 ---
