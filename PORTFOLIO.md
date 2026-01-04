@@ -67,6 +67,12 @@ Space Invaders running on an 8051 microcontroller. Written in assembly and C, pu
 
 Team software engineering project with full documentation, UML diagrams, and Doxygen-generated API docs. Practiced agile methodology, code reviews, and collaborative development. The code itself is less interesting than learning how to build software with other people.
 
+An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServer`) hooks into the server, allowing real-time messaging between users. Built with Swift using JSQMessagesViewController for the chat UI and SwiftSocket for TCP communication.
+
+<p align="center">
+  <img src="assets/socket_chat.png" alt="Socket Chat Client" width="300">
+</p>
+
 ## 8. CLC Tally
 
 **Path:** `src/clc-tally`
