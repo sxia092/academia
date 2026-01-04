@@ -69,6 +69,7 @@ Four years of computer science education distilled into one repository. From wri
 - `CS 1570` Lab Assignments (Lab 08, Lab 15)
 - `CS 1570` Modern C++ Lecture (C++11/14 Features)
 - Missouri S&T Satellite Team Git Tutorial
+- ACM iOS Development With Swift 4 Presentation
 
 ### Side Projects
 

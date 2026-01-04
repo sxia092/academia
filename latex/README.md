@@ -194,7 +194,7 @@ open assignments.pdf
 This collection represents comprehensive academic work including:
 - **279+ Assignments**: Homework, projects, and laboratory reports
 - **450+ Pages of Notes**: Lecture notes and study materials
-- **Teaching Materials**: Lab assignments and lecture presentations
+- **Teaching Materials**: Lab assignments, lecture presentations, and tutorials (100+ pages)
 - **Research Projects**: AI, data mining, and numerical modeling work
 - **Capstone Projects**: Software systems development and engineering projects
 
