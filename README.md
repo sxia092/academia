@@ -58,7 +58,7 @@ Four years of computer science education distilled into one repository. From wri
 - `CpE 2210` **Introduction to Computer Engineering** Binary numbers, truth tables, Boolean algebra, Karnaugh maps, combinational/sequential logic, CMOS, programmable logic devices.
 - `Phys 1135` **Physics I** Mechanics: kinematics, dynamics, statics, energetics.
 - `Phys 2135` **Physics II** Electricity, magnetism, light.
-- `Phys 2305` **Modern Physics** Relativity, quantum mechanics, atomic physics, solid state physics, nuclear and particle physics.
+- `Phys 2311` **Modern Physics I** An introduction to quantum mechanics, atomic physics, and solid state physics. Topics include historically important experiments and interpretations.
 
 ### Humanities
 - `Phil 3225` **Business Ethics** Ethical frameworks in business contexts.
