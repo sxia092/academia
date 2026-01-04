@@ -4,7 +4,7 @@
 
 > **Note:** This repository is archived and read-only. It serves as a historical record of coursework completed between 2014-2018.
 
-📚 **33 courses** · 📝 **146 assignments** · 💻 **9 languages** · 🎓 **BS/MS Computer Science**
+📚 **34 courses** · 📝 **147 assignments** · 💻 **9 languages** · 🎓 **BS/MS Computer Science**
 
 <p align="center">
   <img src="assets/banner.png" alt="Missouri S&T Campus Circuit Board" width="100%">
@@ -44,6 +44,7 @@ Four years of computer science education distilled into one repository. From wri
 - `CS 5200` **Analysis of Algorithms** Algorithm analysis techniques applied to sorting, backtracking, graph algorithms.
 - `CS 5201` **Object-Oriented Numerical Modeling** Object-oriented modeling for scientific applications. Class library development for mechanics and engineering.
 - `CS 5400` **Artificial Intelligence** Search, heuristics, game trees, knowledge representation, reasoning, computational intelligence, machine learning.
+- `CS 5401` **Evolutionary Computing** Evolutionary algorithms, genetic programming, fitness functions, selection strategies, mutation, recombination.
 - `CS 5402` **Data Mining** Classification, clustering, association analysis, data preprocessing, outlier detection.
 
 ### Math & Statistics
