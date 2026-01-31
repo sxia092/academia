@@ -1,5 +1,5 @@
 #################################################################################
-# Created by: Zachary Wileman and Illya Starikov                                #
+# Created by: Illya Starikov                                                    #
 # Operating Systems - Section B                                                 #
 # Homework Assignment #3                                                        #
 #                                                                               #

@@ -2,7 +2,7 @@
     Homework #3
 
     Due Date: April 11, 2016
-    Author(s): Illya Starikov, Claire Trebing, Jason Young.
+    Author(s): Illya Starikov
     Copyright © 2016. All rights reserved.
 */
 
