@@ -63,7 +63,13 @@ Undergraduate research project that instruments C++ code to trace control flow a
 
 **Path:** `src/cs4096-software-systems-development/splatoonio`
 
-Capstone project—a multiplayer mobile game built with Flutter/Dart. Worked with a team to go from concept to deployed app. Handled real-time synchronization, touch controls, and cross-platform deployment. The kind of project where you learn that 80% of software engineering is communication and coordination.
+<p align="center">
+  <img src="assets/splatoonio_game.gif" alt="Splatoonio Game Demo" width="300">
+  &nbsp;&nbsp;
+  <img src="assets/splatoonio_menu.gif" alt="Splatoonio Menu Demo" width="300">
+</p>
+
+Capstone project—a location-based multiplayer paint game for iOS, inspired by Splatoon. Built with Swift + UIKit + MapKit: the map is a grid of 1 m² tiles anchored to real GPS coordinates, and players "paint" tiles by walking over them. Territory is scored by tile ownership at end-of-round. Real-time state sync with a Python server, custom `MKOverlayRenderer` driving a CGBitmap for the paint layer, and a CoreLocation pipeline that filters and smooths GPS updates to keep painting responsive. The kind of project where you learn that 80% of software engineering is communication and coordination.
 
 ## 7. Space Invaders
 

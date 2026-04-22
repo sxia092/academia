@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q4L-Oq-14F">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="BYZ-38-t0r" customClass="MenuViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oby-Ne-m6k"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="h4l-nw-L9F" kind="show" identifier="MenuToLoadingGame" id="Eso-pp-J51"/>
+                        <segue destination="Efl-o8-VKs" kind="show" identifier="MenuToOptions" id="aSk-kt-DO8"/>
+                        <segue destination="jtc-WI-AQ0" kind="show" identifier="MenuToScores" id="0GB-Lg-aBP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="36"/>
+        </scene>
+        <!--Loading Game View Controller-->
+        <scene sceneID="BAp-ni-XvR">
+            <objects>
+                <viewController id="h4l-nw-L9F" customClass="LoadingGameViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y48-yS-LKn"/>
+                        <viewControllerLayoutGuide type="bottom" id="z6h-H3-V3z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LLT-wK-j7v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3A-Ie-rRL">
+                                <rect key="frame" x="14" y="158" width="292" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="statusLabel" destination="x3A-Ie-rRL" id="bq1-U7-ZeD"/>
+                        <segue destination="ecr-85-8BF" kind="show" identifier="LoadingGameToGame" id="jEp-x7-Oz6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJE-vl-h8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920" y="36"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="R1X-wZ-rpy">
+            <objects>
+                <viewController id="ecr-85-8BF" customClass="GameViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wGm-Sx-fTT"/>
+                        <viewControllerLayoutGuide type="bottom" id="frN-Xp-mzo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xO4-id-YNK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="6bU-6A-KT0" kind="show" identifier="GameToGameResults" id="j2K-fp-Cfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7f-wZ-6Hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="35"/>
+        </scene>
+        <!--Game Results View Controller-->
+        <scene sceneID="cjR-LN-YX3">
+            <objects>
+                <viewController id="6bU-6A-KT0" customClass="GameResultsViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rfe-mF-Vvy"/>
+                        <viewControllerLayoutGuide type="bottom" id="D8e-fk-XZd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ySk-Wv-0Db">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAQ-z4-5Lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4181" y="35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hvf-5W-Idh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Q4L-Oq-14F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UaT-LK-YH2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="apP-QE-zeb" kind="relationship" relationship="rootViewController" id="VR4-lk-Etm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpY-hi-5ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1011" y="36"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="LHM-F2-yJY">
+            <objects>
+                <viewController id="apP-QE-zeb" customClass="LoginViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KKY-B8-IDW"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZQ9-T2-vEr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fI0-Iu-xk8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Pa-P9-0Mt"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToMenuNoAnimation" animates="NO" id="jaG-Mc-ng3"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToMenu" id="Id0-6j-zNY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRU-hf-9OW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-83" y="36"/>
+        </scene>
+        <!--Scores View Controller-->
+        <scene sceneID="Id6-qM-Dg3">
+            <objects>
+                <viewController id="jtc-WI-AQ0" customClass="ScoresViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ysC-3h-PmE"/>
+                        <viewControllerLayoutGuide type="bottom" id="mOj-rd-s0I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0So-No-Dlp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="h1Y-Vi-UIM" kind="show" identifier="ScoresToAchievements" id="YyK-XO-Gcl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PxV-9w-pSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920" y="839"/>
+        </scene>
+        <!--Achievements View Controller-->
+        <scene sceneID="aEQ-l7-3dR">
+            <objects>
+                <viewController id="h1Y-Vi-UIM" customClass="AchievementsViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bL5-Bb-epG"/>
+                        <viewControllerLayoutGuide type="bottom" id="XEH-fp-U9h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pQ4-XD-sXO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvl-uD-gbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="839"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="PqL-Ja-90l">
+            <objects>
+                <viewController id="Efl-o8-VKs" customClass="OptionsViewController" customModule="War_Paint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jNb-Bj-bbX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hj3-nR-zYo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fmX-dI-50u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKo-wA-ve9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920" y="1629"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jaG-Mc-ng3"/>
+    </inferredMetricsTieBreakers>
+</document>
