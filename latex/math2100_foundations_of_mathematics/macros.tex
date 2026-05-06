@@ -4,17 +4,17 @@
 \date{Last Modified: \today}
 \author{Robert Roe, Illya Starikov}
 
-\newcommand{\solution}[1]{\subsection*{Class Solution ({_num_1})}}
+\newcommand{\solution}[1]{\subsection*{Class Solution ({#1})}}
 \newcommand{\solutionAlt}[0]{\subsection*{Class Solution}}
 
 \newtheorem{theorem}{Theorem}
 
 \newcommand{\chapterNumber}[1]{%
-    \setcounter{section}{_num_1}
+    \setcounter{section}{#1}
     \addtocounter{section}{-1}
 }
 
-\newcommand{\todo}[2]{\textbf{\colorbox{red!50}{_num_1}}{}}
+\newcommand{\todo}[2]{\textbf{\colorbox{red!50}{#1}}{}}
 
 \let\oldemptyset\emptyset%
 \let\emptyset\varnothing%

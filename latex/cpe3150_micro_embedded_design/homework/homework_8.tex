@@ -90,11 +90,11 @@ void main() {
 
         /* Main */
         ORG 0030H
-MAIN:   MOV P2, _num_00H        ; P2 = output port
-        MOV TMOD, _num_20H      ; Timer 1, mode 2
+MAIN:   MOV P2, #00H        ; P2 = output port
+        MOV TMOD, #20H      ; Timer 1, mode 2
         MOV TH1, #-37D      ; 5 kHz => 25000 Hz => 4^-5 s
                             ; => 40 us => 40/1.085 ticks => 37 ticks
-        MOV IE, _num_88H
+        MOV IE, #88H
         SETB TR1
 
 LOOP:   INC R0
@@ -104,7 +104,7 @@ LOOP:   INC R0
 
 ; so we need to generate a 10.85us delay
 ; 10.85/1.085 = 10MC. Easier to just do a brute force
-DELAY:  MOV R1, _num_4D         ; 2 MC
+DELAY:  MOV R1, #4D         ; 2 MC
 HERE:   DJNZ R1, HERE       ; 4 * 2 = 8 MC
         RET                 ; 8 + 2 = 10 MC
 
@@ -133,12 +133,12 @@ HERE:   DJNZ R1, HERE       ; 4 * 2 = 8 MC
 
         /* Main */
         ORG 30H
-MAIN:   MOV TMOD, _num_12H          ; T0M2 & T1M1
-        MOV P1, _num_0              ; P1 = output port
+MAIN:   MOV TMOD, #12H          ; T0M2 & T1M1
+        MOV P1, #0              ; P1 = output port
         ACALL WAVE0
         ACALL WAVE1
 
-        MOV IE, _num_8AH
+        MOV IE, #8AH
 REPEAT: SJMP REPEAT
 
 ; 5kHz => 1/5000 s = .0002 s => 200 microseconds
@@ -151,8 +151,8 @@ WAVE0:  MOV TH0, #-92
 ; 500 Hz => .002 s => 2000 us
 ; (FFFF - x + 1)(1.085) = 2000
 ; x = FFFF - 1842 => E7 BD
-WAVE1:  MOV TH1, _num_0E7H
-        MOV TL1, _num_0BDH
+WAVE1:  MOV TH1, #0E7H
+        MOV TL1, #0BDH
         SETB TR1
         RET
 
@@ -176,9 +176,9 @@ WAVE1:  MOV TH1, _num_0E7H
 
         /* Main */
         ORG 30H
-MAIN:   MOV R7, _num_1D
-        MOV P1, _num_0              ; Make P1 an output port
-        MOV IE, _num_88H            ; Enable interrupt on T1
+MAIN:   MOV R7, #1D
+        MOV P1, #0              ; Make P1 an output port
+        MOV IE, #88H            ; Enable interrupt on T1
 
 LOOP:   MOV P2, R7              ; R7 holds the value of the div series
         ACALL INFSER
@@ -186,9 +186,9 @@ LOOP:   MOV P2, R7              ; R7 holds the value of the div series
 
 ; code for the square wave interrupt
 ; determines via R6 what the last wave was
-SWAVE:  MOV TMOD, _num_20H  ; Timer 2, mode 2
+SWAVE:  MOV TMOD, #20H  ; Timer 2, mode 2
 
-        CJNE R6, _num_70, SKIP2LOW
+        CJNE R6, #70, SKIP2LOW
         ACALL HWAVE
         SJMP NEXT
 
@@ -205,7 +205,7 @@ NEXT:   SETB TR1
 HWAVE:
         SETB P1.1
         MOV TH1, #-92
-        MOV R6, _num_70             ; Just to keep track of what our last value was
+        MOV R6, #70             ; Just to keep track of what our last value was
         RET
 
 ; so, exact same reasoning as before, we need 130 ticks for
@@ -214,7 +214,7 @@ HWAVE:
 LWAVE:
         CLR P1.1
         MOV TH1, #-38
-        MOV R6, _num_30
+        MOV R6, #30
         RET
 
 ; computes infinite divergent series incrementally
@@ -234,13 +234,13 @@ RETURN: MOV R7, A
 ; returns two's compliment of A
 TWOCOMP:
         CPL A
-        ADD A, _num_1D
+        ADD A, #1D
         RET
 
 
 ; returns 1 in C if B is negative
 ISNEGATIVE:
-        CJNE A, _num_10000000B, NEXT2
+        CJNE A, #10000000B, NEXT2
 NEXT2:  CPL C
         RET
 

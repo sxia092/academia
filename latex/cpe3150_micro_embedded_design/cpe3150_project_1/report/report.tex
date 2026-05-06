@@ -7,7 +7,7 @@
 
 \setcounter{secnumdepth}{2}
 
-\title{Project \_num_2}
+\title{Project \#2}
 \date{Due Date: November 8\textsuperscript{th}, 2016}
 \author{Michael Schoen, Abdirahman Osman, Illya Starikov}
 
@@ -27,17 +27,17 @@
         scale only axis,
         width=.8\textwidth,
         height = 5cm,
-        title={_num_1},
-        xlabel={_num_2},
-        ylabel={_num_3},
+        title={#1},
+        xlabel={#2},
+        ylabel={#3},
         legend pos=north west,
         ymajorgrids=true,
         grid style=dashed,
     ]
 
-    \addplot[color=blue, mark = square] table [x=a, y=b, col sep=comma] {_num_4};
+    \addplot[color=blue, mark = square] table [x=a, y=b, col sep=comma] {#4};
 
-    \legend{_num_5}
+    \legend{#5}
     \end{axis}
     \end{tikzpicture}
 }
@@ -45,7 +45,7 @@
 
 \definecolor{amber}{rgb}{1.0, 0.75, 0.0}
 \makeatletter
-\renewcommand{\boxed}[1]{\text{\fboxsep=.2em\fbox{\m@th$\displaystyle_num_1$}}}
+\renewcommand{\boxed}[1]{\text{\fboxsep=.2em\fbox{\m@th$\displaystyle#1$}}}
 \makeatother
 
 \begin{document}
@@ -96,24 +96,24 @@ Our failed attempt for a linear congruential generator is as follows.
 ; Result will be stored in A
 RNG:
                 MOV A, R7
-                MOV B, _num_7D
+                MOV B, #7D
                 DIV AB
                 MOV A, B
 
                 JNZ SKIP1
                 INC R6
-SKIP1:          MOV A,  _num_7D
+SKIP1:          MOV A,  #7D
                 MOV B, R7
                 MUL AB                      ; A = aX_n
 
                 ADD A, R6
-                MOV B, _num_72D
+                MOV B, #72D
                 DIV AB
 
                 MOV R7, B
 
                 MOV A, B
-                MOV B, _num_10D
+                MOV B, #10D
                 DIV AB
 
                 MOV A, B

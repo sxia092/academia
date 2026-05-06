@@ -22,7 +22,7 @@
 \newcounter{conflicts}
 
 \newcommand{\shellcmd}[1]{\texttt{\colorbox{gray!30}{#1}}}
-\newcommand{\presentcount}[1]{\addtocounter{_num_1}{1}\Roman{_num_1}}
+\newcommand{\presentcount}[1]{\addtocounter{#1}{1}\Roman{#1}}
 
 \definecolor{cverbbg}{gray}{.7}
 \newenvironment{lcverbatim}
@@ -38,7 +38,7 @@
 
 \newcommand{\hugeslide}[1]{
 \begin{frame}[plain,c]
-    \centering {\usebeamerfont*{frametitle} \usebeamercolor[fg]{frametitle}\fontsize{40}{50}\selectfont \textit{_num_1}}
+    \centering {\usebeamerfont*{frametitle} \usebeamercolor[fg]{frametitle}\fontsize{40}{50}\selectfont \textit{#1}}
 \end{frame}
 }
 \begin{document}
@@ -69,7 +69,7 @@
         \item Copy the link provided (something like \url{https://github.com/IllyaStarikov/msat_git_tutorial.git}).
         \item Open your terminal emulator of choice.
         \item Navigate to desired directory (using \shellcmd{cd DIRECTORY})
-        \item Type in \shellcmd{git clone LINK}, where link is the copied link from Step \_num_1.
+        \item Type in \shellcmd{git clone LINK}, where link is the copied link from Step \#1.
     \end{enumerate}
 
 

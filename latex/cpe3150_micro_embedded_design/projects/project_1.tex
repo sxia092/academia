@@ -39,13 +39,13 @@ After the output, there is to be a delay. This delay has to be $27,250 \mu s$, w
     \begin{tabular}{|c|l|l|l|l|}
         \hline
         \textbf{Code} & \textbf{MC} & $\textbf{Iter}$ & \textbf{Time} \\ \hline
-        \verb|         MOV R3, _num_255     | & 2 & 1               & $ 2.17 \mu s$     \\
-        \verb| DELAY1: MOV R4, _num_47      | & 2 & 255             & $ 553.35 \mu s$   \\
+        \verb|         MOV R3, #255     | & 2 & 1               & $ 2.17 \mu s$     \\
+        \verb| DELAY1: MOV R4, #47      | & 2 & 255             & $ 553.35 \mu s$   \\
         \verb|                          | &   &                 &                   \\
         \verb| DELAY2: DJNZ R4, DELAY2  | & 2 & 255 $\times$ 47 & $ 26007.45 \mu s$ \\
         \verb|         DJNZ R3, DELAY1  | & 2 & 255             & $ 553.35 \mu s$   \\
         \verb|                          | &   &                 &                   \\
-        \verb|         MOV R3, _num_109     | & 2 & 1               & $ 2.17 \mu s$     \\
+        \verb|         MOV R3, #109     | & 2 & 1               & $ 2.17 \mu s$     \\
         \verb| DELAY3: DJNZ R3, DELAY3  | & 2 & 61              & $ 132.37 \mu s$   \\ \hline
     \end{tabular}
 

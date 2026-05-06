@@ -24,8 +24,8 @@
     Version: \textbf{\versionNumber}
 }
 
-\newcommand{\placeholder}[1]{\texttt{\colorbox{red!50}{\uppercase{_num_1}}}}
-\newcommand{\anchorlink}[2]{\hyperlink{_num_1}{\color{red}_num_2}}
+\newcommand{\placeholder}[1]{\texttt{\colorbox{red!50}{\uppercase{#1}}}}
+\newcommand{\anchorlink}[2]{\hyperlink{#1}{\color{red}#2}}
 
 \DeclareGraphicsExtensions{.png,.pdf}
 
@@ -111,12 +111,12 @@
 \end{tikzpicture}%
 }
 
-\newcommand{\namesigdatehrule}[1]{\par\tikz \draw [blue, densely dotted, ultra thick] (0,0) -- (_num_1,0);\par}
+\newcommand{\namesigdatehrule}[1]{\par\tikz \draw [blue, densely dotted, ultra thick] (0,0) -- (#1,0);\par}
 \newcommand{\namesigdate}[2][5cm]{%
-\begin{minipage}{_num_1}%
-    _num_2 \vspace{1.0cm}\namesigdatehrule{_num_1}\smallskip
+\begin{minipage}{#1}%
+    #2 \vspace{1.0cm}\namesigdatehrule{#1}\smallskip
     \small \noindent\textit{Signature}
-    \vspace{1.0cm}\namesigdatehrule{_num_1}\smallskip
+    \vspace{1.0cm}\namesigdatehrule{#1}\smallskip
     \small \textit{Date}
 \end{minipage}
 }

@@ -46,9 +46,9 @@
 \begin{verbatim}
     ORG 0
 
-    MOV A, _num_35H
-    MOV P2, _num_0
-    MOV R0, _num_8
+    MOV A, #35H
+    MOV P2, #0
+    MOV R0, #8
 
     SETB P2.1
     SETB P2.1
@@ -70,7 +70,7 @@ TX: RLC A
 \begin{verbatim}
     ORG 0
 
-    MOV R0, _num_8
+    MOV R0, #8
 
 RX: MOV C, P2.5
     RRC A
@@ -87,8 +87,8 @@ RX: MOV C, P2.5
 
 \begin{verbatim}
     ORG 0
-    MOV R0, _num_0  ; Counter for 1s
-    MOV R1, _num_8  ; Counter for loop
+    MOV R0, #0  ; Counter for 1s
+    MOV R1, #8  ; Counter for loop
 
     MOV A, P2
 
@@ -104,12 +104,12 @@ LP: RRC A
 
 \begin{verbatim}
     ORG 0
-    MOV R0, _num_30H
-    MOV @R0, _num_0
+    MOV R0, #30H
+    MOV @R0, #0
 
     XCHD A, @R0     ; M[30] = 07, A = 30H
     SWAP A          ; A = 30H
-    ORL A, _num_30H
+    ORL A, #30H
 \end{verbatim}
 
 

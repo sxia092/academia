@@ -1,16 +1,16 @@
 \usepackage{amssymb,amsmath,verbatim,graphicx,microtype,upquote,units,booktabs,multicol,xcolor,listings}
 
 \newcommand{\chapterNumber}[1]{
-    \setcounter{section}{_num_1}
+    \setcounter{section}{#1}
     \addtocounter{section}{-1}
 }
 
 % For Boxed Commands --- Simply used \boxed{}
 \makeatletter
-\renewcommand{\boxed}[1]{\text{\fboxsep=.2em\fbox{\m@th$\displaystyle_num_1$}}}
+\renewcommand{\boxed}[1]{\text{\fboxsep=.2em\fbox{\m@th$\displaystyle#1$}}}
 \makeatother
 
-\newcommand{\todo}[2]{\textbf{\colorbox{red!50}{_num_1}}{}}
+\newcommand{\todo}[2]{\textbf{\colorbox{red!50}{#1}}{}}
 \newcommand{\shellcmd}[1]{\texttt{\colorbox{gray!30}{#1}}}
 
 \lstset{

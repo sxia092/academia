@@ -4,7 +4,7 @@
 
 \setlength\parindent{0pt}
 
-\newcommand{\limit}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{_num_1}\;$}}}
+\newcommand{\limit}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -26,7 +26,7 @@
 \newcommand{\wvec}{\textbf{w} }
 
 \newcommand{\chapterNumber}[1]{
-    \setcounter{section}{_num_1}
+    \setcounter{section}{#1}
     \addtocounter{section}{-1}
 }
 

@@ -191,10 +191,19 @@ open assignments.pdf
 
 ## 🎓 Portfolio Contents
 
+Aggregate PDFs (rebuild via `make`):
+
+| Portfolio | Pages | Size | Description |
+|-----------|------:|-----:|-------------|
+| `notes.pdf` | 473 | 5.7M | Lecture notes and study materials |
+| `assignments.pdf` | 498 | 17M | Homework, projects, and laboratory reports |
+| `curated.pdf` | 258 | 7.9M | Selected best work + teaching materials |
+| `complete.pdf` | **1,113** | 26M | Comprehensive collection of academic work |
+
 This collection represents comprehensive academic work including:
-- **279+ Assignments**: Homework, projects, and laboratory reports
-- **450+ Pages of Notes**: Lecture notes and study materials
-- **Teaching Materials**: Lab assignments, lecture presentations, and tutorials (100+ pages)
+- **Course Notes**: 473 pages across 30+ courses
+- **Assignments**: Homework, projects, and laboratory reports across 17 courses
+- **Teaching Materials**: Lab assignments, lecture presentations, and tutorials
 - **Research Projects**: AI, data mining, and numerical modeling work
 - **Capstone Projects**: Software systems development and engineering projects
 

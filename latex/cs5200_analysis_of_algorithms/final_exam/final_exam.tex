@@ -20,7 +20,7 @@
 
 \newcommand{\approptoinn}[2]{\mathrel{\vcenter{
     \offinterlineskip\halign{\hfil$##$\cr
-    _num_1\propto\cr\noalign{\kern2pt}_num_1\sim\cr\noalign{\kern-2pt}}}}}
+    #1\propto\cr\noalign{\kern2pt}#1\sim\cr\noalign{\kern-2pt}}}}}
 
 \newcommand{\appropto}{\mathpalette\approptoinn\relax}
 
@@ -141,7 +141,7 @@
 \problem{}
 For the proceeding problems, the source code is as follows.
 
-% \lstinputlisting[caption=Problem \_num_2, firstline=11]{source/problem-2.py}
+% \lstinputlisting[caption=Problem \#2, firstline=11]{source/problem-2.py}
 % Note: Source file missing
 
 \problem{}
@@ -367,7 +367,7 @@ For a $\bigO{c}$ solution to $H(n)$, the following was produced:
     \end{cases}
 \end{equation*}
 
-% \lstinputlisting[caption=Problem \_num_5, firstline=11]{source/problem-5.py}
+% \lstinputlisting[caption=Problem \#5, firstline=11]{source/problem-5.py}
 % Note: Source file missing
 
 \problem{}

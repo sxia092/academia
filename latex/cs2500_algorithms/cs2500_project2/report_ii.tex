@@ -38,17 +38,17 @@
     scale only axis,
     width=\textwidth,
     height = 5cm,
-    title={_num_1},
-    xlabel={_num_2},
-    ylabel={_num_3},
+    title={#1},
+    xlabel={#2},
+    ylabel={#3},
     legend pos=north west,
     ymajorgrids=true,
     grid style=dashed,
 ]
 
-\addplot[color=blue, mark = square] table [x=a, y=b, col sep=comma] {_num_4};
+\addplot[color=blue, mark = square] table [x=a, y=b, col sep=comma] {#4};
 
-\legend{_num_5}
+\legend{#5}
 \end{axis}
 \end{tikzpicture}
 }

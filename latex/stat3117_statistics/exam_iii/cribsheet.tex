@@ -51,11 +51,11 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \newlength\mylenA{}
 
 \newcommand*\xoverline[2][0.75]{%
-    \sbox{\myboxA}{$\m@th_num_2$}%
+    \sbox{\myboxA}{$\m@th#2$}%
     \setbox\myboxB\null% Phantom box
     \ht\myboxB=\ht\myboxA%
     \dp\myboxB=\dp\myboxA%
-    \wd\myboxB=_num_1\wd\myboxA% Scale phantom
+    \wd\myboxB=#1\wd\myboxA% Scale phantom
     \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
     \setlength\mylenA{\the\wd\myboxA}%   calc width diff
     \addtolength\mylenA{-\the\wd\myboxB}%

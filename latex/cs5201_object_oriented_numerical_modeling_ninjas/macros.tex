@@ -63,10 +63,10 @@
 
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\newcommand{\bigO}[1]{\mathcal{O}\left(_num_1\right)}
-\newcommand{\bigTheta}[1]{\Theta\left(_num_1\right)}
-\newcommand{\bigOmega}[1]{\Omega\left(_num_1\right)}
+\newcommand{\bigO}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\bigTheta}[1]{\Theta\left(#1\right)}
+\newcommand{\bigOmega}[1]{\Omega\left(#1\right)}
 
-\newcommand{\shellcmd}[1]{\texttt{\colorbox{gray!25}{_num_1}}}
-\newcommand{\todo}[1]{\textbf{\colorbox{red!50}{\strut_num_1}}}
-\newcommand{\cpp}[1]{\lstinline$_num_1$}
+\newcommand{\shellcmd}[1]{\texttt{\colorbox{gray!25}{#1}}}
+\newcommand{\todo}[1]{\textbf{\colorbox{red!50}{\strut#1}}}
+\newcommand{\cpp}[1]{\lstinline$#1$}

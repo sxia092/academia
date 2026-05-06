@@ -136,7 +136,7 @@ $547$.
 
 \begin{proof}
     \begin{description}
-        \item[Step \_num_1] We wish to prove that for all natural numbers $f(n) = g(n)$, where $f$ and $g$ are as defined as follows:
+        \item[Step \#1] We wish to prove that for all natural numbers $f(n) = g(n)$, where $f$ and $g$ are as defined as follows:
 
             \begin{align*}
                 f(x) &=  \sum _{i = 1}^n  {(-1)}^{i - 1} i^3 \\
@@ -145,7 +145,7 @@ $547$.
 
             Let $D$ be the set of natural numbers (i.e., $D = \mathbb{Z}^+$). $D$ includes the stopping value $1$.
 
-        \item[Step \_num_2] Checking two values is trivial; take $2$ and $3$.
+        \item[Step \#2] Checking two values is trivial; take $2$ and $3$.
 
             \begin{align*}
                 \sum _{i = 1}^2 {(-1)}^{i - 1} i^3 = -\frac{1}{8} {(-1)}^2 \left( 4 * 2^3 + 6 * ^2 - 1 \right) - \frac{1}{8} = -7 \\
@@ -154,11 +154,11 @@ $547$.
 
             To check the stopping value, we check the first value. We clearly see that $f(x) = g(x) = 1$.
 
-        \item[Step \_num_3] If $n$ in $\mathbb{Z}^+$ triggers a recursive call, then $n > 0$. The only value used in the call is $n - 1$, which is in $\mathbb{Z}$ and greater than or equal to $0$, because it is an integer and $n − 1 \geq 0$ since $n > 0$.
+        \item[Step \#3] If $n$ in $\mathbb{Z}^+$ triggers a recursive call, then $n > 0$. The only value used in the call is $n - 1$, which is in $\mathbb{Z}$ and greater than or equal to $0$, because it is an integer and $n − 1 \geq 0$ since $n > 0$.
 
-        \item[Step \_num_4] We use the integer $n$ as the counter. When recursion is called the function is called with the value $n - 1$. The counter strictly decreases and the recursion halts.
+        \item[Step \#4] We use the integer $n$ as the counter. When recursion is called the function is called with the value $n - 1$. The counter strictly decreases and the recursion halts.
 
-        \item[Step \_num_5] To prove recursion stops, we take the following:
+        \item[Step \#5] To prove recursion stops, we take the following:
 
             \begin{align}
                 f(x) &= f(n - 1) + f(n) \\
@@ -169,7 +169,7 @@ $547$.
             \end{align}
             Because $f(n) = g(n)$, the property is inherited recursively.
 
-        \item[Step \_num_6]  Since Steps 1--5 have been verified, it follows from the Principle of Recursion that $P$ holds for all values in $\mathbb{Z^+}$, i.e., $f(n) = g(n), \forall n \in \mathbb{Z}^+$
+        \item[Step \#6]  Since Steps 1--5 have been verified, it follows from the Principle of Recursion that $P$ holds for all values in $\mathbb{Z^+}$, i.e., $f(n) = g(n), \forall n \in \mathbb{Z}^+$
     \end{description}
 \end{proof}
 

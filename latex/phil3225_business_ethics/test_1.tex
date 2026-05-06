@@ -34,14 +34,14 @@
 
 % Header and footer for when a page split occurs within a problem environment
 \newcommand{\enterProblemHeader}[1]{
-\nobreak\extramarks{_num_1}{_num_1 continued on next page\ldots}\nobreak
-\nobreak\extramarks{_num_1 (continued)}{_num_1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
 }
 
 % Header and footer for when a page split occurs between problem environments
 \newcommand{\exitProblemHeader}[1]{
-\nobreak\extramarks{_num_1 (continued)}{_num_1 continued on next page\ldots}\nobreak
-\nobreak\extramarks{_num_1}{}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
 }
 
 \setcounter{secnumdepth}{0} % Removes default section numbers
@@ -50,7 +50,7 @@
 \newcommand{\homeworkProblemName}{}
 \newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
 \stepcounter{homeworkProblemCounter} % Increase counter for number of problems
-\renewcommand{\homeworkProblemName}{_num_1} % Assign \homeworkProblemName the name of the problem
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
 \section{\homeworkProblemName} % Make a section in the document with the custom problem count
 \enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
 }{
@@ -60,13 +60,13 @@
 \newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
 \begin{tcolorbox}[colback=black!5!white,colframe=black!75!black]
     \centering
-    \begin{minipage}{0.98\columnwidth}_num_1\end{minipage}
+    \begin{minipage}{0.98\columnwidth}#1\end{minipage}
 \end{tcolorbox} % Makes the box around the problem answer and puts the content inside
 }
 
 \newcommand{\homeworkSectionName}{}
 \newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
-\renewcommand{\homeworkSectionName}{_num_1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
 \subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
 \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
 }{
@@ -77,7 +77,7 @@
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
 
-\newcommand{\hmwkTitle}{Test \_num_1} % Assignment title
+\newcommand{\hmwkTitle}{Test \#1} % Assignment title
 \newcommand{\hmwkDueDate}{Wednesday, April\ 5\textsuperscript{th},\ 2017} % Due date
 \newcommand{\hmwkClass}{PHILOS\ 3235} % Course/class
 \newcommand{\hmwkClassTime}{15:00} % Class/lecture time

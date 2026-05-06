@@ -4,7 +4,7 @@
 
 > **Note:** This repository is archived and read-only. It serves as a historical record of coursework completed between 2014-2018.
 
-📚 **34 courses** · 📝 **147 assignments** · 💻 **9 languages** · 🎓 **BS/MS Computer Science**
+📚 **34 courses** · 📝 **147 assignments** · 📄 **1,113 pages** · 💻 **9 languages** · 🎓 **BS/MS Computer Science**
 
 <p align="center">
   <img src="assets/banner.png" alt="Missouri S&T Campus Circuit Board" width="100%">

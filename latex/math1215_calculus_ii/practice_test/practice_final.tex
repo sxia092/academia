@@ -7,10 +7,10 @@
 \newboolean{KEY}
 % \setboolean{KEY}{true} %prints questions and answers
 \setboolean{KEY}{false} %prints questions only
-\newcommand{\question}[1]{\ifthenelse{\boolean{KEY}}{}{_num_1}}
-\newcommand{\answer}[1]{\ifthenelse{\boolean{KEY}}{_num_1}{}}
+\newcommand{\question}[1]{\ifthenelse{\boolean{KEY}}{}{#1}}
+\newcommand{\answer}[1]{\ifthenelse{\boolean{KEY}}{#1}{}}
 
-\newcommand{\eval}[2]{\Bigr| _{_num_1} ^{_num_2}}
+\newcommand{\eval}[2]{\Bigr| _{#1} ^{#2}}
 
 \begin{document}
 \section*{MATH 1215 Practice Final \answer{Key}}

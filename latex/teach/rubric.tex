@@ -9,27 +9,27 @@
 
 \usepackage{tikz}
 
-\newcommand{\namesigdatehrule}[1]{\par\tikz \draw [black, densely dotted, ultra thick] (0,0) -- (_num_1,0);\par}
+\newcommand{\namesigdatehrule}[1]{\par\tikz \draw [black, densely dotted, ultra thick] (0,0) -- (#1,0);\par}
 \newcommand{\namesigdate}[2][9cm]{%
-\begin{minipage}{_num_1}%
-    _num_2 \vspace{.5cm}\namesigdatehrule{_num_1}\smallskip
+\begin{minipage}{#1}%
+    #2 \vspace{.5cm}\namesigdatehrule{#1}\smallskip
 \end{minipage}
 }
 
 \begin{document}
 \begin{center}
-\textbf{\huge\sffamily Homework \_num_10 Grading Rubric} \\\vskip.5em
+\textbf{\huge\sffamily Homework \#10 Grading Rubric} \\\vskip.5em
 \textbf{\LARGE\sffamily Introduction To Programming}
 \end{center}\vskip1em
 
 \section{Partners}
-\noindent \namesigdate{Author \_num_1} \hfill \namesigdate{Author \_num_2}
+\noindent \namesigdate{Author \#1} \hfill \namesigdate{Author \#2}
 
 \section{Grading Rubric}
 \centering
 \begin{tabular}{|p{7cm}|p{2cm}|p{1.25cm}|p{1.25cm}|p{5cm}|}
     \hline
-    \centering \textbf{Description} & \centering \textbf{Points Possible} & \centering \textbf{Grade \_num_1} & \centering \textbf{Grade \_num_2} & {\centering\textbf{Notes}\par} \\  \hline
+    \centering \textbf{Description} & \centering \textbf{Points Possible} & \centering \textbf{Grade \#1} & \centering \textbf{Grade \#2} & {\centering\textbf{Notes}\par} \\  \hline
 
     \footnotesize The program works as expected. All classes are properly implemented. Milhouse is chased by phantom pants. Bullies are scattered. Milhouse doesn't run over stuff. A clean, 17x17 grid is displayed. \textbf{Colors are required}. & \centering 40 & & & \\ \hline
     \footnotesize

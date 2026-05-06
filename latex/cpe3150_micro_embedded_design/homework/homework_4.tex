@@ -19,14 +19,14 @@
         YELLOW BIT P2.1
         RED    BIT P2.3
 
-        MOV P1, _num_0FFH      ; Make an import port
+        MOV P1, #0FFH      ; Make an import port
 
 INCT5:
         CPL RED
         ACALL DELAY5S
         CPL RED
         ACALL DELAY5S
-        MOV R0, _num_5H        ; Attempt counter
+        MOV R0, #5H        ; Attempt counter
         MOV R2, #30H       ; First correct numbers
         MOV R4, 3          ; For yellow light
 
@@ -38,7 +38,7 @@ INCT:
 
         MOV A, R4
         JZ SKIP1           ; If 3 attempts have been used, yellow
-        MOV R4, _num_0FFH      ; To make sure you don't hit this twice
+        MOV R4, #0FFH      ; To make sure you don't hit this twice
         CPL YELLOW
         ACALL DELAY5S
         CPL YELLOW
@@ -71,7 +71,7 @@ SKIP:   CLR C
 
 \end{verbatim}
 
-\section{Problem \_num_2}
+\section{Problem \#2}
 \begin{verbatim}
         ORG 0
 
@@ -80,7 +80,7 @@ SKIP:   CLR C
 
         MOV A, 7           ; A = B3,R7
 
-        CJNE A, _num_64, NEXT  ; This is literally to set the flag, nothing else
+        CJNE A, #64, NEXT  ; This is literally to set the flag, nothing else
         NEXT:
 
         CLR PSW.4
@@ -91,7 +91,7 @@ SKIP:   CLR C
           R5 IS LOWER BYTE
         */
 
-        MOV B, _num_100D
+        MOV B, #100D
         DIV AB
 
         MOV R6, A
@@ -124,7 +124,7 @@ ILOOP:  RRC A              ; Start scanning at LSB
 SKIP:   DJNZ R0, ILOOP
 
         /*Output to P2 */
-        MOV P2, _num_0         ; Make P2 an output port
+        MOV P2, #0         ; Make P2 an output port
         REPEAT:            ; For repeating output indefinetly
         MOV R1, #30H       ; Again, to be used for output
         MOV 3, 7           ; R3 = R7 (The number of occurrences)
@@ -136,7 +136,7 @@ SKIP:   DJNZ R0, ILOOP
         DJNZ R3, OLOOP;
         SJMP REPEAT;
 
-DELAY:  MOV R7, _num_118       ; DJNZ = 2MC. (256/1.085069444) / 2 MC = 117.9648 MC
+DELAY:  MOV R7, #118       ; DJNZ = 2MC. (256/1.085069444) / 2 MC = 117.9648 MC
 DLOOP:  DJNZ R7, DLOOP
         RET
 
@@ -144,7 +144,7 @@ DLOOP:  DJNZ R7, DLOOP
 
 \end{verbatim}
 
-\section{Problem \_num_4}
+\section{Problem \#4}
 \begin{verbatim}
         ORG 0
 

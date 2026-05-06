@@ -11,17 +11,17 @@
 \makeatletter
 \newsavebox{\measure@tikzpicture}
 \NewEnviron{scaletikzpicturetowidth}[1]{%
-  \def\tikz@width{_num_1}%
+  \def\tikz@width{#1}%
   \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
   \BODY
   \end{lrbox}%
-  \pgfmathparse{_num_1/\wd\measure@tikzpicture}%
+  \pgfmathparse{#1/\wd\measure@tikzpicture}%
   \edef\tikzscale{\pgfmathresult}%
   \BODY
 }
 \makeatother
 
-\title{Homework \_num_2}
+\title{Homework \#2}
 \date{Due Date: April 6\textsuperscript{th}, 2017}
 \author{Illya Starikov}
 
