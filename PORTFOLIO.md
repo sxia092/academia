@@ -8,7 +8,7 @@ Course notes and assignments typeset in LaTeX—the standard for academic and sc
 
 | Document | Pages | Description |
 |----------|------:|-------------|
-| [Curated](latex/curated.pdf) | 258 | Curated selection of best work |
+| [Curated](latex/curated.pdf) | 284 | Curated selection of best work |
 | [Notes](latex/notes.pdf) | 473 | Lecture notes and study materials |
 | [Assignments](latex/assignments.pdf) | 498 | Homework assignments with solutions |
 | [Complete](latex/complete.pdf) | 1,113 | Complete collection: assignments + notes |

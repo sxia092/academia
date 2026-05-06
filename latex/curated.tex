@@ -94,6 +94,12 @@ Comprehensive final examination for graduate Analysis of Algorithms course. Feat
 \subsection*{CS3800 Exam II Cheatsheet}
 Concise reference sheet for Operating Systems Exam II, formatted for maximum information density. Covers advanced OS concepts in a landscape format, optimized for quick reference during examinations. Demonstrates ability to synthesize and organize complex technical information effectively.
 
+\subsection*{CS2500 Project 1: Knapsack Memory Manager}
+Comparative analysis of Brute Force, Dynamic Programming, and Greedy approaches to the 0-1 knapsack problem, framed as a smartphone OS deciding which apps to swap to disk. Each app has a memory cost and a recovery cost; the goal is to free a target amount of memory while minimizing recovery cost. A twelve-hour empirical test campaign exposes where each algorithm breaks down: Brute Force fails at $n=50$, Dynamic Programming remains tractable to $n=1{,}000$, and Greedy is always fast but only optimal under sorted ratios. The empirical scaling curves are the actual deliverable.
+
+\subsection*{CS2500 Project 2: Graph Analytics Suite}
+Six classical metrics for social network graphs, implemented from scratch in C++: degree distribution, shortest-path distribution, graph diameter, closeness centrality, betweenness centrality via Floyd-Warshall path reconstruction, and community detection. The implementation produces CSV data that the LaTeX report renders as pgfplots curves --- empirical graph theory turning ``what does centrality measure'' into a number you can plot.
+
 \subsection*{CS2300 Databases Final Report}
 Comprehensive database system design and implementation report for ForFit, a fitness tracking application. Includes complete database design manual with conceptual, logical, and physical design phases, along with detailed user manual. Features EER diagrams, relational schemas, application program design, and extensive testing procedures. Demonstrates end-to-end database project development from problem statement to deployment.
 
@@ -168,6 +174,12 @@ Examination covering utilitarian and Kantian ethical frameworks with practical a
 
 % CS3800 Operating Systems Exam II Cheatsheet
 \includeassignment{cs3800_operating_systems/crib-sheets/exam-2.pdf}{CS3800 Exam II Cheatsheet}
+
+% CS2500 Project 1: Knapsack Memory Manager
+\includeassignment{cs2500_algorithms/cs2500_project1/report_ii.pdf}{CS2500 Project 1: Knapsack}
+
+% CS2500 Project 2: Graph Analytics Suite
+\includeassignment{cs2500_algorithms/cs2500_project2/report_ii.pdf}{CS2500 Project 2: Graph Analytics}
 
 % CS2300 Databases Final Report
 \includeassignment{cs2300_databases/final-report/master.pdf}{CS2300 Databases Final Report}
