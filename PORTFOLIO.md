@@ -53,13 +53,35 @@ A templated C++ linear algebra library. Supports matrices, vectors, and various 
   <img src="assets/linear_algebra.gif" alt="Linear Algebra Visualization">
 </p>
 
-## 5. CFG Tracer
+## 5. Graph Analytics Suite
+
+**Path:** `src/cs2500-algorithms/CS2500-Project2/`
+
+Six classical metrics for social network graphs, implemented from scratch in C++: degree distribution, shortest-path distribution, graph diameter, closeness centrality, betweenness centrality, and community detection. Betweenness uses Floyd-Warshall path reconstruction—every shortest path is recovered, and each intermediate vertex's centrality counter goes up. The output drives a LaTeX report rendered with pgfplots, so the code's job ends at producing CSVs the report turns into curves. Empirical graph theory: turning "what does centrality even measure" into a number you can plot.
+
+## 6. Knapsack Memory Manager
+
+**Path:** `src/cs2500-algorithms/CS2500-Project1/`
+
+Brute Force vs. Dynamic Programming vs. Greedy on the 0-1 knapsack, framed as a smartphone OS deciding which apps to swap to disk. Each app has a memory cost and a recovery cost; the goal is to free a target amount of memory while minimizing recovery cost. Test rig ran for twelve hours straight, scaling input size until each algorithm hit its wall—Brute Force died at n=50, Dynamic Programming was tractable to n=1,000, Greedy was always fast but only optimal when ratios cooperated. The empirical scaling curves are the actual deliverable; the algorithms are the easy part.
+
+## 7. CFG Tracer
 
 **Path:** `src/cs4099-undergrad-research/`
 
 Undergraduate research project that instruments C++ code to trace control flow at runtime. A control flow graph (CFG) represents all possible execution paths through a program—nodes are basic blocks (straight-line code with no branches), edges are jumps between them. This tool parses source files, identifies basic blocks, and generates execution traces. Used Boost for regex parsing. The goal was to understand how programs actually execute versus how we think they execute.
 
-## 6. Splatoonio
+## 8. Lexical Analyzer
+
+**Path:** `src/cs3500-programming-languages-and-translators/`
+
+A lexer built twice. First in pure Python as an explicit finite state machine—each token category gets a named state, transitions are hand-coded. Then rebuilt in C++ with Lex/Flex, where the same token grammar collapses into a regex spec and Flex generates the FSM for you. Both versions recognize integers, decimals, scientific notation, hex, binary, identifiers, string constants, keywords, operators, and phone numbers in three formats. Doing it both ways is the lesson: you understand what Flex actually buys you.
+
+<p align="center">
+  <img src="assets/automata.png" alt="Lexer DFA" width="80%">
+</p>
+
+## 9. Splatoonio
 
 **Path:** `src/cs4096-software-systems-development/splatoonio`
 
@@ -71,7 +93,7 @@ Undergraduate research project that instruments C++ code to trace control flow a
 
 Capstone project—a location-based multiplayer paint game for iOS, inspired by Splatoon. Built with Swift + UIKit + MapKit: the map is a grid of 1 m² tiles anchored to real GPS coordinates, and players "paint" tiles by walking over them. Territory is scored by tile ownership at end-of-round. Real-time state sync with a Python server, custom `MKOverlayRenderer` driving a CGBitmap for the paint layer, and a CoreLocation pipeline that filters and smooths GPS updates to keep painting responsive. The kind of project where you learn that 80% of software engineering is communication and coordination.
 
-## 7. Space Invaders
+## 10. Space Invaders
 
 **Path:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders`
 
@@ -81,7 +103,7 @@ Capstone project—a location-based multiplayer paint game for iOS, inspired by 
 
 Space Invaders running on an 8051 microcontroller. Written in assembly and C, pushing against tight memory constraints. Every byte mattered. Implementing smooth sprite movement and collision detection on hardware this limited teaches you what efficiency really means.
 
-## 8. Camelot
+## 11. Camelot
 
 **Path:** `src/cs3100-software-engineering-i/camelot`
 
@@ -93,7 +115,7 @@ An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServ
   <img src="assets/socket_chat.png" alt="Socket Chat Client" width="300">
 </p>
 
-## 9. CLC Tally
+## 12. CLC Tally
 
 **Path:** `src/clc-tally`
 
@@ -103,7 +125,13 @@ An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServ
 
 iOS app for tracking student headcounts at Missouri S&T's Computer Learning Center. Built to solve a real problem—tutors needed a quick way to log how many students they helped. Simple interface, local storage, export functionality. Sometimes the best software is the software that just works.
 
-## 10. Grading Suite
+## 13. Bolt
+
+**Path:** `src/bolt`
+
+iOS interval timer with a custom UI. A circular angular overlay (`AngularOverlayView`) drives timer state; a small `Timer` model handles tick logic and persistence via UserDefaults. The interesting bit is `CustomPresentAnimationController`—a hand-rolled `UIViewControllerAnimatedTransitioning` that springs the settings sheet up over 2.5 seconds with damped spring physics. Built in 2015–2016, when UIKit was the only game in town and custom transitions meant writing them yourself.
+
+## 14. Grading Suite
 
 **Path:** `src/cs1570-grading-suite`
 
