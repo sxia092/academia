@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$pagetitle$</title>
+$if(description)$
+  <meta name="description" content="$description$">
+  <meta property="og:description" content="$description$">
+$endif$
+  <meta property="og:title" content="$pagetitle$">
+  <meta property="og:url" content="https://academia.starikov.io/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://academia.starikov.io/">
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --fg: #f5f5f7;
+      --muted: #8a8a90;
+      --border: rgba(255, 255, 255, 0.12);
+      --hover: rgba(255, 255, 255, 0.06);
+      --code-bg: rgba(255, 255, 255, 0.06);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fafafa;
+        --fg: #111;
+        --muted: #555;
+        --border: rgba(0, 0, 0, 0.12);
+        --hover: rgba(0, 0, 0, 0.04);
+        --code-bg: rgba(0, 0, 0, 0.05);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+      margin: 0.25rem 0 0.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin: 2.5rem 0 0.75rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.5rem;
+      font-weight: 600;
+    }
+    h4 {
+      font-size: 1rem;
+      margin: 1.25rem 0 0.5rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    p { margin: 0.75rem 0; }
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+    }
+    a:hover { text-decoration-color: var(--fg); }
+    img { max-width: 100%; height: auto; }
+    blockquote {
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      border-left: 3px solid var(--border);
+      color: var(--muted);
+    }
+    blockquote p { margin: 0.25rem 0; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    li { margin: 0.25rem 0; }
+    code {
+      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: var(--code-bg);
+      padding: 0.15em 0.35em;
+      border-radius: 4px;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      overflow-x: auto;
+      line-height: 1.45;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.875em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+    }
+    th { font-weight: 600; }
+    p[align="center"] { text-align: center; }
+    p[align="center"] img { display: inline-block; vertical-align: middle; }
+    /* Tighten the hero stats line under the banner blockquotes */
+    h1 + blockquote { margin-top: 0.5rem; }
+    /* Footer-ish muted look for trailing contributors list */
+    main > ul:last-child { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+$body$
+  </main>
+</body>
+</html>

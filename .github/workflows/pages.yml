@@ -20,11 +20,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
       - name: Assemble site
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp CNAME .nojekyll index.html _site/
+          cp CNAME .nojekyll _site/
+          cp -R assets _site/assets
+          pandoc README.md \
+            --standalone \
+            --wrap=none \
+            --template=templates/page.html \
+            --metadata pagetitle="Academia · Illya Starikov" \
+            --metadata description="1,113 pages of academic notes — four years of Missouri S&T, typeset in LaTeX." \
+            -o _site/index.html
+          pandoc PORTFOLIO.md \
+            --standalone \
+            --wrap=none \
+            --template=templates/page.html \
+            --metadata pagetitle="Portfolio · Academia" \
+            --metadata description="14 curated projects from four years of Missouri S&T coursework." \
+            -o _site/portfolio.html
+          # Rewrite GitHub-relative paths to deployed-site paths.
+          sed -i 's|href="PORTFOLIO\.md"|href="portfolio.html"|g' _site/index.html
+          sed -i 's|href="latex/\([^"]*\.pdf\)"|href="\1"|g' _site/portfolio.html
           cp latex/curated.pdf      _site/curated.pdf
           cp latex/assignments.pdf  _site/assignments.pdf
           cp latex/notes.pdf        _site/notes.pdf

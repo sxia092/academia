@@ -13,10 +13,23 @@
 Four years of computer science education distilled into one repository. From writing "Hello World" to implementing chess AIs—this is the complete journey through Missouri S&T's CS curriculum.
 
 <p align="center">
-  <a href="PORTFOLIO.md"><strong>View Portfolio &rarr;</strong></a>
+  <a href="PORTFOLIO.md"><img src="https://img.shields.io/badge/Portfolio-14_projects-2ea44f?style=for-the-badge" alt="View Portfolio"></a>
+  &nbsp;
+  <a href="https://academia.starikov.io/curated.pdf"><img src="https://img.shields.io/badge/Notes-1,113_pages-1f6feb?style=for-the-badge" alt="View Notes"></a>
 </p>
 
 ---
+
+## Notes
+
+Four years of LaTeX-typeset coursework — math, diagrams, and code rendered properly. Available in four cuts:
+
+| Document | Pages | Size | Description |
+|----------|------:|-----:|-------------|
+| **[Curated](https://academia.starikov.io/curated.pdf)** | 284 | 8.3 MB | Best of the best |
+| **[Notes](https://academia.starikov.io/notes.pdf)** | 473 | 5.7 MB | Lecture notes and study materials |
+| **[Assignments](https://academia.starikov.io/assignments.pdf)** | 498 | 17 MB | Homework with solutions |
+| **[Complete](https://academia.starikov.io/complete.pdf)** | 1,113 | 26 MB | Everything |
 
 ## Coursework
 
