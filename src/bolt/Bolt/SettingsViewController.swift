@@ -11,7 +11,7 @@ import UIKit
 class SettingsViewController: UITableViewController {
     var defaults = UserDefaults()
     
- func repeatsValueChanged(_ sender: UISwitch) {
+    @IBAction func repeatsValueChanged(_ sender: UISwitch) {
         defaults.set(sender.isOn, forKey: "Repeats")
     }
     
