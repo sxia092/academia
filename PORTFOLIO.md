@@ -23,65 +23,7 @@ Built a chess engine from scratch using bitboards—64-bit integers where each b
   <img src="assets/chess_ai.gif" alt="Chess AI Demo">
 </p>
 
-## 2. Puzzle Solvers
-
-**Path:** `src/cs5400-artificial-intelligence/puzzle-series/`
-
-Four puzzle solvers using various search algorithms. The standout is the A* implementation with custom heuristics that solves complex state-space problems efficiently. Each puzzle required thinking carefully about state representation and admissible heuristics. Watching the solver find optimal paths through thousands of states in milliseconds was deeply satisfying.
-
-<p align="center">
-  <img src="assets/match3.gif" alt="Mechanical Match Demo">
-</p>
-
-## 3. Shape Packer
-
-**Path:** `src/cs5401-evolutionary-computing/`
-
-Evolutionary algorithm for 2D shape packing. Given a set of irregular shapes and a rectangular board, find the optimal placement that maximizes coverage. The EA uses fitness proportional selection, k-tournament selection (with and without replacement), and truncation for survival. Shapes can rotate and translate—the genome encodes position and orientation for each piece. Mutation perturbs placements; recombination swaps shape configurations between parents. Watching generations converge on tight packings is mesmerizing.
-
-<p align="center">
-  <img src="assets/shape_packer.gif" alt="Shape Packer Demo">
-</p>
-
-## 4. Linear Algebra Library
-
-**Path:** `src/cs5201-object-oriented-numerical-modeling-ninjas/`
-
-A templated C++ linear algebra library. Supports matrices, vectors, and various decompositions (LU, QR, Cholesky). Heavy use of operator overloading to make matrix math read naturally. The final project ties it all together to solve systems of linear equations with different numerical methods.
-
-<p align="center">
-  <img src="assets/linear_algebra.gif" alt="Linear Algebra Visualization">
-</p>
-
-## 5. Graph Analytics Suite
-
-**Path:** `src/cs2500-algorithms/CS2500-Project2/`
-
-Six classical metrics for social network graphs, implemented from scratch in C++: degree distribution, shortest-path distribution, graph diameter, closeness centrality, betweenness centrality, and community detection. Betweenness uses Floyd-Warshall path reconstruction—every shortest path is recovered, and each intermediate vertex's centrality counter goes up. The output drives a LaTeX report rendered with pgfplots, so the code's job ends at producing CSVs the report turns into curves. Empirical graph theory: turning "what does centrality even measure" into a number you can plot.
-
-## 6. Knapsack Memory Manager
-
-**Path:** `src/cs2500-algorithms/CS2500-Project1/`
-
-Brute Force vs. Dynamic Programming vs. Greedy on the 0-1 knapsack, framed as a smartphone OS deciding which apps to swap to disk. Each app has a memory cost and a recovery cost; the goal is to free a target amount of memory while minimizing recovery cost. Test rig ran for twelve hours straight, scaling input size until each algorithm hit its wall—Brute Force died at n=50, Dynamic Programming was tractable to n=1,000, Greedy was always fast but only optimal when ratios cooperated. The empirical scaling curves are the actual deliverable; the algorithms are the easy part.
-
-## 7. CFG Tracer
-
-**Path:** `src/cs4099-undergrad-research/`
-
-Undergraduate research project that instruments C++ code to trace control flow at runtime. A control flow graph (CFG) represents all possible execution paths through a program—nodes are basic blocks (straight-line code with no branches), edges are jumps between them. This tool parses source files, identifies basic blocks, and generates execution traces. Used Boost for regex parsing. The goal was to understand how programs actually execute versus how we think they execute.
-
-## 8. Lexical Analyzer
-
-**Path:** `src/cs3500-programming-languages-and-translators/`
-
-A lexer built twice. First in pure Python as an explicit finite state machine—each token category gets a named state, transitions are hand-coded. Then rebuilt in C++ with Lex/Flex, where the same token grammar collapses into a regex spec and Flex generates the FSM for you. Both versions recognize integers, decimals, scientific notation, hex, binary, identifiers, string constants, keywords, operators, and phone numbers in three formats. Doing it both ways is the lesson: you understand what Flex actually buys you.
-
-<p align="center">
-  <img src="assets/automata.png" alt="Lexer DFA" width="80%">
-</p>
-
-## 9. Splatoonio
+## 2. Splatoonio
 
 **Path:** `src/cs4096-software-systems-development/splatoonio`
 
@@ -93,7 +35,27 @@ A lexer built twice. First in pure Python as an explicit finite state machine—
 
 Capstone project—a location-based multiplayer paint game for iOS, inspired by Splatoon. Built with Swift + UIKit + MapKit: the map is a grid of 1 m² tiles anchored to real GPS coordinates, and players "paint" tiles by walking over them. Territory is scored by tile ownership at end-of-round. Real-time state sync with a Python server, custom `MKOverlayRenderer` driving a CGBitmap for the paint layer, and a CoreLocation pipeline that filters and smooths GPS updates to keep painting responsive. The kind of project where you learn that 80% of software engineering is communication and coordination.
 
-## 10. Space Invaders
+## 3. Shape Packer
+
+**Path:** `src/cs5401-evolutionary-computing/`
+
+Evolutionary algorithm for 2D shape packing. Given a set of irregular shapes and a rectangular board, find the optimal placement that maximizes coverage. The EA uses fitness proportional selection, k-tournament selection (with and without replacement), and truncation for survival. Shapes can rotate and translate—the genome encodes position and orientation for each piece. Mutation perturbs placements; recombination swaps shape configurations between parents. Watching generations converge on tight packings is mesmerizing.
+
+<p align="center">
+  <img src="assets/shape_packer.gif" alt="Shape Packer Demo">
+</p>
+
+## 4. Puzzle Solvers
+
+**Path:** `src/cs5400-artificial-intelligence/puzzle-series/`
+
+Four puzzle solvers using various search algorithms. The standout is the A* implementation with custom heuristics that solves complex state-space problems efficiently. Each puzzle required thinking carefully about state representation and admissible heuristics. Watching the solver find optimal paths through thousands of states in milliseconds was deeply satisfying.
+
+<p align="center">
+  <img src="assets/match3.gif" alt="Mechanical Match Demo">
+</p>
+
+## 5. Space Invaders
 
 **Path:** `src/cpe3150-micro-embedded-design/project-3/code/space-invaders`
 
@@ -103,17 +65,120 @@ Capstone project—a location-based multiplayer paint game for iOS, inspired by 
 
 Space Invaders running on an 8051 microcontroller. Written in assembly and C, pushing against tight memory constraints. Every byte mattered. Implementing smooth sprite movement and collision detection on hardware this limited teaches you what efficiency really means.
 
-## 11. Camelot
+## 6. Linear Algebra Library
 
-**Path:** `src/cs3100-software-engineering-i/camelot`
+**Path:** `src/cs5201-object-oriented-numerical-modeling-ninjas/`
 
-Team software engineering project with full documentation, UML diagrams, and Doxygen-generated API docs. Practiced agile methodology, code reviews, and collaborative development. The code itself is less interesting than learning how to build software with other people.
-
-An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServer`) hooks into the server, allowing real-time messaging between users. Built with Swift using JSQMessagesViewController for the chat UI and SwiftSocket for TCP communication.
+A templated C++ linear algebra library. Supports matrices, vectors, and various decompositions (LU, QR, Cholesky). Heavy use of operator overloading to make matrix math read naturally. The final project ties it all together to solve systems of linear equations with different numerical methods.
 
 <p align="center">
-  <img src="assets/socket_chat.png" alt="Socket Chat Client" width="300">
+  <img src="assets/linear_algebra.gif" alt="Linear Algebra Visualization">
 </p>
+
+## 7. Lexical Analyzer
+
+**Path:** `src/cs3500-programming-languages-and-translators/`
+
+A lexer built twice. First in pure Python as an explicit finite state machine—each token category gets a named state, transitions are hand-coded. Then rebuilt in C++ with Lex/Flex, where the same token grammar collapses into a regex spec and Flex generates the FSM for you. Both versions recognize integers, decimals, scientific notation, hex, binary, identifiers, string constants, keywords, operators, and phone numbers in three formats. Doing it both ways is the lesson: you understand what Flex actually buys you.
+
+<p align="center">
+  <img src="assets/automata.png" alt="Lexer DFA" width="80%">
+</p>
+
+## 8. Knapsack Memory Manager
+
+**Path:** `src/cs2500-algorithms/CS2500-Project1/`
+
+Brute Force vs. Dynamic Programming vs. Greedy on the 0-1 knapsack, framed as a smartphone OS deciding which apps to swap to disk. Each app has a memory cost and a recovery cost; the goal is to free a target amount of memory while minimizing recovery cost. Test rig ran for twelve hours straight, scaling input size until each algorithm hit its wall—Brute Force died at n=50, Dynamic Programming was tractable to n=1,000, Greedy was always fast but only optimal when ratios cooperated. The empirical scaling curves are the actual deliverable; the algorithms are the easy part.
+
+<p align="center">
+  <img src="assets/knapsack_scaling.png" alt="Input Size vs Time — Brute Force, DP, Greedy" width="80%">
+</p>
+
+## 9. Graph Analytics Suite
+
+**Path:** `src/cs2500-algorithms/CS2500-Project2/`
+
+Six classical metrics for social network graphs, implemented from scratch in C++: degree distribution, shortest-path distribution, graph diameter, closeness centrality, betweenness centrality, and community detection. Betweenness uses Floyd-Warshall path reconstruction—every shortest path is recovered, and each intermediate vertex's centrality counter goes up. The output drives a LaTeX report rendered with pgfplots, so the code's job ends at producing CSVs the report turns into curves. Empirical graph theory: turning "what does centrality even measure" into a number you can plot.
+
+<p align="center">
+  <img src="assets/graph_analytics.png" alt="Degree Distribution from Graph Analytics Report" width="80%">
+</p>
+
+## 10. CFG Tracer
+
+**Path:** `src/cs4099-undergrad-research/`
+
+Undergraduate research project that instruments C++ code to trace control flow at runtime. A control flow graph (CFG) represents all possible execution paths through a program—nodes are basic blocks (straight-line code with no branches), edges are jumps between them. This tool parses source files, identifies basic blocks, and generates execution traces. Used Boost for regex parsing. The goal was to understand how programs actually execute versus how we think they execute.
+
+<details>
+<summary>Sample CFG and Trace</summary>
+
+Source program (`if.cpp`):
+
+```cpp
+int main()
+{
+    int a = 0;
+    if (a < 10)
+        a++;
+    return 0;
+}
+```
+
+Extracted CFG (`if.cfg`)—basic blocks with predecessors, successors, and per-block statements:
+
+```
+int main()
+ [B4 (ENTRY)]
+   Succs (1): B3
+
+ [B1]
+   1: 0
+   2: return [B1.1];
+   Preds (2): B2 B3
+   Succs (1): B0
+
+ [B2]
+   1: a
+   2: [B2.1]++
+   Preds (1): B3
+   Succs (1): B1
+
+ [B3]
+   1: 0
+   2: int a = 0;
+   3: a
+   4: [B3.3] (ImplicitCastExpr, LValueToRValue, int)
+   5: 10
+   6: [B3.4] < [B3.5]
+   T: if [B3.6]
+   Preds (1): B4
+   Succs (2): B2 B1
+
+ [B0 (EXIT)]
+   Preds (1): B1
+```
+
+Runtime trace—the sequence of basic blocks actually visited during one execution:
+
+```
+0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 11 12 13 14 17 18 9 11 12 13 14 15 11 12 13 14 17 18 9 10 11 12 13 14 15 10 11 12 13 14 17 20 21
+```
+
+</details>
+
+## 11. Bolt
+
+**Path:** `src/bolt`
+
+<p align="center">
+  <img src="assets/bolt_timer.png" alt="Bolt Timer Screen" width="300">
+  &nbsp;&nbsp;
+  <img src="assets/bolt_settings.png" alt="Bolt Settings Screen" width="300">
+</p>
+
+iOS interval timer with a custom UI. A circular angular overlay (`AngularOverlayView`) drives timer state; a small `Timer` model handles tick logic and persistence via UserDefaults. The interesting bit is `CustomPresentAnimationController`—a hand-rolled `UIViewControllerAnimatedTransitioning` that springs the settings sheet up over 2.5 seconds with damped spring physics. Built in 2015–2016, when UIKit was the only game in town and custom transitions meant writing them yourself.
 
 ## 12. CLC Tally
 
@@ -125,13 +190,7 @@ An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServ
 
 iOS app for tracking student headcounts at Missouri S&T's Computer Learning Center. Built to solve a real problem—tutors needed a quick way to log how many students they helped. Simple interface, local storage, export functionality. Sometimes the best software is the software that just works.
 
-## 13. Bolt
-
-**Path:** `src/bolt`
-
-iOS interval timer with a custom UI. A circular angular overlay (`AngularOverlayView`) drives timer state; a small `Timer` model handles tick logic and persistence via UserDefaults. The interesting bit is `CustomPresentAnimationController`—a hand-rolled `UIViewControllerAnimatedTransitioning` that springs the settings sheet up over 2.5 seconds with damped spring physics. Built in 2015–2016, when UIKit was the only game in town and custom transitions meant writing them yourself.
-
-## 14. Grading Suite
+## 13. Grading Suite
 
 **Path:** `src/cs1570-grading-suite`
 
@@ -175,6 +234,18 @@ $ python3 stylechecker.py bad_homework.cpp bad_homework.h
 ```
 
 </details>
+
+## 14. Camelot
+
+**Path:** `src/cs3100-software-engineering-i/camelot`
+
+Team software engineering project with full documentation, UML diagrams, and Doxygen-generated API docs. Practiced agile methodology, code reviews, and collaborative development. The code itself is less interesting than learning how to build software with other people.
+
+An optional iOS chat client (`src/cs3800-operating-systems/homework-3/SocketServer`) hooks into the server, allowing real-time messaging between users. Built with Swift using JSQMessagesViewController for the chat UI and SwiftSocket for TCP communication.
+
+<p align="center">
+  <img src="assets/socket_chat.png" alt="Socket Chat Client" width="300">
+</p>
 
 ---
 
