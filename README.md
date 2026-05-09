@@ -15,7 +15,7 @@ Four years of computer science education distilled into one repository. From wri
 <p align="center">
   <a href="PORTFOLIO.md"><img src="https://img.shields.io/badge/Portfolio-14_projects-2ea44f?style=for-the-badge" alt="View Portfolio"></a>
   &nbsp;
-  <a href="https://academia.starikov.io/curated.pdf"><img src="https://img.shields.io/badge/Notes-1,113_pages-1f6feb?style=for-the-badge" alt="View Notes"></a>
+  <a href="https://academia.starikov.io/complete.pdf"><img src="https://img.shields.io/badge/Notes-1,113_pages-1f6feb?style=for-the-badge" alt="View Notes"></a>
 </p>
 
 ---
